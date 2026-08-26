@@ -1,0 +1,6 @@
+Model	Type	Dimensions	Max Tokens	Best For
+all-MiniLM-L6-v2	Local (Free)	384	512	Fast prototyping, running entirely on a laptop, tiny memory footprint.
+BAAI/bge-small-en-v1.5	Local (Free)	384	512	Highest accuracy for small local models on the current leaderboards.
+nomic-embed-text	Local (Free)	768 / 1536	8192	Long documents kept local; matches OpenAI performance but needs more RAM.
+OpenAI text-embedding-3-small	API (Paid)	1536 (adjustable)	8192	Industry standard, incredibly cheap, highly accurate out-of-the-box.
+AWS Bedrock (Amazon Titan / Cohere)	API (Paid)	256 to 1024+	8192	Enterprise pipelines natively integrated with EventBridge, Lambda, or CloudFormation architectures.

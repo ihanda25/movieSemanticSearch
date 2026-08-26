@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Movie Semantic Search</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="intro">
+        <p class="eyebrow">Movie Semantic Search</p>
+        <h1>Describe the scene you remember.</h1>
+        <p class="sub">
+          A moment, a line, a feeling — whatever stuck with you. We'll take it
+          from there.
+        </p>
+      </header>
+
+      <form id="search-form" class="search" autocomplete="off">
+        <textarea
+          id="query"
+          name="query"
+          rows="3"
+          placeholder="A house lifts off the ground carried by thousands of balloons..."
+          aria-label="Describe a movie"
+        ></textarea>
+        <div class="actions">
+          <span class="hint">Press <kbd>⌘</kbd> <kbd>Enter</kbd> to search</span>
+          <button type="submit" id="submit">Search</button>
+        </div>
+      </form>
+
+      <section id="result" class="result" hidden aria-live="polite"></section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
