@@ -1,0 +1,251 @@
+================================================================================
+FINDINGS -- movieSemanticSearch
+Last updated: 2026-08-28
+================================================================================
+
+Running notes on how the search behaves and what to do about it. Append new
+findings at the bottom.
+
+
+--------------------------------------------------------------------------------
+1. ML TOPICS IMPLEMENTED SO FAR
+--------------------------------------------------------------------------------
+
+The search is a dense-retrieval pipeline. Five ideas are actually in the code:
+
+  a) SENTENCE EMBEDDINGS
+     Each movie is converted from text into a single 384-dimensional vector of
+     floats that represents its meaning, rather than its words. Texts about
+     similar things land near each other in that space regardless of shared
+     vocabulary. Done in embed.py by sentence-transformers all-MiniLM-L6-v2,
+     a 6-layer transformer distilled from BERT. It runs locally on CPU, needs
+     no API key, and caches ~90MB of weights in ~/.cache/huggingface.
+
+  b) MEAN POOLING
+     The transformer emits one vector per token, but we need one vector per
+     document. MiniLM averages the token vectors together. This is the single
+     most important implementation detail for understanding the model's
+     behaviour, because an average is a proportion: adding tokens about
+     anything else shrinks the share of the final vector devoted to any one
+     concept. See finding 3 -- almost all of it follows from this.
+
+  c) L2 NORMALIZATION
+     Every vector is scaled to length exactly 1 (normalize_embeddings=True, on
+     both the document side in embed.py and the query side in
+     search_disney.py). This is what makes the dot product equal cosine
+     similarity -- see (d). It must be applied identically on both sides or the
+     scores stop meaning anything.
+
+  d) COSINE SIMILARITY VIA DOT PRODUCT
+     Similarity is the cosine of the angle between the query vector and each
+     movie vector. Since a.b = |a||b|cos(theta), and normalization forced
+     |a| = |b| = 1, the dot product IS the cosine. So the score is a pure
+     direction comparison with magnitude divided out -- long overviews get no
+     advantage from being long.
+
+     Range is -1 to 1 in theory. In practice these embeddings occupy a narrow
+     cone rather than the full sphere, so unrelated pairs score meaningfully
+     above 0 and negatives are rare. Consequence: the scores are ORDINAL, not
+     absolute. They rank reliably within one query but are not comparable
+     across queries, and a fixed cutoff like "reject below 0.4" will not behave
+     consistently. Observed noise floor varies by query -- roughly 0.27 for one
+     query in finding 2, roughly 0.44 for the query in finding 3.
+
+  e) BRUTE-FORCE k-NN SEARCH
+     np.dot(db_embeddings, query_vector) scores all 826 movies in one matrix
+     operation, then np.argsort picks the top k. No index, no approximation,
+     exact results every time. At 826 x 384 float32 the whole matrix is ~1.3MB
+     and the scan is well under a millisecond, so an ANN index like HNSW would
+     add a dependency and inexact results to avoid a cost that does not exist.
+     Revisit around 100k vectors.
+
+  NOT implemented, and worth naming so the gap is explicit: no fine-tuning, no
+  reranking, no hybrid keyword/BM25 scoring, and NO EVALUATION SET. Quality is
+  currently judged by typing queries and eyeballing results. See section 4.
+
+
+--------------------------------------------------------------------------------
+2. FINDING: THE CORPUS DESCRIBES PREMISES, NOT SCENES
+--------------------------------------------------------------------------------
+
+The product premise is "describe a scene you remember", but TMDB overviews are
+marketing blurbs describing premises, median 42 words, and 7 entries have no
+overview at all (stored as "N/A").
+
+Evidence:
+
+  query: "a house lifted by balloons to south america"
+    0.285  America's Heart & Soul
+    0.271  The Haunted House
+    0.270  The Three Caballeros
+
+Up is not in the top 3 and the scores are flat and low -- that shape (flat AND
+low) is what "nothing in the corpus matches" actually looks like. The Lion King
+overview never mentions the stampede; Up's never mentions the balloons.
+
+Working queries look different:
+
+  query: "ice queen sister with magic powers"
+    0.496  Frozen
+    0.492  Ice Princess
+    0.455  Snow White
+
+Flat but genuinely on-topic -- the model found a real cluster.
+
+Practical note for the UI: the GAP between the top hit and the rest is a better
+"no good match" signal than the top hit's absolute value.
+
+
+--------------------------------------------------------------------------------
+3. FINDING: FILLER WORDS IN THE QUERY DOMINATE THE RESULT
+--------------------------------------------------------------------------------
+
+Big Hero 6 IS in the catalog (TMDB 177572, Walt Disney Animation Studios) and
+its overview is nearly a literal restatement of the query below:
+
+  "A special bond develops between plus-sized inflatable robot Baymax, and
+   prodigy Hiro Hamada, who team up with a group of friends to form a band of
+   high-tech heroes."
+
+It still ranked 18th of 826.
+
+  query: "A movie where there is a robot and a kid who are superheros"
+    0.502  Next Avengers: Heroes of Tomorrow
+    0.481  Toy Story at 20: To Infinity and Beyond
+    0.470  LEGO Marvel Avengers: Mission Demolition
+    0.467  A Goofy Movie
+    0.438  The Incredibles
+    ...
+    0.371  Big Hero 6                                 <-- rank 18
+
+Phrasing sweep, same target movie:
+
+  rank  score  query
+    18  0.371  A movie where there is a robot and a kid who are superheros
+    18  0.371  A movie where there is a robot and a kid who are superheroes
+     5  0.456  a robot and a kid who are superheroes
+     5  0.457  robot kid superheroes
+     1  0.490  inflatable robot and a boy genius
+
+DIAGNOSIS
+
+  The misspelling costs nothing. "superheros" and "superheroes" score
+  identically to three decimals, because WordPiece tokenization splits both
+  into the same subword pieces. Ruled out.
+
+  The filler costs 13 ranks. Deleting "A movie where there is" moves Big Hero 6
+  from 18 to 5 with no other change.
+
+  This is mean pooling, item (b). Seven of ~13 tokens in the original query are
+  grammatical scaffolding: a, movie, where, there, is, who, are. Roughly half
+  the query vector therefore encodes "generic English sentence about a movie",
+  which points at the dense center of the embedding space where everything is
+  mildly similar to everything. Only the remaining half encodes
+  robot/kid/superhero. Cosine measures direction, so halving the concept's
+  share of the direction is a real penalty.
+
+  The same dilution hurts Big Hero 6 on the document side. Its overview spends
+  most of its length on proper nouns and texture -- "Baymax", "Hiro Hamada",
+  "plus-sized inflatable", "a special bond develops" -- which carry almost no
+  transferable meaning. Next Avengers: Heroes of Tomorrow is short and is about
+  nothing except hero children, so a large fraction of its vector points
+  exactly where the query points.
+
+  A Goofy Movie at 0.467, which has nothing to do with robots or superheroes,
+  establishes the noise floor for this query at roughly 0.44. Big Hero 6 at
+  0.371 scored BELOW the noise floor -- the model extracted essentially no
+  usable signal from its overview.
+
+GENERAL RULE
+
+  Cosine over mean-pooled embeddings rewards the PROPORTION of a text devoted
+  to a concept, not whether the concept is present. A short document entirely
+  about X beats a longer document that mentions X alongside other things. The
+  search is not finding what CONTAINS the concept, it is finding what IS MOSTLY
+  the concept. This applies to both sides: query and document.
+
+
+--------------------------------------------------------------------------------
+4. PROPOSED FIX
+--------------------------------------------------------------------------------
+
+Three changes, in the order I would do them. The first is one line, the second
+is the real fix, the third is what tells you whether either worked.
+
+--- 4a. SWAP THE MODEL (one line, do this first) ------------------------------
+
+  all-MiniLM-L6-v2 is trained for SYMMETRIC similarity: sentence vs sentence,
+  where both sides are the same kind of text and roughly the same length. Its
+  training objective was "are these two sentences paraphrases".
+
+  This project is ASYMMETRIC retrieval: a short user query vs a longer
+  descriptive passage. Different shape, different objective. multi-qa-MiniLM-
+  L6-cos-v1 is trained on ~215M question/answer pairs specifically for that
+  shape, using a contrastive objective -- pull the true query/passage pair
+  together, push apart the other passages in the batch (in-batch negatives).
+  That training is precisely what teaches a model to ignore the query-side
+  filler in finding 3, because "A movie where there is..." appeared in its
+  training queries too and carried no signal about which passage was correct.
+
+  It is a drop-in swap: same 6-layer architecture, same 384 dims, same speed,
+  same mean pooling, same cosine normalization. Nothing downstream changes.
+
+    embed.py:9          EMBEDDING_MODEL = 'multi-qa-MiniLM-L6-cos-v1'
+    search_disney.py:16 EMBEDDING_MODEL = "multi-qa-MiniLM-L6-cos-v1"
+
+  Then re-run embed.py. NOTE: the constant is duplicated in two files and the
+  two MUST match -- encoding the query with a different model than the
+  documents produces garbage silently, no error. Worth importing the constant
+  from one place rather than keeping two copies in sync by hand.
+
+--- 4b. ENRICH THE EMBEDDED TEXT (the real fix) -------------------------------
+
+  Finding 3's general rule says concept proportion is what matters, so raise
+  the concept density of each document. TMDB /movie/{id}/keywords is the cheap
+  source: for Big Hero 6 it returns terms like "robot", "superhero", "brother
+  brother relationship", "san fransokyo". Pure concept, zero filler, and it is
+  the vocabulary users actually type.
+
+  This also directly attacks finding 2. Keywords are frequently scene-level and
+  thematic where overviews are premise-level -- this is the documented path to
+  making "describe a scene you remember" work at all.
+
+  Change in embed.py, roughly:
+
+    text_chunk = (f"Title: {title}, Overview: {overview}, "
+                  f"Keywords: {', '.join(keywords)}")
+
+  Cost: one extra TMDB call per movie in build_catalog.py (826 calls, a few
+  minutes, cache them into catalog.json so embed.py stays offline), then
+  re-run embed.py. Taglines are a second cheap source in the same request.
+
+  CAUTION: keywords lengthen the document, and by the mean-pooling logic that
+  dilutes the overview's contribution. The expected win is that keywords are
+  denser in useful signal than the text they dilute -- likely but NOT
+  guaranteed. This is exactly why 4c exists.
+
+--- 4c. BUILD A SMALL EVALUATION SET (do this before or alongside 4b) ---------
+
+  Right now quality is judged by typing a query and eyeballing the output.
+  That cannot tell you whether a change helped overall or just helped the one
+  query you happened to look at -- and 4a and 4b will each help some queries
+  and hurt others. Without a measurement, "did that work" is unanswerable.
+
+  Minimum viable version: a JSON file of 30-50 hand-written pairs of
+  {query, expected TMDB id}, written the way a real user would type -- filler
+  and misspellings included, since that is the actual input distribution.
+  Draw them from movies you know well.
+
+  Then score two numbers:
+    Recall@5  -- fraction of queries where the right movie is in the top 5.
+                 This is the one users feel.
+    MRR       -- mean of 1/rank of the correct movie. Rewards moving a film
+                 from rank 5 to rank 1, which Recall@5 cannot see.
+
+  Record the baseline BEFORE changing anything, then re-measure after 4a and
+  after 4b. Keep the change only if the numbers move. Big Hero 6 for the
+  finding-3 query is one row of this set: currently rank 18, MRR contribution
+  0.056, Recall@5 miss.
+
+  This is the difference between tuning and guessing, and it is the piece the
+  project is missing most.

@@ -19,6 +19,47 @@ function show(label, text, isError = false) {
   result.append(labelEl, textEl);
 }
 
+function showResults(results) {
+  result.hidden = false;
+  result.classList.remove("error");
+  result.innerHTML = "";
+
+  const labelEl = document.createElement("p");
+  labelEl.className = "label";
+  labelEl.textContent = results.length ? "Closest matches" : "No matches";
+  result.append(labelEl);
+
+  const list = document.createElement("ol");
+  list.className = "hits";
+
+  for (const hit of results) {
+    const item = document.createElement("li");
+    item.className = "hit";
+
+    const head = document.createElement("div");
+    head.className = "hit-head";
+
+    const title = document.createElement("h2");
+    title.className = "hit-title";
+    title.textContent = hit.year ? `${hit.title} (${hit.year})` : hit.title;
+
+    const match = document.createElement("span");
+    match.className = "hit-match";
+    match.textContent = `${hit.match}% match`;
+
+    head.append(title, match);
+
+    const overview = document.createElement("p");
+    overview.className = "hit-overview";
+    overview.textContent = hit.overview;
+
+    item.append(head, overview);
+    list.append(item);
+  }
+
+  result.append(list);
+}
+
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
@@ -42,7 +83,7 @@ form.addEventListener("submit", async (event) => {
     if (!response.ok) {
       show("Error", data.error || "Something went wrong.", true);
     } else {
-      show("Sent to the server", data.received);
+      showResults(data.results || []);
     }
   } catch (err) {
     show("Error", "Could not reach the server.", true);
