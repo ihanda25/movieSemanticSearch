@@ -4,6 +4,7 @@ Serves the frontend and runs a description through the semantic search in
 `disney_overview_search/search_disney.py`.
 """
 
+import math
 import sys
 from pathlib import Path
 
@@ -16,28 +17,31 @@ FRONTEND_DIR = ROOT / "frontend"
 # the sibling package needs the root added before it can be imported.
 sys.path.insert(0, str(ROOT))
 
-from disney_overview_search.search_disney import search_movies  # noqa: E402
+from disney_overview_search.disney_cross_encode import search_movies_reranked  # noqa: E402
 
 TOP_K = 5
-
-# Cosine scores from all-MiniLM-L6-v2 occupy a narrow band rather than the full
-# 0..1 range: measured across a spread of queries, genuine matches land
-# 0.45-0.55, a query whose answer is not in the corpus tops out near 0.29, and
-# off-domain nonsense near 0.15. Multiplying by 100 would label a correct hit
-# "49% match", so rescale that observed band onto 0-100 instead. The map is
-# linear and monotonic, so it never reorders results, and a query with no good
-# answer still reads as uniformly low instead of being stretched up to 100%.
-SCORE_FLOOR = 0.15
-SCORE_CEILING = 0.60
 
 app = Flask(__name__, static_folder=None)
 
 
 def to_percent(score):
-    """Rescales a raw cosine score onto a 0-100 'match' figure."""
+    """Turns a cross-encoder logit into a 0-100 'match' figure.
 
-    ratio = (score - SCORE_FLOOR) / (SCORE_CEILING - SCORE_FLOOR)
-    return round(max(0.0, min(1.0, ratio)) * 100)
+    The ms-marco cross-encoder is trained with a binary relevance objective, so
+    its raw output is a logit and sigmoid(logit) is the model's own probability
+    that the document answers the query. That replaces the hand-tuned rescaling
+    the bi-encoder needed: cosine scores sat in a narrow band whose endpoints
+    had to be measured by hand, whereas these numbers mean something absolute
+    on their own. Still monotonic, so it never reorders results.
+
+    Consequence worth knowing: a query the model has no good answer for now
+    reads in the single digits rather than a comfortable-looking 40%.
+    """
+
+    # Clamped only so math.exp cannot overflow; real logits from this model sit
+    # within about +/-11.
+    score = max(-30.0, min(30.0, score))
+    return round(100 / (1 + math.exp(-score)))
 
 
 @app.get("/")
@@ -61,7 +65,7 @@ def search():
     app.logger.info("Received description: %s", query)
 
     results = []
-    for hit in search_movies(query, top_k=TOP_K):
+    for hit in search_movies_reranked(query, top_k=TOP_K):
         movie = hit["movie"]
         # release_date is "YYYY-MM-DD", or missing/empty for a few entries.
         release_date = movie.get("release_date") or ""
@@ -76,11 +80,11 @@ def search():
 
 
 if __name__ == "__main__":
-    # Load the model and vectors up front so the first real search is not the
-    # one that pays for it. With debug=True the reloader runs this twice, once
-    # in the parent and once in the child it spawns.
-    print("Loading model and vector database...")
-    search_movies("warmup")
+    # Load both models and the vectors up front so the first real search is
+    # not the one that pays for it. With debug=True the reloader runs this
+    # twice, once in the parent and once in the child it spawns.
+    print("Loading models and vector database...")
+    search_movies_reranked("warmup")
     print("Ready on http://127.0.0.1:8000")
 
     app.run(host="127.0.0.1", port=8000, debug=True)
