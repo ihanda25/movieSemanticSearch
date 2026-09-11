@@ -1,0 +1,160 @@
+{
+  "rules": [
+    "PARKED, not in use. These are the scene-level queries: a specific moment you remember rather than the film's setup.",
+    "They measured 32% Recall@5 against 96% for premise rows, because TMDB overviews describe premises -- Up's never mentions balloons. That is a corpus problem, not a ranking one.",
+    "Switch them back on with: evaluate.py --queries evaluation/queries_scene.json, after enriching the embedded text with TMDB keywords. That is the measurement that says whether enrichment worked.",
+    "Same authoring rules as queries.json: written from memory of the film, never naming the film."
+  ],
+  "queries": [
+    {
+      "query": "the part where a huge herd of wildebeest stampede through a canyon and the dad dies",
+      "kind": "scene",
+      "expected_tmdb_id": 8587,
+      "expected_title": "The Lion King (1994)"
+    },
+    {
+      "query": "an old mans house gets lifted into the sky by thousands of balloons",
+      "kind": "scene",
+      "expected_tmdb_id": 14160,
+      "expected_title": "Up (2009)"
+    },
+    {
+      "query": "the toys all hold hands as they slide toward a fire at the dump",
+      "kind": "scene",
+      "expected_tmdb_id": 10193,
+      "expected_title": "Toy Story 3 (2010)"
+    },
+    {
+      "query": "a boy walks across a bridge made of orange flower petals into the land of the dead",
+      "kind": "scene",
+      "expected_tmdb_id": 354912,
+      "expected_title": "Coco (2017)"
+    },
+    {
+      "query": "two people sitting in a boat watching floating lanterns fill the sky",
+      "kind": "scene",
+      "expected_tmdb_id": 38757,
+      "expected_title": "Tangled (2010)"
+    },
+    {
+      "query": "she builds a whole palace out of ice on top of a mountain while singing",
+      "kind": "scene",
+      "expected_tmdb_id": 109445,
+      "expected_title": "Frozen (2013)"
+    },
+    {
+      "query": "a guy takes a princess on a flying carpet ride at night over the city",
+      "kind": "scene",
+      "expected_tmdb_id": 420817,
+      "expected_title": "Aladdin (2019)"
+    },
+    {
+      "query": "dancing in a huge golden ballroom in a yellow dress with a beast",
+      "kind": "scene",
+      "expected_tmdb_id": 10020,
+      "expected_title": "Beauty and the Beast (1991)"
+    },
+    {
+      "query": "the part where the deers mom gets shot by hunters",
+      "kind": "scene",
+      "expected_tmdb_id": 3170,
+      "expected_title": "Bambi (1942)"
+    },
+    {
+      "query": "a wooden boy and an old man get swallowed by a giant whale",
+      "kind": "scene",
+      "expected_tmdb_id": 10895,
+      "expected_title": "Pinocchio (1940)"
+    },
+    {
+      "query": "a mouse in a wizard hat makes brooms carry buckets of water and floods everything",
+      "kind": "scene",
+      "expected_tmdb_id": 756,
+      "expected_title": "Fantasia (1940)"
+    },
+    {
+      "query": "an old witch gives a girl a poisoned apple and she falls asleep in a glass coffin",
+      "kind": "scene",
+      "expected_tmdb_id": 408,
+      "expected_title": "Snow White and the Seven Dwarfs (1938)"
+    },
+    {
+      "query": "she fires a cannon at a snowy mountain to cause an avalanche and stop an army",
+      "kind": "scene",
+      "expected_tmdb_id": 10674,
+      "expected_title": "Mulan (1998)"
+    },
+    {
+      "query": "a mermaid gives up her voice to a sea witch in exchange for legs",
+      "kind": "scene",
+      "expected_tmdb_id": 447277,
+      "expected_title": "The Little Mermaid (2023)"
+    },
+    {
+      "query": "flying down a narrow trench to shoot a torpedo into a giant round space station",
+      "kind": "scene",
+      "expected_tmdb_id": 11,
+      "expected_title": "Star Wars (1977)"
+    },
+    {
+      "query": "the guy in the black mask tells him hes his father after cutting off his hand",
+      "kind": "scene",
+      "expected_tmdb_id": 1891,
+      "expected_title": "The Empire Strikes Back (1980)"
+    },
+    {
+      "query": "a giant round boulder chases the guy out of a booby trapped temple",
+      "kind": "scene",
+      "expected_tmdb_id": 85,
+      "expected_title": "Raiders of the Lost Ark (1981)"
+    },
+    {
+      "query": "a portal opens in the sky over new york city and aliens pour out of it",
+      "kind": "scene",
+      "expected_tmdb_id": 24428,
+      "expected_title": "The Avengers (2012)"
+    },
+    {
+      "query": "the sloth working at the dmv who talks really really slowly",
+      "kind": "scene",
+      "expected_tmdb_id": 269149,
+      "expected_title": "Zootopia (2016)"
+    },
+    {
+      "query": "a group of sharks hold a meeting and say fish are friends not food",
+      "kind": "scene",
+      "expected_tmdb_id": 12,
+      "expected_title": "Finding Nemo (2003)"
+    },
+    {
+      "query": "a chase through a giant warehouse of doors hanging on rails",
+      "kind": "scene",
+      "expected_tmdb_id": 585,
+      "expected_title": "Monsters, Inc. (2001)"
+    },
+    {
+      "query": "the food critic takes one bite and gets thrown back into his childhood kitchen",
+      "kind": "scene",
+      "expected_tmdb_id": 2062,
+      "expected_title": "Ratatouille (2007)"
+    },
+    {
+      "query": "a baby elephant learns to fly by flapping his huge ears while holding a feather",
+      "kind": "scene",
+      "expected_tmdb_id": 11360,
+      "expected_title": "Dumbo (1941)"
+    },
+    {
+      "query": "the mom stretches her arms and legs across a hallway and gets stuck in doors",
+      "kind": "scene",
+      "expected_tmdb_id": 9806,
+      "expected_title": "The Incredibles (2004)"
+    },
+    {
+      "query": "pirates turn into walking skeletons whenever the moonlight hits them",
+      "kind": "scene",
+      "expected_tmdb_id": 22,
+      "expected_title": "Pirates of the Caribbean: The Curse of the Black Pearl (2003)"
+    }
+  ]
+}

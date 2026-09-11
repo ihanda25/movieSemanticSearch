@@ -1,0 +1,311 @@
+{
+  "rules": [
+    "Queries are written from memory of the film, never by reading the TMDB overview -- otherwise the set measures whether the model can match text to a paraphrase of itself.",
+    "PREMISE ROWS ONLY for now. Scene queries are parked in queries_scene.json: the corpus describes premises, so scene retrieval is a known failure waiting on corpus enrichment, and mixing the two hides movement in the half that works.",
+    "No film appears in more than one row, and no film shares its title with another catalog entry -- a premise query cannot tell an original from its remake, so a row like that would measure label luck.",
+    "Phrasing is deliberately how a user types -- lowercase, filler, missing apostrophes -- because that is the real input distribution.",
+    "Film titles are never used in the query text; a row that names its own answer measures nothing."
+  ],
+  "queries": [
+    {
+      "query": "toys that come alive when nobody is around and a cowboy gets jealous of a new spaceman toy",
+      "kind": "premise",
+      "expected_tmdb_id": 862,
+      "expected_title": "Toy Story (1995)"
+    },
+    {
+      "query": "a little trash compacting robot left all alone on an abandoned earth",
+      "kind": "premise",
+      "expected_tmdb_id": 10681,
+      "expected_title": "WALL·E (2008)"
+    },
+    {
+      "query": "the emotions inside a girls head run her from a control room",
+      "kind": "premise",
+      "expected_tmdb_id": 150540,
+      "expected_title": "Inside Out (2015)"
+    },
+    {
+      "query": "a rich weapons designer gets kidnapped and builds a robotic suit of armor to escape",
+      "kind": "premise",
+      "expected_tmdb_id": 1726,
+      "expected_title": "Iron Man (2008)"
+    },
+    {
+      "query": "a hidden advanced african nation with a special metal that powers everything",
+      "kind": "premise",
+      "expected_tmdb_id": 284054,
+      "expected_title": "Black Panther (2018)"
+    },
+    {
+      "query": "a team of misfits in space with a talking raccoon and a tree that talks",
+      "kind": "premise",
+      "expected_tmdb_id": 118340,
+      "expected_title": "Guardians of the Galaxy (2014)"
+    },
+    {
+      "query": "a skinny guy takes a serum during world war 2 and becomes a super soldier",
+      "kind": "premise",
+      "expected_tmdb_id": 1771,
+      "expected_title": "Captain America: The First Avenger (2011)"
+    },
+    {
+      "query": "a lonely hawaiian girl adopts an alien thinking that its a dog",
+      "kind": "premise",
+      "expected_tmdb_id": 11544,
+      "expected_title": "Lilo & Stitch (2002)"
+    },
+    {
+      "query": "a video game bad guy is tired of being the villain and leaves his arcade game",
+      "kind": "premise",
+      "expected_tmdb_id": 82690,
+      "expected_title": "Wreck-It Ralph (2012)"
+    },
+    {
+      "query": "a selfish emperor gets turned into a llama and has to travel home with a peasant",
+      "kind": "premise",
+      "expected_tmdb_id": 11688,
+      "expected_title": "The Emperor's New Groove (2000)"
+    },
+    {
+      "query": "a family living in a magic house where everyone gets a special power except one girl",
+      "kind": "premise",
+      "expected_tmdb_id": 568124,
+      "expected_title": "Encanto (2021)"
+    },
+    {
+      "query": "a scottish princess doesnt want to marry and accidentally turns her mother into a bear",
+      "kind": "premise",
+      "expected_tmdb_id": 62177,
+      "expected_title": "Brave (2012)"
+    },
+    {
+      "query": "a magical nanny flies in with an umbrella to look after two kids in london",
+      "kind": "premise",
+      "expected_tmdb_id": 433,
+      "expected_title": "Mary Poppins (1964)"
+    },
+    {
+      "query": "a famous race car gets stuck in a tiny desert town and has to repair the road",
+      "kind": "premise",
+      "expected_tmdb_id": 920,
+      "expected_title": "Cars (2006)"
+    },
+    {
+      "query": "a princess is cursed to sleep forever if she pricks her finger on a spinning wheel",
+      "kind": "premise",
+      "expected_tmdb_id": 10882,
+      "expected_title": "Sleeping Beauty (1959)"
+    },
+    {
+      "query": "a woman wants to make a fur coat out of stolen puppies",
+      "kind": "premise",
+      "expected_tmdb_id": 12230,
+      "expected_title": "One Hundred and One Dalmatians (1961)"
+    },
+    {
+      "query": "a kid inventor and a big soft white healthcare robot start a superhero team",
+      "kind": "premise",
+      "expected_tmdb_id": 177572,
+      "expected_title": "Big Hero 6 (2014)"
+    },
+    {
+      "query": "a jazz pianist dies and his soul ends up in the place where souls come from",
+      "kind": "premise",
+      "expected_tmdb_id": 508442,
+      "expected_title": "Soul (2020)"
+    },
+    {
+      "query": "sea monster boys who turn human when they are dry in an italian seaside town",
+      "kind": "premise",
+      "expected_tmdb_id": 508943,
+      "expected_title": "Luca (2021)"
+    },
+    {
+      "query": "a chinese canadian girl turns into a giant red panda whenever she gets emotional",
+      "kind": "premise",
+      "expected_tmdb_id": 508947,
+      "expected_title": "Turning Red (2022)"
+    },
+    {
+      "query": "a waitress in new orleans kisses a frog prince and turns into a frog herself",
+      "kind": "premise",
+      "expected_tmdb_id": 10198,
+      "expected_title": "The Princess and the Frog (2009)"
+    },
+    {
+      "query": "a colony of ants is bullied by grasshoppers so one ant recruits circus bugs to fight back",
+      "kind": "premise",
+      "expected_tmdb_id": 9487,
+      "expected_title": "A Bug's Life (1998)"
+    },
+    {
+      "query": "a man raised by gorillas in the jungle meets other humans for the first time",
+      "kind": "premise",
+      "expected_tmdb_id": 37135,
+      "expected_title": "Tarzan (1999)"
+    },
+    {
+      "query": "a boy is tutored by a bumbling wizard and then pulls a sword out of a stone to become king",
+      "kind": "premise",
+      "expected_tmdb_id": 9078,
+      "expected_title": "The Sword in the Stone (1963)"
+    },
+    {
+      "query": "a boy who can fly and never grows up takes three kids to an island with pirates and fairies",
+      "kind": "premise",
+      "expected_tmdb_id": 10693,
+      "expected_title": "Peter Pan (1953)"
+    },
+    {
+      "query": "an old widower flies his house away to south america with a boy scout stuck on the porch",
+      "kind": "premise",
+      "expected_tmdb_id": 14160,
+      "expected_title": "Up (2009)"
+    },
+    {
+      "query": "the toys get donated to a daycare and try to escape back to their owner who left for college",
+      "kind": "premise",
+      "expected_tmdb_id": 10193,
+      "expected_title": "Toy Story 3 (2010)"
+    },
+    {
+      "query": "a boy who wants to be a musician in a family that banned music ends up in the land of the dead",
+      "kind": "premise",
+      "expected_tmdb_id": 354912,
+      "expected_title": "Coco (2017)"
+    },
+    {
+      "query": "a girl with really long magic hair is locked in a tower by a woman pretending to be her mother",
+      "kind": "premise",
+      "expected_tmdb_id": 38757,
+      "expected_title": "Tangled (2010)"
+    },
+    {
+      "query": "a queen with ice powers runs away from her kingdom and her sister goes to find her",
+      "kind": "premise",
+      "expected_tmdb_id": 109445,
+      "expected_title": "Frozen (2013)"
+    },
+    {
+      "query": "a bunch of classical music pieces turned into animation with no talking",
+      "kind": "premise",
+      "expected_tmdb_id": 756,
+      "expected_title": "Fantasia (1940)"
+    },
+    {
+      "query": "a farm boy joins a rebellion against an evil empire with an old wizard and a smuggler",
+      "kind": "premise",
+      "expected_tmdb_id": 11,
+      "expected_title": "Star Wars (1977)"
+    },
+    {
+      "query": "the rebels are losing and the kid goes off to train with a little green master in a swamp",
+      "kind": "premise",
+      "expected_tmdb_id": 1891,
+      "expected_title": "The Empire Strikes Back (1980)"
+    },
+    {
+      "query": "an archaeologist with a whip races the nazis to find a biblical artifact",
+      "kind": "premise",
+      "expected_tmdb_id": 85,
+      "expected_title": "Raiders of the Lost Ark (1981)"
+    },
+    {
+      "query": "a group of superheroes who cant get along have to team up to stop an alien invasion",
+      "kind": "premise",
+      "expected_tmdb_id": 24428,
+      "expected_title": "The Avengers (2012)"
+    },
+    {
+      "query": "a rabbit becomes the first bunny cop in a city of animals and teams up with a con artist fox",
+      "kind": "premise",
+      "expected_tmdb_id": 269149,
+      "expected_title": "Zootopia (2016)"
+    },
+    {
+      "query": "a clownfish dad crosses the whole ocean to find his son who got scooped up by a diver",
+      "kind": "premise",
+      "expected_tmdb_id": 12,
+      "expected_title": "Finding Nemo (2003)"
+    },
+    {
+      "query": "monsters scare human kids to collect their screams as energy for their city",
+      "kind": "premise",
+      "expected_tmdb_id": 585,
+      "expected_title": "Monsters, Inc. (2001)"
+    },
+    {
+      "query": "a rat with an amazing sense of taste secretly cooks by controlling a young guy in a paris restaurant",
+      "kind": "premise",
+      "expected_tmdb_id": 2062,
+      "expected_title": "Ratatouille (2007)"
+    },
+    {
+      "query": "a family of superheroes has to hide their powers and live a normal life in the suburbs",
+      "kind": "premise",
+      "expected_tmdb_id": 9806,
+      "expected_title": "The Incredibles (2004)"
+    },
+    {
+      "query": "a blacksmith teams up with a weird drunk pirate captain to rescue the governors daughter",
+      "kind": "premise",
+      "expected_tmdb_id": 22,
+      "expected_title": "Pirates of the Caribbean: The Curse of the Black Pearl (2003)"
+    },
+    {
+      "query": "a young deer grows up in the forest with a rabbit and a skunk as his friends",
+      "kind": "premise",
+      "expected_tmdb_id": 3170,
+      "expected_title": "Bambi (1942)"
+    },
+    {
+      "query": "a hammer god loses his hammer and has to fight in a gladiator arena on a junk planet",
+      "kind": "premise",
+      "expected_tmdb_id": 284053,
+      "expected_title": "Thor: Ragnarok (2017)"
+    },
+    {
+      "query": "a thief gets a suit that shrinks him down to the size of an ant but makes him really strong",
+      "kind": "premise",
+      "expected_tmdb_id": 102899,
+      "expected_title": "Ant-Man (2015)"
+    },
+    {
+      "query": "a team goes on a suicide mission to steal the plans for a planet destroying weapon",
+      "kind": "premise",
+      "expected_tmdb_id": 330459,
+      "expected_title": "Rogue One: A Star Wars Story (2016)"
+    },
+    {
+      "query": "a nerdy linguist joins a submarine expedition to find a sunken city",
+      "kind": "premise",
+      "expected_tmdb_id": 10865,
+      "expected_title": "Atlantis: The Lost Empire (2001)"
+    },
+    {
+      "query": "a teenager finds a map to pirate treasure and sails on a space ship with a cyborg cook",
+      "kind": "premise",
+      "expected_tmdb_id": 9016,
+      "expected_title": "Treasure Planet (2002)"
+    },
+    {
+      "query": "a deformed bell ringer in a paris cathedral is kept hidden away by a cruel judge",
+      "kind": "premise",
+      "expected_tmdb_id": 10545,
+      "expected_title": "The Hunchback of Notre Dame (1996)"
+    },
+    {
+      "query": "a cartoon princess gets pushed into the real world and ends up in new york city",
+      "kind": "premise",
+      "expected_tmdb_id": 4523,
+      "expected_title": "Enchanted (2007)"
+    },
+    {
+      "query": "boys at a detention camp in the desert are forced to dig holes all day for no reason",
+      "kind": "premise",
+      "expected_tmdb_id": 8326,
+      "expected_title": "Holes (2003)"
+    }
+  ]
+}
