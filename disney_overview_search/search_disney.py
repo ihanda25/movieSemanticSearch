@@ -5,6 +5,7 @@ database once, caches them, and returns the closest movies to a description.
 """
 
 from pathlib import Path
+import sys
 
 import numpy as np
 from sentence_transformers import SentenceTransformer
@@ -12,7 +13,8 @@ from sentence_transformers import SentenceTransformer
 
 ROOT = Path(__file__).resolve().parent.parent
 DB_FILE = ROOT / "database" / "disney_vector_db.npz"
-EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+sys.path.insert(0, str(ROOT))
+from disney_overview_search.documents import EMBEDDING_MODEL
 
 # Loading the model and the .npz costs a few seconds, so do it once and reuse it
 # across queries rather than on every request.
@@ -22,11 +24,15 @@ _cache = None
 def load_database(filepath):
     """Returns (embeddings, movies) where row i of embeddings <-> movies[i]."""
 
-    data = np.load(filepath, allow_pickle=True)
-    # metadata is a 0-d object array wrapping the catalog dict, keyed by TMDB id
-    # and in the same order embed.py iterated it.
-    metadata = data["metadata"].item()
-    return data["embeddings"], list(metadata.values())
+    with np.load(filepath, allow_pickle=True) as data:
+        if "embedding_model" in data and data["embedding_model"].item() != EMBEDDING_MODEL:
+            raise ValueError("Index model differs from query model; rebuild with embed.py")
+        movies = list(data["metadata"].item().values())
+        indices = data["movie_indices"] if "movie_indices" in data else np.arange(len(movies))
+        embeddings = data["embeddings"]
+        if len(indices) != len(embeddings):
+            raise ValueError("Vector rows and movie mapping differ in length")
+        return embeddings, [movies[int(i)] for i in indices]
 
 
 def search(query, model, db_embeddings, db_metadata, top_k=3):
@@ -42,16 +48,25 @@ def search(query, model, db_embeddings, db_metadata, top_k=3):
     # 3. Sort and extract the top K results
     # np.argsort sorts the scores from lowest to highest.
     # [::-1] reverses it to highest to lowest. [:top_k] grabs the top ones.
-    top_indicies = np.argsort(scores)[::-1][:top_k]
+    top_indicies = np.argsort(scores)[::-1]
 
     # 4. Fetch the original JSON metadata for those top scores
     results = []
+    seen = set()
+    if top_k <= 0:
+        return results
     for idx in top_indicies:
+        movie_id = db_metadata[idx]["id"]
+        if movie_id in seen:
+            continue
+        seen.add(movie_id)
         results.append({
             # float() because np.float32 is not JSON-serializable
             "score": float(scores[idx]),
             "movie": db_metadata[idx]
         })
+        if len(results) == top_k:
+            break
     return results
 
 

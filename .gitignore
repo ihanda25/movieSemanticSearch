@@ -3,3 +3,10 @@
 __pycache__/
 *.pyc
 disney_vector_db.npz
+
+# Local user queries and feedback exports
+database/feedback.sqlite3*
+evaluation/feedback*.csv
+
+# Agent-generated trials stay separate from human feedback
+database/agent_feedback.sqlite3*

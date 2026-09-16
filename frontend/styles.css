@@ -237,3 +237,8 @@ button:disabled {
     transform: none;
   }
 }
+
+.feedback { margin-top: 1rem; }
+.feedback button, .feedback-choice { padding: .5rem .8rem; margin: .5rem .5rem .5rem 0; font-size: .9rem; }
+.feedback input { padding: .6rem; max-width: 100%; color: inherit; background: transparent; border: 1px solid currentColor; border-radius: .4rem; }
+.feedback-status { font-size: .9rem; }

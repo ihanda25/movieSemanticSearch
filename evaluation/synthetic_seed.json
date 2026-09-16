@@ -1,0 +1,3431 @@
+{
+  "metadata": {
+    "schema_version": 1,
+    "purpose": "Synthetic training seed for human review; not held-out evaluation or human feedback.",
+    "authorship": "Agent-authored from film knowledge before retrieval. Catalog title/year/ID used only for identity matching.",
+    "label_status": "needs_human_review",
+    "limitations": [
+      "Intended labels are unverified and may contain errors or ambiguity.",
+      "Two queries per movie are correlated; group by movie and review franchise overlap before splitting.",
+      "Existing evaluation films overlap; do not use this as an independent held-out test.",
+      "Retrieved alternatives are not automatically negative training labels."
+    ],
+    "training_performed": false,
+    "count": 377,
+    "batches": [
+      {
+        "batch": 1,
+        "count": 100,
+        "movies": 50,
+        "kind_bias": "roughly even premise/scene"
+      },
+      {
+        "batch": 2,
+        "count": 100,
+        "movies": 50,
+        "kind_bias": "deliberately scene-majority (60 scene / 40 premise) to cover the documented scene-level weak spot from findings.txt"
+      },
+      {
+        "batch": 3,
+        "count": 177,
+        "movies": 177,
+        "kind_bias": "breadth-focused: 1 query per movie across as many distinct new titles as possible, scene-biased where genuine recall allowed"
+      }
+    ]
+  },
+  "queries": [
+    {
+      "query": "trying to find the cartoon where two rival toys are stranded at a kid's house full of mutilated toys",
+      "expected_tmdb_id": 862,
+      "expected_title": "Toy Story (1995)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:862"
+    },
+    {
+      "query": "a cowboy toy lights a rocket strapped to a space toy and they soar toward their owner's moving car",
+      "expected_tmdb_id": 862,
+      "expected_title": "Toy Story (1995)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:862"
+    },
+    {
+      "query": "a stolen cowboy doll discovers he was part of an old television show and a collector wants to ship him overseas",
+      "expected_tmdb_id": 863,
+      "expected_title": "Toy Story 2 (1999)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:863"
+    },
+    {
+      "query": "the toys cross a busy road hidden under traffic cones and accidentally cause a pileup",
+      "expected_tmdb_id": 863,
+      "expected_title": "Toy Story 2 (1999)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:863"
+    },
+    {
+      "query": "a strawberry scented bear runs a daycare like a prison for discarded toys",
+      "expected_tmdb_id": 10193,
+      "expected_title": "Toy Story 3 (2010)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10193"
+    },
+    {
+      "query": "a little girl receives a box of toys and the college bound boy plays with them one last time",
+      "expected_tmdb_id": 10193,
+      "expected_title": "Toy Story 3 (2010)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10193"
+    },
+    {
+      "query": "a homemade toy made from a disposable fork keeps trying to throw himself away",
+      "expected_tmdb_id": 301528,
+      "expected_title": "Toy Story 4 (2019)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:301528"
+    },
+    {
+      "query": "a carnival toy duck and bunny imagine attacking an old lady to get a key",
+      "expected_tmdb_id": 301528,
+      "expected_title": "Toy Story 4 (2019)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:301528"
+    },
+    {
+      "query": "what's the animated fish film where a missing kid ends up in a dentist's aquarium",
+      "expected_tmdb_id": 12,
+      "expected_title": "Finding Nemo (2003)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:12"
+    },
+    {
+      "query": "the dad fish and his forgetful companion bounce across the tops of jellyfish",
+      "expected_tmdb_id": 12,
+      "expected_title": "Finding Nemo (2003)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:12"
+    },
+    {
+      "query": "a forgetful blue fish starts remembering her parents and looks for them at a marine rescue center",
+      "expected_tmdb_id": 127380,
+      "expected_title": "Finding Dory (2016)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:127380"
+    },
+    {
+      "query": "an octopus drives a truck off the road into the sea",
+      "expected_tmdb_id": 127380,
+      "expected_title": "Finding Dory (2016)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:127380"
+    },
+    {
+      "query": "a little human girl gets into a monster city and two factory workers try to get her home",
+      "expected_tmdb_id": 585,
+      "expected_title": "Monsters, Inc. (2001)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:585"
+    },
+    {
+      "query": "a one-eyed monster rebuilds a shredded door so his furry friend can see the little girl again",
+      "expected_tmdb_id": 585,
+      "expected_title": "Monsters, Inc. (2001)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:585"
+    },
+    {
+      "query": "two future monster coworkers meet in college and join a team of unpopular students for a scaring contest",
+      "expected_tmdb_id": 62211,
+      "expected_title": "Monsters University (2013)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:62211"
+    },
+    {
+      "query": "two monsters trapped in the human world scare adult campers to power their door home",
+      "expected_tmdb_id": 62211,
+      "expected_title": "Monsters University (2013)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:62211"
+    },
+    {
+      "query": "a retired strongman secretly accepts missions on an island without telling his superhero wife",
+      "expected_tmdb_id": 9806,
+      "expected_title": "The Incredibles (2004)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9806"
+    },
+    {
+      "query": "a fast little boy discovers he can run across water while escaping flying guards",
+      "expected_tmdb_id": 9806,
+      "expected_title": "The Incredibles (2004)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9806"
+    },
+    {
+      "query": "a superhero dad stays home with the kids while his stretchy wife becomes the public face of legalizing heroes",
+      "expected_tmdb_id": 260513,
+      "expected_title": "Incredibles 2 (2018)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:260513"
+    },
+    {
+      "query": "the baby fights a raccoon in the backyard and keeps changing powers",
+      "expected_tmdb_id": 260513,
+      "expected_title": "Incredibles 2 (2018)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:260513"
+    },
+    {
+      "query": "an arrogant racing rookie learns about an older champion while stranded in a forgotten highway town",
+      "expected_tmdb_id": 920,
+      "expected_title": "Cars (2006)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:920"
+    },
+    {
+      "query": "a race car gives up his chance at winning to push an injured rival over the finish line",
+      "expected_tmdb_id": 920,
+      "expected_title": "Cars (2006)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:920"
+    },
+    {
+      "query": "a rusty tow truck on an international racing trip gets mistaken for a secret agent",
+      "expected_tmdb_id": 49013,
+      "expected_title": "Cars 2 (2011)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:49013"
+    },
+    {
+      "query": "a tow truck discovers that a bomb has been attached to him in london",
+      "expected_tmdb_id": 49013,
+      "expected_title": "Cars 2 (2011)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:49013"
+    },
+    {
+      "query": "an aging race car struggles to keep up with a younger generation and works with a trainer who dreamed of racing",
+      "expected_tmdb_id": 260514,
+      "expected_title": "Cars 3 (2017)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:260514"
+    },
+    {
+      "query": "the old racer lets his trainer take his place midway through the final race",
+      "expected_tmdb_id": 260514,
+      "expected_title": "Cars 3 (2017)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:260514"
+    },
+    {
+      "query": "an awkward restaurant worker owes his cooking success to an animal hiding beneath his hat",
+      "expected_tmdb_id": 2062,
+      "expected_title": "Ratatouille (2007)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:2062"
+    },
+    {
+      "query": "a rat washes his paws and leads a whole colony in preparing dinner at a restaurant",
+      "expected_tmdb_id": 2062,
+      "expected_title": "Ratatouille (2007)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:2062"
+    },
+    {
+      "query": "a tiny cleaning machine follows a white robot into space after she finds a living plant",
+      "expected_tmdb_id": 10681,
+      "expected_title": "WALL·E (2008)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10681"
+    },
+    {
+      "query": "two robots dance outside a spaceship using a fire extinguisher to propel themselves",
+      "expected_tmdb_id": 10681,
+      "expected_title": "WALL·E (2008)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10681"
+    },
+    {
+      "query": "a widower and a young explorer meet a rare bird and talking dogs on a remote plateau",
+      "expected_tmdb_id": 14160,
+      "expected_title": "Up (2009)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:14160"
+    },
+    {
+      "query": "an old man reads his late wife's adventure scrapbook and discovers she filled it with their everyday life",
+      "expected_tmdb_id": 14160,
+      "expected_title": "Up (2009)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:14160"
+    },
+    {
+      "query": "a red haired archer tries to undo a witch's spell on her family before time runs out",
+      "expected_tmdb_id": 62177,
+      "expected_title": "Brave (2012)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:62177"
+    },
+    {
+      "query": "a princess splits another arrow while competing for her own hand in marriage",
+      "expected_tmdb_id": 62177,
+      "expected_title": "Brave (2012)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:62177"
+    },
+    {
+      "query": "a happy emotion gets stranded far from headquarters with the sad emotion while a child struggles with moving",
+      "expected_tmdb_id": 150540,
+      "expected_title": "Inside Out (2015)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:150540"
+    },
+    {
+      "query": "an imaginary pink elephant lets himself fall out of a rocket wagon so the happy emotion can escape",
+      "expected_tmdb_id": 150540,
+      "expected_title": "Inside Out (2015)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:150540"
+    },
+    {
+      "query": "a young guitarist learns that the famous singer he admires stole songs from someone in his family",
+      "expected_tmdb_id": 354912,
+      "expected_title": "Coco (2017)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:354912"
+    },
+    {
+      "query": "a boy sings to his elderly great grandmother and she begins remembering her father",
+      "expected_tmdb_id": 354912,
+      "expected_title": "Coco (2017)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:354912"
+    },
+    {
+      "query": "two elf brothers botch a spell to bring back their father and travel with only his walking legs",
+      "expected_tmdb_id": 508439,
+      "expected_title": "Onward (2020)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:508439"
+    },
+    {
+      "query": "a teenage elf walks across an invisible bridge while his brother encourages him",
+      "expected_tmdb_id": 508439,
+      "expected_title": "Onward (2020)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:508439"
+    },
+    {
+      "query": "a music teacher and a soul who refuses to be born accidentally end up in the wrong bodies",
+      "expected_tmdb_id": 508442,
+      "expected_title": "Soul (2020)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:508442"
+    },
+    {
+      "query": "a cat ends up with a jazz musician's soul while another soul occupies his human body",
+      "expected_tmdb_id": 508442,
+      "expected_title": "Soul (2020)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:508442"
+    },
+    {
+      "query": "two unusual boys enter a town's race because they want enough money to buy a scooter",
+      "expected_tmdb_id": 508943,
+      "expected_title": "Luca (2021)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:508943"
+    },
+    {
+      "query": "rain during a bicycle race reveals that the boys are sea creatures",
+      "expected_tmdb_id": 508943,
+      "expected_title": "Luca (2021)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:508943"
+    },
+    {
+      "query": "a teenager tries to hide her giant furry transformation while raising money to see a boy band",
+      "expected_tmdb_id": 508947,
+      "expected_title": "Turning Red (2022)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:508947"
+    },
+    {
+      "query": "a huge red panda mother interrupts a boy band concert at a stadium",
+      "expected_tmdb_id": 508947,
+      "expected_title": "Turning Red (2022)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:508947"
+    },
+    {
+      "query": "a young woman made of fire falls for a man made of water while feeling obligated to run her father's shop",
+      "expected_tmdb_id": 976573,
+      "expected_title": "Elemental (2023)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:976573"
+    },
+    {
+      "query": "a water man appears to evaporate in a hot room and is brought back when the fire girl makes his family cry",
+      "expected_tmdb_id": 976573,
+      "expected_title": "Elemental (2023)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:976573"
+    },
+    {
+      "query": "an inventor insect hires performers believing they are warriors who can defend his colony",
+      "expected_tmdb_id": 9487,
+      "expected_title": "A Bug's Life (1998)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9487"
+    },
+    {
+      "query": "the insects build a fake bird out of leaves to scare their enemies",
+      "expected_tmdb_id": 9487,
+      "expected_title": "A Bug's Life (1998)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9487"
+    },
+    {
+      "query": "a young inventor investigates a masked villain after losing his older brother in a fire",
+      "expected_tmdb_id": 177572,
+      "expected_title": "Big Hero 6 (2014)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:177572"
+    },
+    {
+      "query": "a white inflatable robot uses his rocket fist to push a boy out of a portal and stays behind",
+      "expected_tmdb_id": 177572,
+      "expected_title": "Big Hero 6 (2014)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:177572"
+    },
+    {
+      "query": "an arcade villain befriends a glitching girl who wants to compete in a candy racing game",
+      "expected_tmdb_id": 82690,
+      "expected_title": "Wreck-It Ralph (2012)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:82690"
+    },
+    {
+      "query": "a huge arcade character smashes the little girl's homemade race car because he thinks he is protecting her",
+      "expected_tmdb_id": 82690,
+      "expected_title": "Wreck-It Ralph (2012)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:82690"
+    },
+    {
+      "query": "two arcade friends go online to buy a replacement part before their game gets unplugged",
+      "expected_tmdb_id": 404368,
+      "expected_title": "Ralph Breaks the Internet (2018)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:404368"
+    },
+    {
+      "query": "a racing girl meets a room full of animated princesses who change into casual clothes",
+      "expected_tmdb_id": 404368,
+      "expected_title": "Ralph Breaks the Internet (2018)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:404368"
+    },
+    {
+      "query": "a rookie officer investigates predators mysteriously becoming violent in an animal metropolis",
+      "expected_tmdb_id": 269149,
+      "expected_title": "Zootopia (2016)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:269149"
+    },
+    {
+      "query": "a rabbit tricks a sheep into confessing by using blueberries in a dart gun",
+      "expected_tmdb_id": 269149,
+      "expected_title": "Zootopia (2016)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:269149"
+    },
+    {
+      "query": "an islander's daughter sails beyond the reef to return a stolen green stone and save her home",
+      "expected_tmdb_id": 277834,
+      "expected_title": "Moana (2016)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:277834"
+    },
+    {
+      "query": "a girl walks toward a lava creature after the sea parts and gives it back its heart",
+      "expected_tmdb_id": 277834,
+      "expected_title": "Moana (2016)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:277834"
+    },
+    {
+      "query": "the only ordinary child in a gifted family investigates cracks in their enchanted home",
+      "expected_tmdb_id": 568124,
+      "expected_title": "Encanto (2021)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:568124"
+    },
+    {
+      "query": "the super strong sister sings about feeling crushed by everyone else's expectations",
+      "expected_tmdb_id": 568124,
+      "expected_title": "Encanto (2021)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:568124"
+    },
+    {
+      "query": "a sheltered girl persuades a wanted thief to escort her outside for her birthday",
+      "expected_tmdb_id": 38757,
+      "expected_title": "Tangled (2010)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:38757"
+    },
+    {
+      "query": "a young man cuts the girl's magical hair so the woman holding her captive loses her youth",
+      "expected_tmdb_id": 38757,
+      "expected_title": "Tangled (2010)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:38757"
+    },
+    {
+      "query": "two royal sisters are separated after hidden ice magic accidentally plunges their kingdom into winter",
+      "expected_tmdb_id": 109445,
+      "expected_title": "Frozen (2013)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:109445"
+    },
+    {
+      "query": "a freezing young woman turns away from the man who could help her to shield her sister from a sword",
+      "expected_tmdb_id": 109445,
+      "expected_title": "Frozen (2013)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:109445"
+    },
+    {
+      "query": "two sisters enter an enchanted forest to discover why a mysterious voice is calling one of them",
+      "expected_tmdb_id": 330457,
+      "expected_title": "Frozen II (2019)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:330457"
+    },
+    {
+      "query": "a woman with ice powers tames a water horse while crossing a stormy sea",
+      "expected_tmdb_id": 330457,
+      "expected_title": "Frozen II (2019)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:330457"
+    },
+    {
+      "query": "a ruler must trust the villager whose home he wanted demolished after his adviser poisons him",
+      "expected_tmdb_id": 11688,
+      "expected_title": "The Emperor's New Groove (2000)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11688"
+    },
+    {
+      "query": "a villain and her assistant pull the wrong lever and fall through a trapdoor",
+      "expected_tmdb_id": 11688,
+      "expected_title": "The Emperor's New Groove (2000)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11688"
+    },
+    {
+      "query": "looking for the animated movie with two hawaiian sisters trying to keep their family together while hiding a runaway experiment",
+      "expected_tmdb_id": 11544,
+      "expected_title": "Lilo & Stitch (2002)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11544"
+    },
+    {
+      "query": "a little blue alien reads a book about a lost duckling and wanders into the woods alone",
+      "expected_tmdb_id": 11544,
+      "expected_title": "Lilo & Stitch (2002)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11544"
+    },
+    {
+      "query": "a troubled boy bonds with a cook aboard a solar sailing ship without realizing the cook plans a mutiny",
+      "expected_tmdb_id": 9016,
+      "expected_title": "Treasure Planet (2002)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9016"
+    },
+    {
+      "query": "a cyborg gives up the treasure to catch the boy dangling above a fiery pit",
+      "expected_tmdb_id": 9016,
+      "expected_title": "Treasure Planet (2002)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9016"
+    },
+    {
+      "query": "an expedition's translator discovers that his fellow explorers plan to steal the power source of an underwater civilization",
+      "expected_tmdb_id": 10865,
+      "expected_title": "Atlantis: The Lost Empire (2001)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10865"
+    },
+    {
+      "query": "a princess floats into a giant crystal that takes her body into itself",
+      "expected_tmdb_id": 10865,
+      "expected_title": "Atlantis: The Lost Empire (2001)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10865"
+    },
+    {
+      "query": "an ambitious cook and a broke prince must travel through the bayou to break a transformation curse",
+      "expected_tmdb_id": 10198,
+      "expected_title": "The Princess and the Frog (2009)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10198"
+    },
+    {
+      "query": "a firefly dies and a new star appears beside the star he loved",
+      "expected_tmdb_id": 10198,
+      "expected_title": "The Princess and the Frog (2009)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10198"
+    },
+    {
+      "query": "a boy wrongly sent to a desert camp discovers that the digging is a hunt for buried treasure",
+      "expected_tmdb_id": 8326,
+      "expected_title": "Holes (2003)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:8326"
+    },
+    {
+      "query": "a boy carries his friend up a mountain and they survive by eating onions",
+      "expected_tmdb_id": 8326,
+      "expected_title": "Holes (2003)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:8326"
+    },
+    {
+      "query": "a weapons manufacturer returns from captivity and decides to stop selling the weapons that hurt him",
+      "expected_tmdb_id": 1726,
+      "expected_title": "Iron Man (2008)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1726"
+    },
+    {
+      "query": "a man tests rocket boots in his workshop and crashes into the ceiling",
+      "expected_tmdb_id": 1726,
+      "expected_title": "Iron Man (2008)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1726"
+    },
+    {
+      "query": "a billionaire in powered armor faces a rival industrialist and an attacker using electric whips",
+      "expected_tmdb_id": 10138,
+      "expected_title": "Iron Man 2 (2010)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10138"
+    },
+    {
+      "query": "a man with electrified whips walks onto a racetrack and slices apart a racing car",
+      "expected_tmdb_id": 10138,
+      "expected_title": "Iron Man 2 (2010)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10138"
+    },
+    {
+      "query": "after a terrorist destroys his home an inventor is stranded with a broken suit and helped by a boy",
+      "expected_tmdb_id": 68721,
+      "expected_title": "Iron Man 3 (2013)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:68721"
+    },
+    {
+      "query": "a superhero links falling airplane passengers together in a chain to rescue them",
+      "expected_tmdb_id": 68721,
+      "expected_title": "Iron Man 3 (2013)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:68721"
+    },
+    {
+      "query": "a wartime volunteer is used to sell war bonds before he defies orders to rescue captured soldiers",
+      "expected_tmdb_id": 1771,
+      "expected_title": "Captain America: The First Avenger (2011)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1771"
+    },
+    {
+      "query": "a skinny recruit jumps onto a dummy grenade to protect the other soldiers",
+      "expected_tmdb_id": 1771,
+      "expected_title": "Captain America: The First Avenger (2011)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1771"
+    },
+    {
+      "query": "a patriotic hero discovers that the intelligence agency he works for has been infiltrated and his old friend is an assassin",
+      "expected_tmdb_id": 100402,
+      "expected_title": "Captain America: The Winter Soldier (2014)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:100402"
+    },
+    {
+      "query": "a shield carrying hero fights a crowded elevator full of men who turn on him",
+      "expected_tmdb_id": 100402,
+      "expected_title": "Captain America: The Winter Soldier (2014)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:100402"
+    },
+    {
+      "query": "a dispute over government oversight divides a superhero team while one hero protects his wanted childhood friend",
+      "expected_tmdb_id": 271110,
+      "expected_title": "Captain America: Civil War (2016)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:271110"
+    },
+    {
+      "query": "a tiny hero grows into a giant during a fight between superheroes at an airport",
+      "expected_tmdb_id": 271110,
+      "expected_title": "Captain America: Civil War (2016)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:271110"
+    },
+    {
+      "query": "a banished prince must learn humility on earth before he can wield his magical weapon again",
+      "expected_tmdb_id": 10195,
+      "expected_title": "Thor (2011)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10195"
+    },
+    {
+      "query": "a blond stranger in a diner smashes his empty coffee cup and asks for another",
+      "expected_tmdb_id": 10195,
+      "expected_title": "Thor (2011)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10195"
+    },
+    {
+      "query": "a prince imprisoned on an alien world must escape to stop his sister from taking over his homeland",
+      "expected_tmdb_id": 284053,
+      "expected_title": "Thor: Ragnarok (2017)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:284053"
+    },
+    {
+      "query": "a hammer wielding hero enters an arena and is delighted to recognize the huge green gladiator",
+      "expected_tmdb_id": 284053,
+      "expected_title": "Thor: Ragnarok (2017)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:284053"
+    },
+    {
+      "query": "a surgeon whose hands are damaged searches for a cure and becomes a student of mystical arts",
+      "expected_tmdb_id": 284052,
+      "expected_title": "Doctor Strange (2016)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:284052"
+    },
+    {
+      "query": "a sorcerer traps a cosmic enemy in a repeating moment and keeps returning after being killed",
+      "expected_tmdb_id": 284052,
+      "expected_title": "Doctor Strange (2016)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:284052"
+    },
+    {
+      "query": "an ex prisoner is recruited by an inventor to steal a dangerous shrinking technology",
+      "expected_tmdb_id": 102899,
+      "expected_title": "Ant-Man (2015)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:102899"
+    },
+    {
+      "query": "two tiny fighters battle on a toy train set where the train looks huge only from their perspective",
+      "expected_tmdb_id": 102899,
+      "expected_title": "Ant-Man (2015)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:102899"
+    },
+    {
+      "expected_tmdb_id": 10895,
+      "expected_title": "Pinocchio (1940)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10895",
+      "query": "a wooden puppet wants to become a real boy and has to prove himself brave honest and unselfish",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 10895,
+      "expected_title": "Pinocchio (1940)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10895",
+      "query": "a boy's nose grows longer every time he tells a lie while sitting in a cage with a talking cricket",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 11360,
+      "expected_title": "Dumbo (1941)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11360",
+      "query": "a baby circus elephant with giant ears gets bullied until he learns he can actually fly",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 11360,
+      "expected_title": "Dumbo (1941)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11360",
+      "query": "a baby elephant gets drunk on accidental champagne in his water bucket and sees pink elephants marching and dancing",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 3170,
+      "expected_title": "Bambi (1942)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:3170",
+      "query": "a young deer grows up in the forest through the seasons and eventually becomes the great prince like his father",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 3170,
+      "expected_title": "Bambi (1942)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:3170",
+      "query": "hunters come through the forest and a young deer's mother is shot and killed while they're running through the snow",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 11224,
+      "expected_title": "Cinderella (1950)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11224",
+      "query": "a servant girl mistreated by her stepmother and stepsisters gets help from her fairy godmother to attend a royal ball",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 11224,
+      "expected_title": "Cinderella (1950)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11224",
+      "query": "mice and birds sew a girl a dress for a ball while her cruel stepsisters tear it apart out of jealousy",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 12092,
+      "expected_title": "Alice in Wonderland (1951)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:12092",
+      "query": "a girl follows a white rabbit down a hole into a nonsensical world full of strange talking creatures",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 12092,
+      "expected_title": "Alice in Wonderland (1951)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:12092",
+      "query": "a grinning cat that can disappear leaving only his smile behind gives a girl confusing directions at a fork in the road",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 10693,
+      "expected_title": "Peter Pan (1953)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10693",
+      "query": "a boy who never grows up takes some london children flying to a magical island full of pirates and mermaids",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 10693,
+      "expected_title": "Peter Pan (1953)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10693",
+      "query": "a boy teaches children to fly by sprinkling them with fairy dust and telling them to think happy thoughts before flying out the window",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 10340,
+      "expected_title": "Lady and the Tramp (1955)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10340",
+      "query": "a pampered cocker spaniel falls for a streetwise stray dog in the city",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 10340,
+      "expected_title": "Lady and the Tramp (1955)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10340",
+      "query": "two dogs share one strand of spaghetti at an italian restaurant until their noses meet in a kiss",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 12230,
+      "expected_title": "One Hundred and One Dalmatians (1961)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:12230",
+      "query": "a fashionable villainess obsessed with fur coats kidnaps a litter of puppies from their dalmatian parents",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 12230,
+      "expected_title": "One Hundred and One Dalmatians (1961)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:12230",
+      "query": "a woman with half white half black hair threatens to have dozens of puppies made into a fur coat while smoking from a long cigarette holder",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 9078,
+      "expected_title": "The Sword in the Stone (1963)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9078",
+      "query": "a young orphan boy destined to be king is tutored by an eccentric wizard who turns him into different animals to teach him lessons",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 9078,
+      "expected_title": "The Sword in the Stone (1963)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9078",
+      "query": "a wizard and a boy turned into fish swim through a moat and get chased by a hungry pike with huge teeth",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 9325,
+      "expected_title": "The Jungle Book (1967)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9325",
+      "query": "a boy raised by wolves in the jungle is escorted back to the man village while a tiger hunts him",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 9325,
+      "expected_title": "The Jungle Book (1967)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9325",
+      "query": "a laid back bear teaches a boy to relax and scratch his back against a tree while singing about the bare necessities of life",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 10112,
+      "expected_title": "The Aristocats (1970)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10112",
+      "query": "a wealthy woman's pampered cats are abandoned in the countryside by a jealous butler who wants her fortune for himself",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 10112,
+      "expected_title": "The Aristocats (1970)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10112",
+      "query": "an alley cat and his musician friends have a wild jazz jam session on rooftops with a mother cat and her kittens",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 11886,
+      "expected_title": "Robin Hood (1973)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11886",
+      "query": "an outlaw fox steals from a greedy prince to give to the poor in a medieval forest full of talking animals",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 11886,
+      "expected_title": "Robin Hood (1973)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11886",
+      "query": "a fox in disguise as a stork wins a rigged archery contest then has to escape by revealing himself and swinging away",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 11319,
+      "expected_title": "The Rescuers (1977)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11319",
+      "query": "two mice from a rescue organization travel to a swamp to save a little orphan girl held captive by a woman after diamonds",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 11319,
+      "expected_title": "The Rescuers (1977)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11319",
+      "query": "a little girl is lowered down into a dark pirate skull cave on a rope to retrieve a giant diamond from a dangerous crocodile lair",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 10948,
+      "expected_title": "The Fox and the Hound (1981)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10948",
+      "query": "a fox and a hunting dog become best friends as young pups but are forced apart when they grow up on opposite sides of a hunt",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 10948,
+      "expected_title": "The Fox and the Hound (1981)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10948",
+      "query": "an old hound corners a fox and a bear fight breaks out, and the dog gets badly hurt saving his old friend",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 10957,
+      "expected_title": "The Black Cauldron (1985)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10957",
+      "query": "a young pig keeper and a magical pig with the power to see the future must stop an evil king from raising an undead army with a cauldron",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 10957,
+      "expected_title": "The Black Cauldron (1985)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10957",
+      "query": "a horned skeletal king rises from a black cauldron along with an army of undead soldiers that march out to attack",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 9994,
+      "expected_title": "The Great Mouse Detective (1986)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9994",
+      "query": "a mouse detective living beneath sherlock holmes investigates the kidnapping of a toymaker with the help of a doctor mouse sidekick",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 9994,
+      "expected_title": "The Great Mouse Detective (1986)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9994",
+      "query": "a mouse detective chases a villainous bat through the gears of a giant clock tower at night, dangling from the hands",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 12233,
+      "expected_title": "Oliver & Company (1988)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:12233",
+      "query": "a stray orange kitten in new york city falls in with a gang of dogs led by a street smart mutt and their owner",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 12233,
+      "expected_title": "Oliver & Company (1988)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:12233",
+      "query": "a gang of stray dogs weaves in and out of traffic pulling a scooter through the streets of new york city to steal groceries",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 10530,
+      "expected_title": "Pocahontas (1995)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10530",
+      "query": "a native american woman falls in love with an english settler and tries to prevent a war between her people and the colonists",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 10530,
+      "expected_title": "Pocahontas (1995)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10530",
+      "query": "a woman jumps in front of her father to stop him from executing an english settler, laying her head on a rock beside his",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 10545,
+      "expected_title": "The Hunchback of Notre Dame (1996)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10545",
+      "query": "a deformed bell ringer hidden away in a cathedral falls for a gypsy woman while a judge obsessed with her hunts them both",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 10545,
+      "expected_title": "The Hunchback of Notre Dame (1996)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10545",
+      "query": "a bell ringer swings down from a cathedral on a rope to rescue a woman from being burned at the stake in the square below",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 10674,
+      "expected_title": "Mulan (1998)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10674",
+      "query": "a young woman disguises herself as a man to take her father's place in the army against invaders",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 10674,
+      "expected_title": "Mulan (1998)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10674",
+      "query": "a woman disguised as a soldier triggers an avalanche with a cannon to bury an entire invading army in the mountains",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 37135,
+      "expected_title": "Tarzan (1999)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:37135",
+      "query": "a man raised by gorillas in the jungle meets human explorers for the first time and must choose between two worlds",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 37135,
+      "expected_title": "Tarzan (1999)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:37135",
+      "query": "a man raised by apes surfs through the jungle canopy on branches and vines, gliding past waterfalls with gorillas",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 22660,
+      "expected_title": "Old Yeller (1957)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:22660",
+      "query": "a boy on the texas frontier bonds with a stray yellow dog who protects the family farm",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 22660,
+      "expected_title": "Old Yeller (1957)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:22660",
+      "query": "a boy has to shoot his own beloved dog after it contracts rabies protecting the family from a wolf",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 864,
+      "expected_title": "Cool Runnings (1993)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:864",
+      "query": "a group of jamaican sprinters who miss olympic qualification form the country's first bobsled team",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 864,
+      "expected_title": "Cool Runnings (1993)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:864",
+      "query": "a jamaican bobsled team carries their broken sled across the finish line on their shoulders after it crashes at the olympics",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 9354,
+      "expected_title": "Honey, I Shrunk the Kids (1989)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9354",
+      "query": "an inventor accidentally shrinks his and the neighbor's children down to a quarter inch tall in the backyard",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 9354,
+      "expected_title": "Honey, I Shrunk the Kids (1989)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9354",
+      "query": "tiny shrunken kids ride on the back of a giant ant through the backyard grass to escape a sprinkler",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 10414,
+      "expected_title": "The Mighty Ducks (1992)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10414",
+      "query": "a hotshot lawyer is sentenced to community service coaching a ragtag youth hockey team and turns them into winners",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 10414,
+      "expected_title": "The Mighty Ducks (1992)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10414",
+      "query": "a ragtag pee-wee hockey team does the flying v formation to skate past their opponents and score the winning goal",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 10439,
+      "expected_title": "Hocus Pocus (1993)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10439",
+      "query": "three witches executed in salem centuries ago are resurrected on halloween night by a teenage boy who lights a candle",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 10439,
+      "expected_title": "Hocus Pocus (1993)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10439",
+      "query": "three resurrected witches on brooms fly through the night sky over salem chasing children on halloween",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 11395,
+      "expected_title": "The Santa Clause (1994)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11395",
+      "query": "a divorced father accidentally causes santa to fall off his roof and is forced to take over as the new santa claus",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 11395,
+      "expected_title": "The Santa Clause (1994)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11395",
+      "query": "a man wakes up gradually turning pudgier and growing a white beard he can't shave off as he slowly becomes santa claus",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 9820,
+      "expected_title": "The Parent Trap (1998)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9820",
+      "query": "identical twins separated at birth meet by chance at summer camp and swap places to reunite their divorced parents",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 9820,
+      "expected_title": "The Parent Trap (1998)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9820",
+      "query": "twin girls who just met at camp have a fencing and paintball duel in a cabin before realizing they're sisters",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 10330,
+      "expected_title": "Freaky Friday (2003)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10330",
+      "query": "a mother and teenage daughter who constantly argue magically switch bodies after eating fortune cookies at a chinese restaurant",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 10330,
+      "expected_title": "Freaky Friday (2003)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10330",
+      "query": "a mother and daughter who swapped bodies at a chinese restaurant feel the ground shake as their fortune cookies glow",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 97,
+      "expected_title": "Tron (1982)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:97",
+      "query": "a computer programmer is digitized and pulled inside a mainframe where programs are forced to fight in gladiator games",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 97,
+      "expected_title": "Tron (1982)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:97",
+      "query": "a man riding a glowing light cycle inside a computer world leaves a solid trail of light to try to trap opponents",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 10249,
+      "expected_title": "The Rocketeer (1991)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10249",
+      "query": "a stunt pilot in the 1930s discovers a hidden jet pack and becomes a helmeted hero while nazi spies chase him for it",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 10249,
+      "expected_title": "The Rocketeer (1991)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10249",
+      "query": "a man wearing a strapped-on rocket pack takes off from an airfield, flying erratically over a crowd before crashing into a barn",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 15789,
+      "expected_title": "A Goofy Movie (1995)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:15789",
+      "query": "an awkward teenage son is dragged on an embarrassing cross country fishing road trip by his clumsy dad",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 15789,
+      "expected_title": "A Goofy Movie (1995)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:15789",
+      "query": "a father and son drive off a collapsing bridge into a river gorge and go over a waterfall in their car during a road trip",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 9574,
+      "expected_title": "Flubber (1997)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9574",
+      "query": "an absent-minded professor invents a bouncy flying green substance that gets him into trouble while he keeps forgetting his own wedding",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 9574,
+      "expected_title": "Flubber (1997)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9574",
+      "query": "a professor's flying green goop makes a basketball team bounce impossibly high off the floor to win a game",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 4523,
+      "expected_title": "Enchanted (2007)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:4523",
+      "query": "an animated fairy tale princess gets pushed through a portal into modern day live action new york city",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 4523,
+      "expected_title": "Enchanted (2007)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:4523",
+      "query": "an animated princess summons rats, pigeons, and cockroaches out of a new york city apartment to help her clean while she sings",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 1891,
+      "expected_title": "The Empire Strikes Back (1980)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1891",
+      "query": "rebels are chased across the galaxy while a young hero trains with a small green master on a swamp planet",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 1891,
+      "expected_title": "The Empire Strikes Back (1980)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1891",
+      "query": "a man learns his enemy is actually his father right after having his hand cut off during a lightsaber duel in a cloud city",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 1892,
+      "expected_title": "Return of the Jedi (1983)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1892",
+      "query": "rebels attempt to rescue their friend from a gangster's palace before launching a final assault on a second death star",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 1892,
+      "expected_title": "Return of the Jedi (1983)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1892",
+      "query": "a hero in a hooded robe blinds a gangster's dancing girl slave then chokes the gangster to death with his own chain",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 1893,
+      "expected_title": "Star Wars: Episode I - The Phantom Menace (1999)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1893",
+      "query": "two jedi knights escort a young queen while discovering a gifted slave boy on a desert planet who might be the chosen one",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 1893,
+      "expected_title": "Star Wars: Episode I - The Phantom Menace (1999)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1893",
+      "query": "a young boy wins a dangerous multi-engine pod race across the desert against huge alien competitors to win his freedom",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 330459,
+      "expected_title": "Rogue One: A Star Wars Story (2016)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:330459",
+      "query": "a ragtag group of rebels steals the plans for the empire's new superweapon just before the original star wars movie begins",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 330459,
+      "expected_title": "Rogue One: A Star Wars Story (2016)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:330459",
+      "query": "a lone dark warrior in black armor slices through rebel soldiers with a red lightsaber in a corridor lit only by blaster fire",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 87,
+      "expected_title": "Indiana Jones and the Temple of Doom (1984)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:87",
+      "query": "an archaeologist and a nightclub singer are pulled into rescuing enslaved children from a cult that rips still-beating hearts out of victims",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 87,
+      "expected_title": "Indiana Jones and the Temple of Doom (1984)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:87",
+      "query": "an archaeologist and his companions escape a collapsing mine on a rickety out of control mine cart racing down the tracks",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 89,
+      "expected_title": "Indiana Jones and the Last Crusade (1989)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:89",
+      "query": "an archaeologist searches for his missing father and the holy grail while racing nazis across europe",
+      "kind": "premise"
+    },
+    {
+      "expected_tmdb_id": 89,
+      "expected_title": "Indiana Jones and the Last Crusade (1989)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:89",
+      "query": "an archaeologist has to pick the true holy grail from dozens of fake cups in a booby trapped chamber, watching a knight age and turn to dust after choosing wrong",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 11,
+      "expected_title": "Star Wars (1977)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11",
+      "query": "a farm boy watches twin suns set on a desert planet dreaming of adventure before his aunt and uncle are killed by stormtroopers",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 11,
+      "expected_title": "Star Wars (1977)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11",
+      "query": "a small fighter pilot switches off his targeting computer and uses the force to fire a torpedo into a tiny exhaust port to destroy a space station",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 85,
+      "expected_title": "Raiders of the Lost Ark (1981)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:85",
+      "query": "an archaeologist swaps a golden idol for a bag of sand on a pressure plate and a giant boulder starts chasing him out of the temple",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 85,
+      "expected_title": "Raiders of the Lost Ark (1981)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:85",
+      "query": "nazis open an ancient golden ark at a ceremony and their faces melt off as ghostly spirits pour out and destroy them",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 8587,
+      "expected_title": "The Lion King (1994)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:8587",
+      "query": "a lion cub is told to run away and hide after a wildebeest stampede kills his father in a gorge",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 8587,
+      "expected_title": "The Lion King (1994)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:8587",
+      "query": "a meerkat and a warthog teach an orphaned lion cub their carefree philosophy about not worrying, eating bugs in the jungle",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 433,
+      "expected_title": "Mary Poppins (1964)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:433",
+      "query": "a magical nanny and the children she cares for jump into a sidewalk chalk drawing and go on an animated countryside outing with dancing penguins",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 433,
+      "expected_title": "Mary Poppins (1964)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:433",
+      "query": "a nanny and a chimney sweep take children dancing across rooftops with a group of soot covered chimney sweeps at sunset",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 10882,
+      "expected_title": "Sleeping Beauty (1959)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10882",
+      "query": "a princess cursed at birth pricks her finger on a spinning wheel and falls into an enchanted sleep on her sixteenth birthday",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 10882,
+      "expected_title": "Sleeping Beauty (1959)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10882",
+      "query": "a prince fights his way through a wall of thorns and slays a witch who has transformed into a giant black dragon",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 22,
+      "expected_title": "Pirates of the Caribbean: The Curse of the Black Pearl (2003)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:22",
+      "query": "a blacksmith and a witty pirate captain team up to rescue a governor's daughter kidnapped by a ghost ship crew of cursed pirates",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 22,
+      "expected_title": "Pirates of the Caribbean: The Curse of the Black Pearl (2003)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:22",
+      "query": "cursed pirates are revealed to be walking skeletons in the moonlight as they raid a ship, immune to bullets and swords",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 2059,
+      "expected_title": "National Treasure (2004)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:2059",
+      "query": "a treasure hunter steals a founding document to find an invisible map written on the back with lemon juice",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 2059,
+      "expected_title": "National Treasure (2004)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:2059",
+      "query": "a man breaks into a heavily guarded archives building at night to steal a historic document before rivals can get to it first",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 10020,
+      "expected_title": "Beauty and the Beast (1991)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10020",
+      "query": "a bookish young woman is held prisoner in an enchanted castle by a cursed beast after her father is caught trespassing",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 10020,
+      "expected_title": "Beauty and the Beast (1991)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10020",
+      "query": "a woman in a golden gown dances with a beast in a grand ballroom while an enchanted candelabra and clock sing about being their guest",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 408,
+      "expected_title": "Snow White and the Seven Dwarfs (1938)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:408",
+      "query": "an evil queen disguised as an old hag tricks a princess into eating a poisoned apple that puts her into a death-like sleep",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 408,
+      "expected_title": "Snow White and the Seven Dwarfs (1938)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:408",
+      "query": "seven small miners march home from the mine singing while a princess cooks and cleans for them in their cottage",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 118340,
+      "expected_title": "Guardians of the Galaxy (2014)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:118340",
+      "query": "a man abducted from earth as a child grows up to be a space outlaw who steals a mysterious orb wanted by a powerful villain",
+      "kind": "scene"
+    },
+    {
+      "expected_tmdb_id": 118340,
+      "expected_title": "Guardians of the Galaxy (2014)",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:118340",
+      "query": "a ragtag group of misfits including a talking raccoon and a tree creature dance and hold hands together as a bomb counts down inside a spaceship",
+      "kind": "scene"
+    },
+    {
+      "query": "an apprentice in a wizard's oversized hat and red robe commands an enchanted broom to carry buckets of water, then multiplies it with an axe until the room floods, all set to orchestral music with no dialogue",
+      "expected_tmdb_id": 756,
+      "expected_title": "Fantasia (1940)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:756"
+    },
+    {
+      "query": "a rabbit character begs a fox and a bear not to throw him into a briar patch, then reveals from safety that the thorns are exactly where he was born and raised",
+      "expected_tmdb_id": 13850,
+      "expected_title": "Song of the South (1946)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:13850"
+    },
+    {
+      "query": "a one-legged ship's cook with a parrot on his shoulder secretly plots mutiny against the captain while pretending to mentor a cabin boy during a voyage to find buried treasure",
+      "expected_tmdb_id": 6646,
+      "expected_title": "Treasure Island (1950)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:6646"
+    },
+    {
+      "query": "a giant mechanical tentacled sea creature attacks a futuristic submarine during a storm, and the crew has to fight it off on the deck with harpoons and axes",
+      "expected_tmdb_id": 173,
+      "expected_title": "20,000 Leagues Under the Sea (1954)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:173"
+    },
+    {
+      "query": "an old Irish caretaker falls down a well into a glowing underground world and captures the king of the leprechauns, who must grant him three wishes to be set free",
+      "expected_tmdb_id": 18887,
+      "expected_title": "Darby O'Gill and the Little People (1959)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:18887"
+    },
+    {
+      "query": "a shipwrecked family builds an elaborate treehouse with pulley-lifted rooms, then rigs coconut bombs, spike pits, and a rolling log trap on the beach to fight off pirates",
+      "expected_tmdb_id": 18444,
+      "expected_title": "Swiss Family Robinson (1960)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:18444"
+    },
+    {
+      "query": "a forgetful college professor invents a bouncy green rubber compound and paints it on the basketball team's sneakers so they can leap absurdly high and win the big game",
+      "expected_tmdb_id": 17984,
+      "expected_title": "The Absent-Minded Professor (1961)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:17984"
+    },
+    {
+      "query": "two identical twin girls who don't know they're related meet as rivals at a summer camp, get into a trick-fueled feud, then realize they were separated as babies",
+      "expected_tmdb_id": 19186,
+      "expected_title": "The Parent Trap (1961)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:19186"
+    },
+    {
+      "query": "an old bull terrier, a young retriever, and a Siamese cat trek together through the wilderness back to their family, and the old dog fights off a bear to save the others",
+      "expected_tmdb_id": 37969,
+      "expected_title": "The Incredible Journey (1963)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:37969"
+    },
+    {
+      "query": "a woman on a flying enchanted bed leads an animated soccer match on a cartoon island where the players include a lion goalkeeper, and the other team of animals keeps losing the ball",
+      "expected_tmdb_id": 12335,
+      "expected_title": "Bedknobs and Broomsticks (1971)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:12335"
+    },
+    {
+      "query": "an invisible furry dragon protects an orphan boy from a greedy backwoods family trying to sell him, turning visible in flashes of color only when it needs to scare people off",
+      "expected_tmdb_id": 11114,
+      "expected_title": "Pete's Dragon (1977)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11114"
+    },
+    {
+      "query": "a robot with a single glowing eye duels a taller red military robot with a spinning blade hand aboard a doomed spaceship right before the whole crew is pulled into a black hole",
+      "expected_tmdb_id": 9570,
+      "expected_title": "The Black Hole (1979)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9570"
+    },
+    {
+      "query": "a sorcerer's apprentice uses a magic amulet to fight a fire-breathing dragon living beneath a mountain that has been demanding a lottery of sacrificed young women from a nearby kingdom",
+      "expected_tmdb_id": 848,
+      "expected_title": "Dragonslayer (1981)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:848"
+    },
+    {
+      "query": "two boys discover that a carousel at a sinister traveling carnival makes you younger each time it spins backward and older each time it spins forward",
+      "expected_tmdb_id": 24808,
+      "expected_title": "Something Wicked This Way Comes (1983)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:24808"
+    },
+    {
+      "query": "a government biologist sent to study an arctic wolf pack ends up living off field mice to test a theory, and at one point runs naked across the tundra alongside a caribou herd",
+      "expected_tmdb_id": 14280,
+      "expected_title": "Never Cry Wolf (1983)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:14280"
+    },
+    {
+      "query": "a teenage girl runs away during the Depression to find her father out west, rides freight trains, and befriends a wild wolf that ends up traveling with her",
+      "expected_tmdb_id": 35144,
+      "expected_title": "The Journey of Natty Gann (1985)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:35144"
+    },
+    {
+      "query": "a boy is taken aboard an alien ship and returns eight years later without having aged a day, then discovers the ship's onboard intelligence copied a star map directly into his brain",
+      "expected_tmdb_id": 10122,
+      "expected_title": "Flight of the Navigator (1986)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10122"
+    },
+    {
+      "query": "a duck-like alien from another dimension ends up in a rock band in Cleveland and eventually has to fight a tentacled dark overlord with laser beams in a climactic battle",
+      "expected_tmdb_id": 10658,
+      "expected_title": "Howard the Duck (1986)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10658"
+    },
+    {
+      "query": "a teenage girl navigates an impossible castle with staircases running along the walls and ceiling in every direction, chasing a goblin king to save her baby brother",
+      "expected_tmdb_id": 13597,
+      "expected_title": "Labyrinth (1986)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:13597"
+    },
+    {
+      "query": "a dwarf farmer protects a baby with a birthmark from an evil queen, while a sorceress who keeps getting turned into the wrong animals is finally restored to human form just in time for the final battle",
+      "expected_tmdb_id": 847,
+      "expected_title": "Willow (1988)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:847"
+    },
+    {
+      "query": "newspaper delivery boys in old New York organize a citywide strike against a powerful publisher, rallying on the street with a big musical number about seizing the day",
+      "expected_tmdb_id": 15300,
+      "expected_title": "Newsies (1992)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:15300"
+    },
+    {
+      "query": "a toddler accidentally grows to giant size in Las Vegas and wanders the strip picking up cars and toys while the whole city panics",
+      "expected_tmdb_id": 11158,
+      "expected_title": "Honey, I Blew Up the Kid (1992)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11158"
+    },
+    {
+      "query": "a stingy old man in Victorian London is visited by the ghost of his dead former business partner, dragging chains made of cash boxes and ledgers, warning him that more spirits are coming that night",
+      "expected_tmdb_id": 10437,
+      "expected_title": "The Muppet Christmas Carol (1992)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10437"
+    },
+    {
+      "query": "an old sheepdog falls into a muddy pit during a cross-country trek home and a younger golden retriever has to dig frantically to save him before the family gives up hope",
+      "expected_tmdb_id": 6878,
+      "expected_title": "Homeward Bound: The Incredible Journey (1993)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:6878"
+    },
+    {
+      "query": "a ragtag youth hockey team from Minnesota executes a trick formation called the Flying V, skating in a wedge shape to blow past defenders at an international tournament",
+      "expected_tmdb_id": 11164,
+      "expected_title": "D2: The Mighty Ducks (1994)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11164"
+    },
+    {
+      "query": "a boy who has been told his estranged father will come back when the last-place baseball team wins the pennant starts seeing actual angels helping the outfielders make impossible catches",
+      "expected_tmdb_id": 24795,
+      "expected_title": "Angels in the Outfield (1994)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:24795"
+    },
+    {
+      "query": "an eccentric new fitness guru takes over a summer camp for overweight boys and forces them through a brutal confidence course, until the kids turn the tables on him during a relay race",
+      "expected_tmdb_id": 14819,
+      "expected_title": "Heavyweights (1995)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:14819"
+    },
+    {
+      "query": "American soldiers during the Vietnam War have to secretly parachute a full-grown elephant out of a cargo plane to deliver it to an allied village",
+      "expected_tmdb_id": 27281,
+      "expected_title": "Operation Dumbo Drop (1995)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:27281"
+    },
+    {
+      "query": "a one-legged ship's cook with a felt hat sings a boastful pirate song to a young cabin boy about all the terrible things a real pirate is supposed to do",
+      "expected_tmdb_id": 10874,
+      "expected_title": "Muppet Treasure Island (1996)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10874"
+    },
+    {
+      "query": "a boy escapes his cruel aunts inside a giant magically grown peach that rolls down a hill crushing everything in its path, then floats out to sea with a crew of oversized talking insects",
+      "expected_tmdb_id": 10539,
+      "expected_title": "James and the Giant Peach (1996)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10539"
+    },
+    {
+      "query": "a fur-obsessed fashion designer crashes a car through the snow chasing a truck full of spotted puppies she's been trying to turn into a coat",
+      "expected_tmdb_id": 11674,
+      "expected_title": "101 Dalmatians (1996)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11674"
+    },
+    {
+      "query": "a businessman's son who was raised alone in the Amazon jungle by his mother comes to live in the city for the first time and keeps a pet tarantula loose in the apartment",
+      "expected_tmdb_id": 9446,
+      "expected_title": "Jungle 2 Jungle (1997)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9446"
+    },
+    {
+      "query": "a man raised by gorillas in the jungle swings through the trees on vines and keeps slamming face-first into the same tree trunk every single time",
+      "expected_tmdb_id": 10603,
+      "expected_title": "George of the Jungle (1997)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10603"
+    },
+    {
+      "query": "a rebellious teenager on a military academy campus gets tarred and feathered as a prank right before Christmas break and has to make his way home across the country covered in it",
+      "expected_tmdb_id": 17037,
+      "expected_title": "I'll Be Home for Christmas (1998)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:17037"
+    },
+    {
+      "query": "a giant gorilla raised by a woman since he was a baby ends up rampaging through a city carnival and saves a girl from a burning Ferris wheel",
+      "expected_tmdb_id": 9822,
+      "expected_title": "Mighty Joe Young (1998)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9822"
+    },
+    {
+      "query": "a cartoon boy with a big nose and his talking dog uncover a gentle swamp monster the town believes is a dangerous beast, and try to stop the mayor from hunting it down",
+      "expected_tmdb_id": 16508,
+      "expected_title": "Doug's 1st Movie (1999)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:16508"
+    },
+    {
+      "query": "a bumbling cyborg detective's arms, legs, and neck extend to absurd lengths at the push of a button while he chases down a masked villain called Claw",
+      "expected_tmdb_id": 332,
+      "expected_title": "Inspector Gadget (1999)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:332"
+    },
+    {
+      "query": "a pod of humpback whales spreads its fins and takes flight, soaring through clouds and over mountains to the sound of an orchestral tone poem with no dialogue",
+      "expected_tmdb_id": 49948,
+      "expected_title": "Fantasia 2000 (2000)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:49948"
+    },
+    {
+      "query": "a bouncing striped animal feeling like he's the only one of his kind sets off through a blizzard with a scrapbook to search for a family tree of others just like him",
+      "expected_tmdb_id": 15655,
+      "expected_title": "The Tigger Movie (2000)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:15655"
+    },
+    {
+      "query": "a plant-eating dinosaur raised by lemurs after being separated from his own kind crosses a desert with a herd fleeing after a meteor shower destroys their home",
+      "expected_tmdb_id": 10567,
+      "expected_title": "Dinosaur (2000)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10567"
+    },
+    {
+      "query": "a cynical adult publicist is confronted in his office by an eight-year-old boy who turns out to be his own childhood self, disappointed at what he grew up to become",
+      "expected_tmdb_id": 4244,
+      "expected_title": "The Kid (2000)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:4244"
+    },
+    {
+      "query": "a space ranger teams up with a purple alien tinker, a robotic insect, and a green ranger to defend the galaxy from a horned emperor obsessed with destroying him",
+      "expected_tmdb_id": 16187,
+      "expected_title": "Buzz Lightyear of Star Command: The Adventure Begins (2000)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:16187"
+    },
+    {
+      "query": "a newly integrated high school football team bonds during a preseason retreat at a Civil War battlefield, with the coach forcing them to learn about brotherhood among the graves",
+      "expected_tmdb_id": 10637,
+      "expected_title": "Remember the Titans (2000)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10637"
+    },
+    {
+      "query": "a reformed fur-coat-obsessed villainess falls off the wagon after meeting a sleazy French furrier, and schemes again to get her hands on spotted puppies while on parole",
+      "expected_tmdb_id": 10481,
+      "expected_title": "102 Dalmatians (2000)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10481"
+    },
+    {
+      "query": "a group of kids on summer break uncover a secret adult plot involving a giant freeze ray meant to cancel summer vacation forever",
+      "expected_tmdb_id": 19405,
+      "expected_title": "Recess: School's Out (2001)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:19405"
+    },
+    {
+      "query": "an awkward teenage girl with unruly hair and glasses gets a dramatic makeover from her grandmother's assistant, emerging with straightened hair and contacts to reveal she's secretly royalty",
+      "expected_tmdb_id": 9880,
+      "expected_title": "The Princess Diaries (2001)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9880"
+    },
+    {
+      "query": "a city dentist who inherits a team of unruly sled dogs in Alaska gets dragged uncontrollably through town the first time he tries to mush them",
+      "expected_tmdb_id": 11888,
+      "expected_title": "Snow Dogs (2002)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11888"
+    },
+    {
+      "query": "a skeptical girl who doesn't believe in fairies is kidnapped by a hook-handed pirate captain and has to learn to believe in order to fly and save the day",
+      "expected_tmdb_id": 16690,
+      "expected_title": "Return to Never Land (2002)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:16690"
+    },
+    {
+      "query": "an aging high school science teacher who once had a promising pitching arm tries out for major league scouts after promising his ragtag team he would if they made the playoffs",
+      "expected_tmdb_id": 14635,
+      "expected_title": "The Rookie (2002)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:14635"
+    },
+    {
+      "query": "a young Jedi and a senator chained in a gladiator arena face down a rhino-like beast, a giant scorpion-lion, and a spider-like creature while a droid army surrounds the stands",
+      "expected_tmdb_id": 1894,
+      "expected_title": "Star Wars: Episode II - Attack of the Clones (2002)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1894"
+    },
+    {
+      "query": "an evil toy version of Santa Claus takes over the North Pole workshop and turns it into a militarized toy factory while the real Santa is stuck trying to find a wife",
+      "expected_tmdb_id": 9021,
+      "expected_title": "The Santa Clause 2 (2002)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9021"
+    },
+    {
+      "query": "a teenage girl discovers a boy drinking from a hidden spring in the woods and is kidnapped by his family, who explain that the water made them all immortal decades ago",
+      "expected_tmdb_id": 13768,
+      "expected_title": "Tuck Everlasting (2002)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:13768"
+    },
+    {
+      "query": "a teenage girl on a class trip to Rome is mistaken for an Italian pop star lookalike and has to expose the scheming manager during a live outdoor concert on the steps of a piazza",
+      "expected_tmdb_id": 18736,
+      "expected_title": "The Lizzie McGuire Movie (2003)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:18736"
+    },
+    {
+      "query": "a family gets trapped overnight in a haunted mansion where the ballroom is full of dancing ghosts and a fortune teller's disembodied head floats inside a crystal ball",
+      "expected_tmdb_id": 10756,
+      "expected_title": "The Haunted Mansion (2003)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10756"
+    },
+    {
+      "query": "a ragtag college all-star hockey team pulls off a stunning upset over the dominant Soviet squad at the Olympics, with the broadcaster asking if anyone believes in miracles",
+      "expected_tmdb_id": 14292,
+      "expected_title": "Miracle (2004)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:14292"
+    },
+    {
+      "query": "three dairy cows on a struggling farm try to catch a cattle rustler who hypnotizes livestock with his yodeling and steals them off their ranches",
+      "expected_tmdb_id": 13700,
+      "expected_title": "Home on the Range (2004)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:13700"
+    },
+    {
+      "query": "a young queen-to-be of a small European country is pressured into an arranged marriage to secure the throne while also being forced to attend a strict princess finishing camp",
+      "expected_tmdb_id": 11130,
+      "expected_title": "The Princess Diaries 2: Royal Engagement (2004)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11130"
+    },
+    {
+      "query": "a Navy SEAL is hired to babysit a family of unruly kids using military discipline while their mother is away, and ends up protecting them from an actual threat",
+      "expected_tmdb_id": 10022,
+      "expected_title": "The Pacifier (2005)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10022"
+    },
+    {
+      "query": "a physics-obsessed teenager uses equations and diagrams to analyze figure skating jumps and ends up training to land a quadruple jump against her mother's wishes",
+      "expected_tmdb_id": 13374,
+      "expected_title": "Ice Princess (2005)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:13374"
+    },
+    {
+      "query": "a former Jedi with glowing yellow eyes duels his old master on the black rocky shore of a lava planet, ending with him losing his limbs and catching fire",
+      "expected_tmdb_id": 1895,
+      "expected_title": "Star Wars: Episode III - Revenge of the Sith (2005)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1895"
+    },
+    {
+      "query": "a small yellow-and-white racing Beetle with a mind of its own competes in a NASCAR-style final race against a smug rival driver and pulls off a flip across the finish line",
+      "expected_tmdb_id": 11451,
+      "expected_title": "Herbie Fully Loaded (2005)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11451"
+    },
+    {
+      "query": "the teenage son of two famous superheroes is humiliated at a special school's sorting ceremony when he's placed in the sidekick track instead of the hero track because his powers haven't appeared yet",
+      "expected_tmdb_id": 11459,
+      "expected_title": "Sky High (2005)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11459"
+    },
+    {
+      "query": "a small-town poultry farmer's son who once wrongly cried that the sky was falling turns out to be right when an actual piece of an alien ship crashes into his backyard",
+      "expected_tmdb_id": 9982,
+      "expected_title": "Chicken Little (2005)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9982"
+    },
+    {
+      "query": "a golden lion allows himself to be shaved, bound, and sacrificed on a stone altar by a white witch in the snow to save a boy who betrayed his siblings, then rises again at dawn",
+      "expected_tmdb_id": 411,
+      "expected_title": "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe (2005)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:411"
+    },
+    {
+      "query": "a college basketball coach starts an all-Black lineup for the first time in an NCAA championship game against an all-white powerhouse team in the 1960s",
+      "expected_tmdb_id": 9918,
+      "expected_title": "Glory Road (2006)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9918"
+    },
+    {
+      "query": "a team of sled dogs is left chained and abandoned in the Antarctic when the humans have to evacuate, and they break free to survive on their own for months hunting and fighting",
+      "expected_tmdb_id": 9036,
+      "expected_title": "Eight Below (2006)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9036"
+    },
+    {
+      "query": "a suburban family's overworked father starts unpredictably turning into a huge sheepdog whenever he gets stressed, right as he's investigating a corrupt case at work",
+      "expected_tmdb_id": 10067,
+      "expected_title": "The Shaggy Dog (2006)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10067"
+    },
+    {
+      "query": "a lion raised in a New York zoo escapes to chase his cub, who was accidentally shipped to Africa in a crate, and treks across the savanna with a squirrel, a giraffe, and a snake",
+      "expected_tmdb_id": 9904,
+      "expected_title": "The Wild (2006)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9904"
+    },
+    {
+      "query": "two rival swordsmen and a former navy officer end up dueling three ways on top of a giant spinning wooden water wheel that rolls off a cliff and down a jungle river",
+      "expected_tmdb_id": 58,
+      "expected_title": "Pirates of the Caribbean: Dead Man's Chest (2006)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:58"
+    },
+    {
+      "query": "an out-of-shape bartender in his 30s tries out for an NFL team at an open camp and has to prove himself catching passes in front of a skeptical veteran coach",
+      "expected_tmdb_id": 11652,
+      "expected_title": "Invincible (2006)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11652"
+    },
+    {
+      "query": "a mall Santa turned actual Santa Claus has to stop a mischievous personification of winter weather from freezing over the North Pole and taking his job",
+      "expected_tmdb_id": 13767,
+      "expected_title": "The Santa Clause 3: The Escape Clause (2006)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:13767"
+    },
+    {
+      "query": "a motorcycle stuntman who sold his soul to a demonic figure transforms at night into a flaming skull-headed rider who can sense guilt and burns the truly wicked with a stare",
+      "expected_tmdb_id": 1250,
+      "expected_title": "Ghost Rider (2007)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1250"
+    },
+    {
+      "query": "a boy inventor is taken to the future by a kid in a jetpack, where he discovers the man in the bowler hat pursuing him is actually someone he knew disguised in a robotic suit for revenge",
+      "expected_tmdb_id": 1267,
+      "expected_title": "Meet the Robinsons (2007)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1267"
+    },
+    {
+      "query": "a superhero wearing a black alien suit that amplifies his aggression struts arrogantly down the street and dances at a jazz club, showing off to impress women and enemies alike",
+      "expected_tmdb_id": 559,
+      "expected_title": "Spider-Man 3 (2007)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:559"
+    },
+    {
+      "query": "a crew flips their ship completely upside down at the edge of the world at sunrise in order to sail back from a ghostly locker realm to the living world",
+      "expected_tmdb_id": 285,
+      "expected_title": "Pirates of the Caribbean: At World's End (2007)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:285"
+    },
+    {
+      "query": "a silver-skinned being riding a surfboard through the sky punches holes straight through the ground while heralding a planet-eating entity, and a team of heroes briefly swap powers to try to stop him",
+      "expected_tmdb_id": 1979,
+      "expected_title": "Fantastic Four: Rise of the Silver Surfer (2007)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1979"
+    },
+    {
+      "query": "a treasure hunter and his crew sneak the President of the United States out of a historic estate into a hidden room to find a clue etched somewhere on the resolute desk",
+      "expected_tmdb_id": 6637,
+      "expected_title": "National Treasure: Book of Secrets (2007)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:6637"
+    },
+    {
+      "query": "an exiled prince blows an ancient horn to summon help from a group of siblings who once ruled his land in a golden age, then leads a failed nighttime raid on a castle",
+      "expected_tmdb_id": 2454,
+      "expected_title": "The Chronicles of Narnia: Prince Caspian (2008)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:2454"
+    },
+    {
+      "query": "an aging adventurer survives a nuclear bomb test at a fake suburban town by climbing into a lead-lined refrigerator right before it detonates, getting thrown for miles",
+      "expected_tmdb_id": 217,
+      "expected_title": "Indiana Jones and the Kingdom of the Crystal Skull (2008)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:217"
+    },
+    {
+      "query": "a scientist who turns into a giant green rage monster fights a hulking armored soldier through the streets of Harlem, smashing cars and buildings",
+      "expected_tmdb_id": 1724,
+      "expected_title": "The Incredible Hulk (2008)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1724"
+    },
+    {
+      "query": "a pampered chihuahua gets lost during a trip to Mexico and has to survive alongside street dogs while being pursued by a gang of Dobermans working for a diamond smuggler",
+      "expected_tmdb_id": 14405,
+      "expected_title": "Beverly Hills Chihuahua (2008)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:14405"
+    },
+    {
+      "query": "a high school basketball star belts out a frustrated solo song alone in an empty parking garage before deciding to follow his heart instead of his father's expectations",
+      "expected_tmdb_id": 11887,
+      "expected_title": "High School Musical 3: Senior Year (2008)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11887"
+    },
+    {
+      "query": "a dog who thinks he has real superpowers from a TV show gets shipped across the country in a box and is devastated to discover he can't actually survive being hit by a truck",
+      "expected_tmdb_id": 13053,
+      "expected_title": "Bolt (2008)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:13053"
+    },
+    {
+      "query": "a hotel handyman's made-up bedtime stories for his niece and nephew start eerily coming true the next day, starting with a rain of gumballs after he mentions them offhand",
+      "expected_tmdb_id": 10202,
+      "expected_title": "Bedtime Stories (2008)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:10202"
+    },
+    {
+      "query": "a Las Vegas cab driver reluctantly helps two teenage siblings with telekinetic and telepathic powers evade government agents while they try to find their crashed spaceship",
+      "expected_tmdb_id": 13836,
+      "expected_title": "Race to Witch Mountain (2009)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:13836"
+    },
+    {
+      "query": "a miserly old man is chased through the snowy streets by a menacing hooded ghost driving a horse-drawn hearse that shrinks him down and drags him toward his own grave",
+      "expected_tmdb_id": 17979,
+      "expected_title": "A Christmas Carol (2009)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:17979"
+    },
+    {
+      "query": "a young woman in armor slays a giant horned dragon with a glowing sword on a battlefield to end a tyrant queen's reign over a fantastical kingdom",
+      "expected_tmdb_id": 12155,
+      "expected_title": "Alice in Wonderland (2010)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:12155"
+    },
+    {
+      "query": "a prince discovers a dagger that can briefly rewind time by draining sand from an hourglass handle, and uses it to undo his uncle's betrayal in the final act",
+      "expected_tmdb_id": 9543,
+      "expected_title": "Prince of Persia: The Sands of Time (2010)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:9543"
+    },
+    {
+      "query": "a young man animates mops and brooms with magic to help him clean a room, echoing an old cartoon segment, while his sorcerer mentor watches with a mix of amusement and alarm",
+      "expected_tmdb_id": 27022,
+      "expected_title": "The Sorcerer's Apprentice (2010)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:27022"
+    },
+    {
+      "query": "a champion racehorse's jockey holds him back for most of a race before letting him surge thirty lengths ahead of the field to complete a historic sweep of three major races",
+      "expected_tmdb_id": 39486,
+      "expected_title": "Secretariat (2010)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:39486"
+    },
+    {
+      "query": "a man searching for his missing father gets pulled inside a glowing digital world and is forced to compete in a gladiatorial light-cycle arena battle riding a neon motorcycle that leaves solid trails",
+      "expected_tmdb_id": 20526,
+      "expected_title": "TRON: Legacy (2010)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:20526"
+    },
+    {
+      "query": "a group of stuffed animal friends misread a note and convince themselves a mysterious backwards-spelled monster has kidnapped their human friend, so they set off to rescue him",
+      "expected_tmdb_id": 51162,
+      "expected_title": "Winnie the Pooh (2011)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:51162"
+    },
+    {
+      "query": "a pirate crew searching for the fountain of youth is ambushed at night on a beach by beautiful singing mermaids that turn vicious and try to drag sailors underwater",
+      "expected_tmdb_id": 1865,
+      "expected_title": "Pirates of the Caribbean: On Stranger Tides (2011)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1865"
+    },
+    {
+      "query": "a group of forgotten puppet performers reunite for one night to put on a telethon and save their old theater from being demolished by an oil tycoon",
+      "expected_tmdb_id": 64328,
+      "expected_title": "The Muppets (2011)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:64328"
+    },
+    {
+      "query": "a Civil War veteran is mysteriously transported to a red desert planet where the lower gravity lets him leap enormous distances and fight off multi-armed green warriors",
+      "expected_tmdb_id": 49529,
+      "expected_title": "John Carter (2012)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:49529"
+    },
+    {
+      "query": "a team of heroes including a soldier, a billionaire in armor, a god of thunder, and a giant green monster stand back to back in a circle on a city street as an alien army pours in from a portal in the sky",
+      "expected_tmdb_id": 24428,
+      "expected_title": "The Avengers (2012)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:24428"
+    },
+    {
+      "query": "a couple who buried a wish in a box in their backyard find a strange child who has grown up overnight covered in leaves, and watch the leaves start falling off him one by one as autumn arrives",
+      "expected_tmdb_id": 71864,
+      "expected_title": "The Odd Life of Timothy Green (2012)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:71864"
+    },
+    {
+      "query": "a con-artist carnival magician uses smoke, mirrors, and fireworks projected onto a giant floating illusion to fake being a terrifyingly powerful wizard and scare off a wicked witch",
+      "expected_tmdb_id": 68728,
+      "expected_title": "Oz the Great and Powerful (2013)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:68728"
+    },
+    {
+      "query": "a masked vigilante and his companion chase a gang of outlaws on top of two trains racing side by side while a classical overture with galloping horns plays",
+      "expected_tmdb_id": 57201,
+      "expected_title": "The Lone Ranger (2013)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:57201"
+    },
+    {
+      "query": "a dark elf seeking an ancient weapon of pure darkness fights a hero across multiple realities as portals randomly teleport the combatants between different worlds mid-battle",
+      "expected_tmdb_id": 76338,
+      "expected_title": "Thor: The Dark World (2013)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:76338"
+    },
+    {
+      "query": "an uptight, prim author breaks down crying during the premiere of a film based on her book, finally connecting the story's umbrella-carrying nanny to memories of her own troubled father",
+      "expected_tmdb_id": 140823,
+      "expected_title": "Saving Mr. Banks (2013)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:140823"
+    },
+    {
+      "query": "a criminal frog impersonates a famous puppet frontman using a fake mole on his cheek and swaps places with him, leaving the real one trapped in a Russian gulag",
+      "expected_tmdb_id": 145220,
+      "expected_title": "Muppets Most Wanted (2014)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:145220"
+    },
+    {
+      "query": "a struggling sports agent flies to India to run a pitching-speed contest hoping to discover the next great baseball prospects among cricket players who have never seen the sport",
+      "expected_tmdb_id": 198185,
+      "expected_title": "Million Dollar Arm (2014)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:198185"
+    },
+    {
+      "query": "a winged forest guardian is drugged by a man she trusted and wakes up to find her wings have been cruelly cut off and stolen while she slept",
+      "expected_tmdb_id": 102651,
+      "expected_title": "Maleficent (2014)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:102651"
+    },
+    {
+      "query": "a girl in a ball gown runs down a grand staircase leaving one glass slipper behind in a puddle of tar that a baker's wife poured on the steps to trap her",
+      "expected_tmdb_id": 224141,
+      "expected_title": "Into the Woods (2014)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:224141"
+    },
+    {
+      "query": "a disgraced football coach who takes a job at a poor farming town's high school helps a group of Latino students who work in the fields become a championship-winning cross country team",
+      "expected_tmdb_id": 228203,
+      "expected_title": "McFarland, USA (2015)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:228203"
+    },
+    {
+      "query": "a fairy godmother waves a wand over a pumpkin, mice, and a lizard in a moonlit garden, transforming them into a glowing carriage, horses, and footmen before a ball",
+      "expected_tmdb_id": 150689,
+      "expected_title": "Cinderella (2015)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:150689"
+    },
+    {
+      "query": "an artificial intelligence created from an alien scepter lifts an entire Eastern European city into the sky, intending to drop it like a meteor, while heroes race to evacuate civilians",
+      "expected_tmdb_id": 99861,
+      "expected_title": "Avengers: Age of Ultron (2015)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:99861"
+    },
+    {
+      "query": "a teenage girl touches a mysterious pin and is transported into a vision of a wheat field that opens up to reveal a gleaming futuristic city on the horizon",
+      "expected_tmdb_id": 158852,
+      "expected_title": "Tomorrowland (2015)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:158852"
+    },
+    {
+      "query": "a nervous young dinosaur and a feral human boy share a quiet night under the stars, each grieving a parent lost to a flash flood that swept them far from home",
+      "expected_tmdb_id": 105864,
+      "expected_title": "The Good Dinosaur (2015)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:105864"
+    },
+    {
+      "query": "a masked warrior confronts an old smuggler on a narrow bridge above a reactor chasm, and after a tense conversation drives a glowing red blade through his chest",
+      "expected_tmdb_id": 140607,
+      "expected_title": "Star Wars: The Force Awakens (2015)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:140607"
+    },
+    {
+      "query": "a small Coast Guard rescue crew sets out in a tiny lifeboat during a brutal nor'easter to save dozens of sailors stranded on an oil tanker that has split in half",
+      "expected_tmdb_id": 300673,
+      "expected_title": "The Finest Hours (2016)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:300673"
+    },
+    {
+      "query": "a man-cub raised by wolves is serenaded and nearly hypnotized by a giant orange orangutan king who wants the secret of fire, while the ancient temple ruins collapse around them",
+      "expected_tmdb_id": 278927,
+      "expected_title": "The Jungle Book (2016)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:278927"
+    },
+    {
+      "query": "a giant with enormous ears kidnaps a girl from an orphanage window at night and carries her off to a land of other giants, some of whom want to eat children",
+      "expected_tmdb_id": 267935,
+      "expected_title": "The BFG (2016)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:267935"
+    },
+    {
+      "query": "a wild boy who has lived alone in the forest for years with a shaggy green dragon is found by a forest ranger's daughter, and hunters try to capture the dragon",
+      "expected_tmdb_id": 294272,
+      "expected_title": "Pete's Dragon (2016)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:294272"
+    },
+    {
+      "query": "a cursed prince with fur and horns dances a slow waltz in a candlelit ballroom with a bookish village girl while a chorus of enchanted household objects sings about the moment",
+      "expected_tmdb_id": 321612,
+      "expected_title": "Beauty and the Beast (2017)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:321612"
+    },
+    {
+      "query": "a blue-skinned alien with fins sacrifices himself to save a raccoon and his captain, using an arrow to fly them both to safety before dying, and is later honored with a funeral of fireworks in space",
+      "expected_tmdb_id": 283995,
+      "expected_title": "Guardians of the Galaxy Vol. 2 (2017)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:283995"
+    },
+    {
+      "query": "a teenage superhero is pinned under tons of rubble in a collapsed warehouse and has to find the strength to lift the debris off himself alone to escape and stop a weapons dealer",
+      "expected_tmdb_id": 315635,
+      "expected_title": "Spider-Man: Homecoming (2017)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:315635"
+    },
+    {
+      "query": "an old Jedi master projects an illusion of himself across the galaxy to face down a masked villain alone on a red salt flat, buying time for the rest of the rebels to escape",
+      "expected_tmdb_id": 181808,
+      "expected_title": "Star Wars: The Last Jedi (2017)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:181808"
+    },
+    {
+      "query": "a newly crowned king fights his exiled cousin in ritual combat beside a thundering waterfall to determine who will rule an isolated African nation hiding advanced technology",
+      "expected_tmdb_id": 284054,
+      "expected_title": "Black Panther (2018)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:284054"
+    },
+    {
+      "query": "a scientist's daughter travels across the universe with three mysterious celestial beings to rescue her father from a disembodied evil brain that has trapped him on another planet",
+      "expected_tmdb_id": 407451,
+      "expected_title": "A Wrinkle in Time (2018)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:407451"
+    },
+    {
+      "query": "a purple alien warlord snaps his gloved fingers on a barren planet, and heroes across the galaxy start dissolving into dust one by one as half of all life disappears",
+      "expected_tmdb_id": 299536,
+      "expected_title": "Avengers: Infinity War (2018)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:299536"
+    },
+    {
+      "query": "a young smuggler wins a fast, beat-up cargo ship from a card-playing gambler in a high-stakes game before making a legendary run through a dangerous asteroid-filled channel",
+      "expected_tmdb_id": 348350,
+      "expected_title": "Solo: A Star Wars Story (2018)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:348350"
+    },
+    {
+      "query": "a shrinking superhero duo turn an entire building down to the size of a rolling suitcase and wheel it down the street to escape before growing it back to normal",
+      "expected_tmdb_id": 363088,
+      "expected_title": "Ant-Man and the Wasp (2018)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:363088"
+    },
+    {
+      "query": "a grown man overwhelmed with adult responsibilities is reunited in a London park with a stuffed bear who still talks slowly about honey, and it unlocks memories of his childhood in the countryside",
+      "expected_tmdb_id": 420814,
+      "expected_title": "Christopher Robin (2018)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:420814"
+    },
+    {
+      "query": "a girl chasing a lost key on Christmas Eve slips into four fantastical realms and discovers a sinister ruler manipulating a growing army of mice to seize control",
+      "expected_tmdb_id": 426543,
+      "expected_title": "The Nutcracker and the Four Realms (2018)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:426543"
+    },
+    {
+      "query": "a magical nanny returns to help a grieving family, and during one sequence the children dive into a painted bathtub scene and end up chased by menacing wolves at an animated music hall",
+      "expected_tmdb_id": 400650,
+      "expected_title": "Mary Poppins Returns (2018)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:400650"
+    },
+    {
+      "query": "a fighter pilot with glowing energy powers relives flashes of every time she was knocked down throughout her life while she powers up to fight off an alien fleet",
+      "expected_tmdb_id": 299537,
+      "expected_title": "Captain Marvel (2019)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:299537"
+    },
+    {
+      "query": "a baby elephant with oversized ears is mocked as a circus freak until a boy discovers that flapping them lets the elephant actually fly",
+      "expected_tmdb_id": 329996,
+      "expected_title": "Dumbo (2019)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:329996"
+    },
+    {
+      "query": "an armored inventor snaps his own gauntleted fingers on a battlefield, sacrificing himself to wipe out an entire invading army and reverse the damage done to the universe",
+      "expected_tmdb_id": 299534,
+      "expected_title": "Avengers: Endgame (2019)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:299534"
+    },
+    {
+      "query": "a street thief falls for a princess disguised as a commoner, then uses a wish from a blue genie in a lamp to pose as a prince and win her hand",
+      "expected_tmdb_id": 420817,
+      "expected_title": "Aladdin (2019)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:420817"
+    },
+    {
+      "query": "a teenage superhero is tricked by illusions of a giant elemental monster made of fire and water rampaging through a European city, only to discover it's all drone-projected holograms controlled by a man in a fishbowl helmet",
+      "expected_tmdb_id": 429617,
+      "expected_title": "Spider-Man: Far From Home (2019)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:429617"
+    },
+    {
+      "query": "a lion cub is shown his dead father's body at the bottom of a gorge by his uncle, who convinces him the stampede that killed him was the cub's own fault",
+      "expected_tmdb_id": 420818,
+      "expected_title": "The Lion King (2019)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:420818"
+    },
+    {
+      "query": "a scavenger turned Jedi reflects a torrent of purple lightning back at a cackling emperor using dual lightsabers, drawing on the strength of every Jedi who came before her",
+      "expected_tmdb_id": 181812,
+      "expected_title": "Star Wars: The Rise of Skywalker (2019)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:181812"
+    },
+    {
+      "query": "a sled dog team led by an aging lead dog races across cracking sea ice in the dark to deliver medicine to a town in the middle of a diphtheria outbreak",
+      "expected_tmdb_id": 606856,
+      "expected_title": "Togo (2019)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:606856"
+    },
+    {
+      "query": "a young woman disguises herself as a man to take her ailing father's place in the imperial army, hiding a rare gift for channeling inner energy that she's been told to suppress",
+      "expected_tmdb_id": 337401,
+      "expected_title": "Mulan (2020)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:337401"
+    },
+    {
+      "query": "a gorilla who has spent decades in a rundown mall menagerie is given paper and crayons for the first time and starts drawing memories of the jungle he was taken from as a baby",
+      "expected_tmdb_id": 508570,
+      "expected_title": "The One and Only Ivan (2020)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:508570"
+    },
+    {
+      "query": "a warrior on a quest to reassemble a shattered gem lays down her weapon and offers her hand in trust to a rival she has every reason to fear, right before an ancient dragon spirit returns",
+      "expected_tmdb_id": 527774,
+      "expected_title": "Raya and the Last Dragon (2021)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:527774"
+    },
+    {
+      "query": "a punk fashion designer with two-toned hair crashes a lavish garden gala in a dress made of trash bags unveiled from the back of a truck, upstaging a cruel fashion icon",
+      "expected_tmdb_id": 337404,
+      "expected_title": "Cruella (2021)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:337404"
+    },
+    {
+      "query": "a spy sits down for an awkward, tense family dinner reunion with the fake parents and sister she was placed with as a child for a Soviet sleeper cell operation years earlier",
+      "expected_tmdb_id": 497698,
+      "expected_title": "Black Widow (2021)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:497698"
+    },
+    {
+      "query": "a riverboat captain and a scientist are attacked by centuries-old cursed conquistadors covered in jungle vines, bees, and snakes bursting out from beneath their armor",
+      "expected_tmdb_id": 451048,
+      "expected_title": "Jungle Cruise (2021)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:451048"
+    },
+    {
+      "query": "a valet quietly hiding his past as a trained assassin reveals his skills when masked attackers try to steal a jade pendant from him on a crowded city bus",
+      "expected_tmdb_id": 566525,
+      "expected_title": "Shang-Chi and the Legend of the Ten Rings (2021)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:566525"
+    },
+    {
+      "query": "three different versions of the same masked hero from different realities meet each other for the first time and compare notes on their doubles, awkwardly finishing each other's catchphrases",
+      "expected_tmdb_id": 634649,
+      "expected_title": "Spider-Man: No Way Home (2021)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:634649"
+    },
+    {
+      "query": "a grieving witch possesses alternate versions of herself across the multiverse to hunt down a teenager who can travel between universes, and slaughters a council of powerful heroes almost effortlessly",
+      "expected_tmdb_id": 453395,
+      "expected_title": "Doctor Strange in the Multiverse of Madness (2022)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:453395"
+    },
+    {
+      "query": "two washed-up cartoon chipmunk detectives investigate a bootlegging ring making counterfeit uncanny-looking versions of beloved characters in a world where toons and humans coexist",
+      "expected_tmdb_id": 420821,
+      "expected_title": "Chip 'n Dale: Rescue Rangers (2022)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:420821"
+    },
+    {
+      "query": "a space ranger stuck testing a faster-than-light fuel returns from what feels like minutes to find years have passed on the surface each time, eventually discovering the armored villain hunting him is an alternate version of himself grown old",
+      "expected_tmdb_id": 718789,
+      "expected_title": "Lightyear (2022)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:718789"
+    },
+    {
+      "query": "a former astrophysicist who is now dying picks up a reforged enchanted hammer and transforms into a powerful thunder goddess for the first time",
+      "expected_tmdb_id": 616037,
+      "expected_title": "Thor: Love and Thunder (2022)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:616037"
+    },
+    {
+      "query": "three resurrected witch sisters from centuries ago cause chaos in a modern town on Halloween, including a viral scene wandering confused through the aisles of a drugstore",
+      "expected_tmdb_id": 642885,
+      "expected_title": "Hocus Pocus 2 (2022)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:642885"
+    },
+    {
+      "query": "an underwater kingdom's blue-skinned winged ruler leads an ambush against an African nation on the surface, flooding a lab and abducting a scientist to force them to stop mining a rare metal",
+      "expected_tmdb_id": 505642,
+      "expected_title": "Black Panther: Wakanda Forever (2022)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:505642"
+    },
+    {
+      "query": "a woman who once got her storybook happy ending moves to a new town and makes a desperate wish for a perfect life, accidentally turning the whole neighborhood into a twisted fairy tale",
+      "expected_tmdb_id": 338958,
+      "expected_title": "Disenchanted (2022)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:338958"
+    },
+    {
+      "query": "three generations of a family of explorers descend into a strange glowing underground world full of giant creatures to find the source of a energy crisis threatening their land",
+      "expected_tmdb_id": 877269,
+      "expected_title": "Strange World (2022)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:877269"
+    },
+    {
+      "query": "a family is accidentally pulled into a microscopic dimension and discovers a exiled conqueror trapped there who has been quietly building an empire and an army out of the realm's strange inhabitants",
+      "expected_tmdb_id": 640146,
+      "expected_title": "Ant-Man and the Wasp: Quantumania (2023)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:640146"
+    },
+    {
+      "query": "a genetically engineered raccoon's tragic origin is revealed in flashback, showing him being experimentally rebuilt again and again inside cages alongside an otter, a walrus, and a rabbit by a god-complex scientist",
+      "expected_tmdb_id": 447365,
+      "expected_title": "Guardians of the Galaxy Vol. 3 (2023)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:447365"
+    },
+    {
+      "query": "a mermaid princess trades her voice to a sea witch for legs, and a seagull sidekick has to help translate for her while she tries to win a prince's love without speaking",
+      "expected_tmdb_id": 447277,
+      "expected_title": "The Little Mermaid (2023)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:447277"
+    },
+    {
+      "query": "an aging archaeologist and his goddaughter use a mechanical device built by an ancient Greek mathematician to travel back in time, landing in the middle of an ancient siege",
+      "expected_tmdb_id": 335977,
+      "expected_title": "Indiana Jones and the Dial of Destiny (2023)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:335977"
+    },
+    {
+      "query": "a widowed father and his son move into a decaying Louisiana mansion and hire a priest, a historian, and a medium to figure out why the spirits trapped inside can't leave",
+      "expected_tmdb_id": 616747,
+      "expected_title": "Haunted Mansion (2023)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:616747"
+    },
+    {
+      "query": "three different superheroes who never met keep involuntarily swapping places with each other in the middle of battle whenever any of them use their powers at the same time",
+      "expected_tmdb_id": 609681,
+      "expected_title": "The Marvels (2023)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:609681"
+    },
+    {
+      "query": "a teenage girl discovers that the beloved king who collects everyone's wishes has actually been hoarding almost all of them in his tower instead of ever granting them",
+      "expected_tmdb_id": 1022796,
+      "expected_title": "Wish (2023)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1022796"
+    },
+    {
+      "query": "a new anxious emotion takes over a teenage girl's mind control center during a stressful hockey tryout, spiraling her into a full-blown panic attack on the ice",
+      "expected_tmdb_id": 1022789,
+      "expected_title": "Inside Out 2 (2024)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1022789"
+    },
+    {
+      "query": "a wisecracking mercenary in a red suit and a feral clawed mutant beat each other bloody in a junkyard alley before grudgingly agreeing to team up",
+      "expected_tmdb_id": 533535,
+      "expected_title": "Deadpool & Wolverine (2024)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:533535"
+    },
+    {
+      "query": "a wayfinder assembles a small crew to sail beyond her home reef in search of a legendary lost island after hearing the voices of her ancestors calling her people to reconnect",
+      "expected_tmdb_id": 1241982,
+      "expected_title": "Moana 2 (2024)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1241982"
+    },
+    {
+      "query": "a orphaned lion cub is swept away by a flood and adopted into a pride, growing up alongside another cub who slowly grows resentful and jealous of his skill and popularity",
+      "expected_tmdb_id": 762509,
+      "expected_title": "Mufasa: The Lion King (2024)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:762509"
+    },
+    {
+      "query": "a lonely boy obsessed with contacting aliens gets accidentally beamed up and mistaken for Earth's official ambassador to a galactic council of alien leaders",
+      "expected_tmdb_id": 1022787,
+      "expected_title": "Elio (2025)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:1022787"
+    },
+    {
+      "query": "a family of retro-futuristic scientists and adventurers in an alternate 1960s must defend Earth from a planet-devouring cosmic entity and its silver herald",
+      "expected_tmdb_id": 617126,
+      "expected_title": "The Fantastic 4: First Steps (2025)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:617126"
+    },
+    {
+      "query": "a mother and teenage daughter who keep bickering wake up to find they've swapped bodies overnight, and the daughter now stuck in mom's body has to survive a chaotic waterskiing show",
+      "expected_tmdb_id": 16084,
+      "expected_title": "Freaky Friday (1976)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:16084"
+    },
+    {
+      "query": "two orphaned kids living with their bumbling uncle find a massive gold nugget in an abandoned mine, drawing the attention of a pair of inept outlaws trying to steal it",
+      "expected_tmdb_id": 18660,
+      "expected_title": "The Apple Dumpling Gang (1975)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:18660"
+    },
+    {
+      "query": "two orphaned siblings with telekinetic and telepathic powers are chased through the countryside by a sinister businessman's men, using their abilities to escape and protect each other",
+      "expected_tmdb_id": 14821,
+      "expected_title": "Escape to Witch Mountain (1975)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:14821"
+    },
+    {
+      "query": "a stray mule with an uncanny talent for kicking perfect field goals gets recruited by a hapless small-town professional football team desperate for a win",
+      "expected_tmdb_id": 20639,
+      "expected_title": "Gus (1976)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:20639"
+    },
+    {
+      "query": "a man who periodically and uncontrollably turns into a sheepdog runs for district attorney while trying to keep his condition secret from voters and a corrupt construction tycoon",
+      "expected_tmdb_id": 15943,
+      "expected_title": "The Shaggy D.A. (1976)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:15943"
+    },
+    {
+      "query": "a young con artist poses as a long-lost heir to a crumbling English manor, where the butler impersonates a colonel and several other made-up characters to keep up appearances for visitors",
+      "expected_tmdb_id": 14612,
+      "expected_title": "Candleshoe (1977)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:14612"
+    },
+    {
+      "query": "a small car with a mind of its own gets used unknowingly to smuggle stolen diamonds during a road rally from Paris to Monte Carlo",
+      "expected_tmdb_id": 14140,
+      "expected_title": "Herbie Goes to Monte Carlo (1977)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:14140"
+    },
+    {
+      "query": "two telekinetic siblings living quietly in the city are targeted again when a rich businessman hypnotizes one of them into helping him commit robberies",
+      "expected_tmdb_id": 14822,
+      "expected_title": "Return from Witch Mountain (1978)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:14822"
+    },
+    {
+      "query": "an astronaut and his robotic double crash-land a spacecraft in medieval England and get mistaken for sorcerers at King Arthur's court",
+      "expected_tmdb_id": 65596,
+      "expected_title": "Unidentified Flying Oddball (1979)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:65596"
+    },
+    {
+      "query": "a spinach-loving sailor with oversized forearms gets into a massive brawl with a hulking bully in a ramshackle seaside town called Sweethaven",
+      "expected_tmdb_id": 11335,
+      "expected_title": "Popeye (1980)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:11335"
+    },
+    {
+      "query": "a small car with a mind of its own is smuggled to Mexico chasing a stolen treasure map, with a mischievous monkey along for the ride",
+      "expected_tmdb_id": 12129,
+      "expected_title": "Herbie Goes Bananas (1980)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:12129"
+    },
+    {
+      "query": "two East German families secretly build a homemade hot air balloon out of scraps of fabric and launch it at night in a desperate attempt to fly over the border",
+      "expected_tmdb_id": 58995,
+      "expected_title": "Night Crossing (1982)",
+      "kind": "scene",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:58995"
+    },
+    {
+      "query": "two teenage brothers on a struggling Oklahoma farm clash after their absentee rodeo-rider father returns, and one of them gets shot during a drug deal gone wrong",
+      "expected_tmdb_id": 27332,
+      "expected_title": "Tex (1982)",
+      "kind": "premise",
+      "source": "agent_authored",
+      "label_status": "needs_human_review",
+      "split_group": "tmdb:27332"
+    }
+  ]
+}

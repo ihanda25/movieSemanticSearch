@@ -13,13 +13,18 @@ if not NPZ_PATH.exists():
 d = np.load(NPZ_PATH, allow_pickle=True)
 emb = d["embeddings"]
 meta = d["metadata"].item()      # 0-d object array holding the dict
-movies = list(meta.values())     # row i of emb <-> movies[i]
+catalog = list(meta.values())
+indices = d["movie_indices"] if "movie_indices" in d else np.arange(len(catalog))
+movies = [catalog[int(i)] for i in indices]  # passage row -> movie
 
 print("shape:      ", emb.shape, emb.dtype)
-print("movies:     ", len(movies))
+print("movies:     ", len(catalog))
 print("aligned:    ", emb.shape[0] == len(movies))
 
+assert emb.shape[0] == len(movies)
+assert set(map(int, indices)) == set(range(len(catalog)))
 norms = np.linalg.norm(emb, axis=1)
+assert np.allclose(norms, 1, atol=1e-5)
 print(f"norms:       min {norms.min():.4f}  max {norms.max():.4f}  (want ~1.0)")
 
 uniq = len(np.unique(emb, axis=0))

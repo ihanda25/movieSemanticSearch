@@ -1,0 +1,958 @@
+{
+  "embedding_model": "all-MiniLM-L6-v2",
+  "cross_encoder_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+  "candidate_k": 50,
+  "cutoff": 5,
+  "results": [
+    {
+      "query": "toys that come alive when nobody is around and a cowboy gets jealous of a new spaceman toy",
+      "kind": "premise",
+      "expected_tmdb_id": 862,
+      "expected_title": "Toy Story (1995)",
+      "bi_rank": 7,
+      "xe_rank": 4,
+      "bi_top1": "Toy Story 2",
+      "xe_top1": "Toy Story 2",
+      "xe_top1_percent": 19,
+      "xe_top5": [
+        "Toy Story 2",
+        "Toy Story 5",
+        "Toy Story 4",
+        "Toy Story",
+        "Toy Story 3"
+      ],
+      "seconds": 0.29789862502366304
+    },
+    {
+      "query": "a little trash compacting robot left all alone on an abandoned earth",
+      "kind": "premise",
+      "expected_tmdb_id": 10681,
+      "expected_title": "WALL·E (2008)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "WALL·E",
+      "xe_top1": "WALL·E",
+      "xe_top1_percent": 0,
+      "xe_top5": [
+        "WALL·E",
+        "The Black Hole",
+        "Eight Below",
+        "Unidentified Flying Oddball",
+        "Toy Story 3"
+      ],
+      "seconds": 0.20271733310073614
+    },
+    {
+      "query": "the emotions inside a girls head run her from a control room",
+      "kind": "premise",
+      "expected_tmdb_id": 150540,
+      "expected_title": "Inside Out (2015)",
+      "bi_rank": 2,
+      "xe_rank": 1,
+      "bi_top1": "Inside Out 2",
+      "xe_top1": "Inside Out",
+      "xe_top1_percent": 1,
+      "xe_top5": [
+        "Inside Out",
+        "Inside Out 2",
+        "Run, Appaloosa, Run!",
+        "Maleficent",
+        "Labyrinth"
+      ],
+      "seconds": 0.2220283339265734
+    },
+    {
+      "query": "a rich weapons designer gets kidnapped and builds a robotic suit of armor to escape",
+      "kind": "premise",
+      "expected_tmdb_id": 1726,
+      "expected_title": "Iron Man (2008)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Iron Man",
+      "xe_top1": "Iron Man",
+      "xe_top1_percent": 75,
+      "xe_top5": [
+        "Iron Man",
+        "Guns in the Heather",
+        "The Invincible Iron Man",
+        "Kidnapped",
+        "Escape to Witch Mountain"
+      ],
+      "seconds": 0.269335791002959
+    },
+    {
+      "query": "a hidden advanced african nation with a special metal that powers everything",
+      "kind": "premise",
+      "expected_tmdb_id": 284054,
+      "expected_title": "Black Panther (2018)",
+      "bi_rank": 2,
+      "xe_rank": 1,
+      "bi_top1": "Ultimate Avengers 2",
+      "xe_top1": "Black Panther",
+      "xe_top1_percent": 24,
+      "xe_top5": [
+        "Black Panther",
+        "Ultimate Avengers 2",
+        "Black Panther: Wakanda Forever",
+        "Indiana Jones and the Kingdom of the Crystal Skull",
+        "The Black Cauldron"
+      ],
+      "seconds": 0.220778499962762
+    },
+    {
+      "query": "a team of misfits in space with a talking raccoon and a tree that talks",
+      "kind": "premise",
+      "expected_tmdb_id": 118340,
+      "expected_title": "Guardians of the Galaxy (2014)",
+      "bi_rank": 29,
+      "xe_rank": 20,
+      "bi_top1": "Ringo, the Refugee Raccoon",
+      "xe_top1": "Chicken Little",
+      "xe_top1_percent": 0,
+      "xe_top5": [
+        "Chicken Little",
+        "Guardians of the Galaxy Vol. 3",
+        "Ringo, the Refugee Raccoon",
+        "A Tale of Two Critters",
+        "Rascal"
+      ],
+      "seconds": 0.21923033299390227
+    },
+    {
+      "query": "a skinny guy takes a serum during world war 2 and becomes a super soldier",
+      "kind": "premise",
+      "expected_tmdb_id": 1771,
+      "expected_title": "Captain America: The First Avenger (2011)",
+      "bi_rank": 8,
+      "xe_rank": 1,
+      "bi_top1": "The Strongest Man in the World",
+      "xe_top1": "Captain America: The First Avenger",
+      "xe_top1_percent": 7,
+      "xe_top5": [
+        "Captain America: The First Avenger",
+        "Captain America: The Winter Soldier",
+        "The Incredible Hulk",
+        "Red Tails",
+        "The Black Cauldron"
+      ],
+      "seconds": 0.23844616604037583
+    },
+    {
+      "query": "a lonely hawaiian girl adopts an alien thinking that its a dog",
+      "kind": "premise",
+      "expected_tmdb_id": 11544,
+      "expected_title": "Lilo & Stitch (2002)",
+      "bi_rank": 2,
+      "xe_rank": 1,
+      "bi_top1": "Lilo & Stitch",
+      "xe_top1": "Lilo & Stitch",
+      "xe_top1_percent": 98,
+      "xe_top5": [
+        "Lilo & Stitch",
+        "Lilo & Stitch",
+        "Concho, the Coyote Who Wasn't",
+        "Atta Girl, Kelly!",
+        "Cheetah"
+      ],
+      "seconds": 0.19119470904115587
+    },
+    {
+      "query": "a video game bad guy is tired of being the villain and leaves his arcade game",
+      "kind": "premise",
+      "expected_tmdb_id": 82690,
+      "expected_title": "Wreck-It Ralph (2012)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Wreck-It Ralph",
+      "xe_top1": "Wreck-It Ralph",
+      "xe_top1_percent": 96,
+      "xe_top5": [
+        "Wreck-It Ralph",
+        "Ralph Breaks the Internet",
+        "Tron",
+        "Avengers: Age of Ultron",
+        "TRON: Legacy"
+      ],
+      "seconds": 0.2835538749350235
+    },
+    {
+      "query": "a selfish emperor gets turned into a llama and has to travel home with a peasant",
+      "kind": "premise",
+      "expected_tmdb_id": 11688,
+      "expected_title": "The Emperor's New Groove (2000)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "The Emperor's New Groove",
+      "xe_top1": "The Emperor's New Groove",
+      "xe_top1_percent": 88,
+      "xe_top5": [
+        "The Emperor's New Groove",
+        "Brave",
+        "Mulan",
+        "Mulan",
+        "I'll Be Home for Christmas"
+      ],
+      "seconds": 0.24755662493407726
+    },
+    {
+      "query": "a family living in a magic house where everyone gets a special power except one girl",
+      "kind": "premise",
+      "expected_tmdb_id": 568124,
+      "expected_title": "Encanto (2021)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Encanto",
+      "xe_top1": "Encanto",
+      "xe_top1_percent": 92,
+      "xe_top5": [
+        "Encanto",
+        "Summer Magic",
+        "The Haunted Mansion",
+        "Haunted Mansion",
+        "One Magic Christmas"
+      ],
+      "seconds": 0.23143699998036027
+    },
+    {
+      "query": "a scottish princess doesnt want to marry and accidentally turns her mother into a bear",
+      "kind": "premise",
+      "expected_tmdb_id": 62177,
+      "expected_title": "Brave (2012)",
+      "bi_rank": 3,
+      "xe_rank": 1,
+      "bi_top1": "Cinderella",
+      "xe_top1": "Brave",
+      "xe_top1_percent": 59,
+      "xe_top5": [
+        "Brave",
+        "Disenchanted",
+        "The Princess and the Frog",
+        "The Sword and the Rose",
+        "The Princess Diaries"
+      ],
+      "seconds": 0.2392825420247391
+    },
+    {
+      "query": "a magical nanny flies in with an umbrella to look after two kids in london",
+      "kind": "premise",
+      "expected_tmdb_id": 433,
+      "expected_title": "Mary Poppins (1964)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Mary Poppins",
+      "xe_top1": "Mary Poppins",
+      "xe_top1_percent": 99,
+      "xe_top5": [
+        "Mary Poppins",
+        "Peter Pan",
+        "Mary Poppins Returns",
+        "Bedknobs and Broomsticks",
+        "James and the Giant Peach"
+      ],
+      "seconds": 0.20429433300159872
+    },
+    {
+      "query": "a famous race car gets stuck in a tiny desert town and has to repair the road",
+      "kind": "premise",
+      "expected_tmdb_id": 920,
+      "expected_title": "Cars (2006)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Cars",
+      "xe_top1": "Cars",
+      "xe_top1_percent": 4,
+      "xe_top5": [
+        "Cars",
+        "The Love Bug",
+        "Cars 2",
+        "Herbie Goes to Monte Carlo",
+        "Joker, The Amiable Ocelot"
+      ],
+      "seconds": 0.2667951249750331
+    },
+    {
+      "query": "a princess is cursed to sleep forever if she pricks her finger on a spinning wheel",
+      "kind": "premise",
+      "expected_tmdb_id": 10882,
+      "expected_title": "Sleeping Beauty (1959)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Sleeping Beauty",
+      "xe_top1": "Sleeping Beauty",
+      "xe_top1_percent": 14,
+      "xe_top5": [
+        "Sleeping Beauty",
+        "Into the Woods",
+        "Frozen",
+        "Enchanted",
+        "Cinderella"
+      ],
+      "seconds": 0.24328820907976478
+    },
+    {
+      "query": "a woman wants to make a fur coat out of stolen puppies",
+      "kind": "premise",
+      "expected_tmdb_id": 12230,
+      "expected_title": "One Hundred and One Dalmatians (1961)",
+      "bi_rank": 5,
+      "xe_rank": 2,
+      "bi_top1": "101 Dalmatians",
+      "xe_top1": "101 Dalmatians",
+      "xe_top1_percent": 98,
+      "xe_top5": [
+        "101 Dalmatians",
+        "One Hundred and One Dalmatians",
+        "Beverly Hills Chihuahua",
+        "Lady and the Tramp",
+        "102 Dalmatians"
+      ],
+      "seconds": 0.2016208329005167
+    },
+    {
+      "query": "a kid inventor and a big soft white healthcare robot start a superhero team",
+      "kind": "premise",
+      "expected_tmdb_id": 177572,
+      "expected_title": "Big Hero 6 (2014)",
+      "bi_rank": 3,
+      "xe_rank": 1,
+      "bi_top1": "Avengers: Age of Ultron",
+      "xe_top1": "Big Hero 6",
+      "xe_top1_percent": 9,
+      "xe_top5": [
+        "Big Hero 6",
+        "Honey, I Blew Up the Kid",
+        "Iron Man 2",
+        "Avengers: Age of Ultron",
+        "More Than Robots"
+      ],
+      "seconds": 0.24472566694021225
+    },
+    {
+      "query": "a jazz pianist dies and his soul ends up in the place where souls come from",
+      "kind": "premise",
+      "expected_tmdb_id": 508442,
+      "expected_title": "Soul (2020)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Soul",
+      "xe_top1": "Soul",
+      "xe_top1_percent": 80,
+      "xe_top5": [
+        "Soul",
+        "Ghost Rider",
+        "The Devil and Max Devlin",
+        "Coco",
+        "America's Heart & Soul"
+      ],
+      "seconds": 0.25814804097171873
+    },
+    {
+      "query": "sea monster boys who turn human when they are dry in an italian seaside town",
+      "kind": "premise",
+      "expected_tmdb_id": 508943,
+      "expected_title": "Luca (2021)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Luca",
+      "xe_top1": "Luca",
+      "xe_top1_percent": 39,
+      "xe_top5": [
+        "Luca",
+        "Pinocchio",
+        "The Strange Monster of Strawberry Cove",
+        "Popeye",
+        "Monsters, Inc."
+      ],
+      "seconds": 0.27998925000429153
+    },
+    {
+      "query": "a chinese canadian girl turns into a giant red panda whenever she gets emotional",
+      "kind": "premise",
+      "expected_tmdb_id": 508947,
+      "expected_title": "Turning Red (2022)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Turning Red",
+      "xe_top1": "Turning Red",
+      "xe_top1_percent": 99,
+      "xe_top5": [
+        "Turning Red",
+        "Embrace the Panda: Making Turning Red",
+        "The BFG",
+        "Mulan",
+        "Inside Out 2"
+      ],
+      "seconds": 0.23421787505503744
+    },
+    {
+      "query": "a waitress in new orleans kisses a frog prince and turns into a frog herself",
+      "kind": "premise",
+      "expected_tmdb_id": 10198,
+      "expected_title": "The Princess and the Frog (2009)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "The Princess and the Frog",
+      "xe_top1": "The Princess and the Frog",
+      "xe_top1_percent": 100,
+      "xe_top5": [
+        "The Princess and the Frog",
+        "Muppets Most Wanted",
+        "Beauty and the Beast",
+        "The Boy from Dead Man's Bayou",
+        "Alice Comedies Vol. 2"
+      ],
+      "seconds": 0.25002308294642717
+    },
+    {
+      "query": "a colony of ants is bullied by grasshoppers so one ant recruits circus bugs to fight back",
+      "kind": "premise",
+      "expected_tmdb_id": 9487,
+      "expected_title": "A Bug's Life (1998)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "A Bug's Life",
+      "xe_top1": "A Bug's Life",
+      "xe_top1_percent": 99,
+      "xe_top5": [
+        "A Bug's Life",
+        "Ant-Man and the Wasp",
+        "Honey, I Shrunk the Kids",
+        "Ant-Man",
+        "Alice Comedies Vol. 2"
+      ],
+      "seconds": 0.2587936669588089
+    },
+    {
+      "query": "a man raised by gorillas in the jungle meets other humans for the first time",
+      "kind": "premise",
+      "expected_tmdb_id": 37135,
+      "expected_title": "Tarzan (1999)",
+      "bi_rank": 2,
+      "xe_rank": 2,
+      "bi_top1": "George of the Jungle",
+      "xe_top1": "George of the Jungle",
+      "xe_top1_percent": 90,
+      "xe_top5": [
+        "George of the Jungle",
+        "Tarzan",
+        "The Jungle Book",
+        "The Jungle Book",
+        "Jungle 2 Jungle"
+      ],
+      "seconds": 0.19402883294969797
+    },
+    {
+      "query": "a boy is tutored by a bumbling wizard and then pulls a sword out of a stone to become king",
+      "kind": "premise",
+      "expected_tmdb_id": 9078,
+      "expected_title": "The Sword in the Stone (1963)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "The Sword in the Stone",
+      "xe_top1": "The Sword in the Stone",
+      "xe_top1_percent": 80,
+      "xe_top5": [
+        "The Sword in the Stone",
+        "The Black Cauldron",
+        "A Kid in King Arthur's Court",
+        "Dragonslayer",
+        "Maleficent"
+      ],
+      "seconds": 0.26919104193802923
+    },
+    {
+      "query": "a boy who can fly and never grows up takes three kids to an island with pirates and fairies",
+      "kind": "premise",
+      "expected_tmdb_id": 10693,
+      "expected_title": "Peter Pan (1953)",
+      "bi_rank": 4,
+      "xe_rank": 2,
+      "bi_top1": "Shipwrecked",
+      "xe_top1": "Peter Pan & Wendy",
+      "xe_top1_percent": 68,
+      "xe_top5": [
+        "Peter Pan & Wendy",
+        "Peter Pan",
+        "Shipwrecked",
+        "James and the Giant Peach",
+        "Sleeping Beauty"
+      ],
+      "seconds": 0.24463745800312608
+    },
+    {
+      "query": "an old widower flies his house away to south america with a boy scout stuck on the porch",
+      "kind": "premise",
+      "expected_tmdb_id": 14160,
+      "expected_title": "Up (2009)",
+      "bi_rank": 46,
+      "xe_rank": 4,
+      "bi_top1": "Spider-Man: Far From Home",
+      "xe_top1": "Summer Magic",
+      "xe_top1_percent": 1,
+      "xe_top5": [
+        "Summer Magic",
+        "Jungle 2 Jungle",
+        "My Family Is a Menagerie",
+        "Up",
+        "Kit Carson and the Mountain Men"
+      ],
+      "seconds": 0.2558900419389829
+    },
+    {
+      "query": "the toys get donated to a daycare and try to escape back to their owner who left for college",
+      "kind": "premise",
+      "expected_tmdb_id": 10193,
+      "expected_title": "Toy Story 3 (2010)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Toy Story 3",
+      "xe_top1": "Toy Story 3",
+      "xe_top1_percent": 97,
+      "xe_top5": [
+        "Toy Story 3",
+        "Toy Story 2",
+        "Toy Story",
+        "No Deposit, No Return",
+        "I'll Be Home for Christmas"
+      ],
+      "seconds": 0.19650166702922434
+    },
+    {
+      "query": "a boy who wants to be a musician in a family that banned music ends up in the land of the dead",
+      "kind": "premise",
+      "expected_tmdb_id": 354912,
+      "expected_title": "Coco (2017)",
+      "bi_rank": 3,
+      "xe_rank": 1,
+      "bi_top1": "Trevor: The Musical",
+      "xe_top1": "Coco",
+      "xe_top1_percent": 96,
+      "xe_top5": [
+        "Coco",
+        "Tall Tale: The Unbelievable Adventure",
+        "The Boy from Dead Man's Bayou",
+        "The Waltz King",
+        "Trevor: The Musical"
+      ],
+      "seconds": 0.2356359170516953
+    },
+    {
+      "query": "a girl with really long magic hair is locked in a tower by a woman pretending to be her mother",
+      "kind": "premise",
+      "expected_tmdb_id": 38757,
+      "expected_title": "Tangled (2010)",
+      "bi_rank": 3,
+      "xe_rank": 1,
+      "bi_top1": "Godmothered",
+      "xe_top1": "Tangled",
+      "xe_top1_percent": 99,
+      "xe_top5": [
+        "Tangled",
+        "Freaky Friday",
+        "Encanto",
+        "One Magic Christmas",
+        "Freaky Friday"
+      ],
+      "seconds": 0.22763295797631145
+    },
+    {
+      "query": "a queen with ice powers runs away from her kingdom and her sister goes to find her",
+      "kind": "premise",
+      "expected_tmdb_id": 109445,
+      "expected_title": "Frozen (2013)",
+      "bi_rank": 2,
+      "xe_rank": 1,
+      "bi_top1": "Snow White",
+      "xe_top1": "Frozen",
+      "xe_top1_percent": 89,
+      "xe_top5": [
+        "Frozen",
+        "Snow White",
+        "Brave",
+        "Frozen II",
+        "Snow White and the Seven Dwarfs"
+      ],
+      "seconds": 0.22749533399473876
+    },
+    {
+      "query": "a bunch of classical music pieces turned into animation with no talking",
+      "kind": "premise",
+      "expected_tmdb_id": 756,
+      "expected_title": "Fantasia (1940)",
+      "bi_rank": 1,
+      "xe_rank": 2,
+      "bi_top1": "Fantasia",
+      "xe_top1": "Fantasia 2000",
+      "xe_top1_percent": 3,
+      "xe_top5": [
+        "Fantasia 2000",
+        "Fantasia",
+        "Music Land",
+        "Frank and Ollie",
+        "Make Mine Music"
+      ],
+      "seconds": 0.19458316697273403
+    },
+    {
+      "query": "a farm boy joins a rebellion against an evil empire with an old wizard and a smuggler",
+      "kind": "premise",
+      "expected_tmdb_id": 11,
+      "expected_title": "Star Wars (1977)",
+      "bi_rank": 64,
+      "xe_rank": null,
+      "bi_top1": "The Sword in the Stone",
+      "xe_top1": "Tall Tale: The Unbelievable Adventure",
+      "xe_top1_percent": 15,
+      "xe_top5": [
+        "Tall Tale: The Unbelievable Adventure",
+        "Star Wars Rebels: Spark of Rebellion",
+        "The Mandalorian and Grogu",
+        "Home on the Range",
+        "For the Love of Willadean"
+      ],
+      "seconds": 0.23159095901064575
+    },
+    {
+      "query": "the rebels are losing and the kid goes off to train with a little green master in a swamp",
+      "kind": "premise",
+      "expected_tmdb_id": 1891,
+      "expected_title": "The Empire Strikes Back (1980)",
+      "bi_rank": 12,
+      "xe_rank": 3,
+      "bi_top1": "The Littlest Outlaw",
+      "xe_top1": "The Ghost of Cypress Swamp",
+      "xe_top1_percent": 0,
+      "xe_top5": [
+        "The Ghost of Cypress Swamp",
+        "Shokee, the Everglades Panther",
+        "The Empire Strikes Back",
+        "The Boy from Dead Man's Bayou",
+        "Gallegher Goes West"
+      ],
+      "seconds": 0.24164954200387
+    },
+    {
+      "query": "an archaeologist with a whip races the nazis to find a biblical artifact",
+      "kind": "premise",
+      "expected_tmdb_id": 85,
+      "expected_title": "Raiders of the Lost Ark (1981)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Raiders of the Lost Ark",
+      "xe_top1": "Raiders of the Lost Ark",
+      "xe_top1_percent": 82,
+      "xe_top5": [
+        "Raiders of the Lost Ark",
+        "Indiana Jones and the Dial of Destiny",
+        "Indiana Jones and the Last Crusade",
+        "National Treasure",
+        "Indiana Jones and the Kingdom of the Crystal Skull"
+      ],
+      "seconds": 0.23723704100120813
+    },
+    {
+      "query": "a group of superheroes who cant get along have to team up to stop an alien invasion",
+      "kind": "premise",
+      "expected_tmdb_id": 24428,
+      "expected_title": "The Avengers (2012)",
+      "bi_rank": 7,
+      "xe_rank": 1,
+      "bi_top1": "Deadpool & Wolverine",
+      "xe_top1": "The Avengers",
+      "xe_top1_percent": 39,
+      "xe_top5": [
+        "The Avengers",
+        "Eternals",
+        "Chicken Little",
+        "Avengers: Endgame",
+        "Ultimate Avengers 2"
+      ],
+      "seconds": 0.21175245800986886
+    },
+    {
+      "query": "a rabbit becomes the first bunny cop in a city of animals and teams up with a con artist fox",
+      "kind": "premise",
+      "expected_tmdb_id": 269149,
+      "expected_title": "Zootopia (2016)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Zootopia",
+      "xe_top1": "Zootopia",
+      "xe_top1_percent": 99,
+      "xe_top5": [
+        "Zootopia",
+        "Zootopia 2",
+        "The City Fox",
+        "The Tigger Movie",
+        "Winnie the Pooh"
+      ],
+      "seconds": 0.1968676659744233
+    },
+    {
+      "query": "a clownfish dad crosses the whole ocean to find his son who got scooped up by a diver",
+      "kind": "premise",
+      "expected_tmdb_id": 12,
+      "expected_title": "Finding Nemo (2003)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Finding Nemo",
+      "xe_top1": "Finding Nemo",
+      "xe_top1_percent": 52,
+      "xe_top5": [
+        "Finding Nemo",
+        "The Island at the Top of the World",
+        "Finding Dory",
+        "Hamad and the Pirates",
+        "Runaway on the Rogue River"
+      ],
+      "seconds": 0.1807104580802843
+    },
+    {
+      "query": "monsters scare human kids to collect their screams as energy for their city",
+      "kind": "premise",
+      "expected_tmdb_id": 585,
+      "expected_title": "Monsters, Inc. (2001)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Monsters, Inc.",
+      "xe_top1": "Monsters, Inc.",
+      "xe_top1_percent": 76,
+      "xe_top5": [
+        "Monsters, Inc.",
+        "The Ewok Adventure",
+        "The Strange Monster of Strawberry Cove",
+        "The Rescuers",
+        "James and the Giant Peach"
+      ],
+      "seconds": 0.19153529091272503
+    },
+    {
+      "query": "a rat with an amazing sense of taste secretly cooks by controlling a young guy in a paris restaurant",
+      "kind": "premise",
+      "expected_tmdb_id": 2062,
+      "expected_title": "Ratatouille (2007)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Ratatouille",
+      "xe_top1": "Ratatouille",
+      "xe_top1_percent": 68,
+      "xe_top5": [
+        "Ratatouille",
+        "The Hunchback of Notre Dame",
+        "The Princess and the Frog",
+        "Bon Voyage!",
+        "The Great Mouse Detective"
+      ],
+      "seconds": 0.1959098749794066
+    },
+    {
+      "query": "a family of superheroes has to hide their powers and live a normal life in the suburbs",
+      "kind": "premise",
+      "expected_tmdb_id": 9806,
+      "expected_title": "The Incredibles (2004)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "The Incredibles",
+      "xe_top1": "The Incredibles",
+      "xe_top1_percent": 5,
+      "xe_top5": [
+        "The Incredibles",
+        "Sky High",
+        "The Fantastic 4: First Steps",
+        "Spider-Man: No Way Home",
+        "Next Avengers: Heroes of Tomorrow"
+      ],
+      "seconds": 0.23941954202018678
+    },
+    {
+      "query": "a blacksmith teams up with a weird drunk pirate captain to rescue the governors daughter",
+      "kind": "premise",
+      "expected_tmdb_id": 22,
+      "expected_title": "Pirates of the Caribbean: The Curse of the Black Pearl (2003)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Pirates of the Caribbean: The Curse of the Black Pearl",
+      "xe_top1": "Pirates of the Caribbean: The Curse of the Black Pearl",
+      "xe_top1_percent": 100,
+      "xe_top5": [
+        "Pirates of the Caribbean: The Curse of the Black Pearl",
+        "Pirates of the Caribbean: Dead Man's Chest",
+        "Pirates of the Caribbean: At World's End",
+        "Secrets of the Pirate's Inn",
+        "Peter Pan & Wendy"
+      ],
+      "seconds": 0.23244670894928277
+    },
+    {
+      "query": "a young deer grows up in the forest with a rabbit and a skunk as his friends",
+      "kind": "premise",
+      "expected_tmdb_id": 3170,
+      "expected_title": "Bambi (1942)",
+      "bi_rank": 4,
+      "xe_rank": 1,
+      "bi_top1": "Nosey, the Sweetest Skunk in the West",
+      "xe_top1": "Bambi",
+      "xe_top1_percent": 7,
+      "xe_top5": [
+        "Bambi",
+        "Nosey, the Sweetest Skunk in the West",
+        "George of the Jungle",
+        "Winnie the Pooh",
+        "A Tale of Two Critters"
+      ],
+      "seconds": 0.16429529106244445
+    },
+    {
+      "query": "a hammer god loses his hammer and has to fight in a gladiator arena on a junk planet",
+      "kind": "premise",
+      "expected_tmdb_id": 284053,
+      "expected_title": "Thor: Ragnarok (2017)",
+      "bi_rank": 2,
+      "xe_rank": 1,
+      "bi_top1": "Hulk vs. Thor",
+      "xe_top1": "Thor: Ragnarok",
+      "xe_top1_percent": 0,
+      "xe_top5": [
+        "Thor: Ragnarok",
+        "Thor: Love and Thunder",
+        "Hulk vs. Thor",
+        "Thor",
+        "Ewoks: The Battle for Endor"
+      ],
+      "seconds": 0.2714940420119092
+    },
+    {
+      "query": "a thief gets a suit that shrinks him down to the size of an ant but makes him really strong",
+      "kind": "premise",
+      "expected_tmdb_id": 102899,
+      "expected_title": "Ant-Man (2015)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Ant-Man",
+      "xe_top1": "Ant-Man",
+      "xe_top1_percent": 99,
+      "xe_top5": [
+        "Ant-Man",
+        "Honey, I Shrunk the Kids",
+        "Ant-Man and the Wasp",
+        "My Dog, the Thief",
+        "A Bug's Life"
+      ],
+      "seconds": 0.2711544999619946
+    },
+    {
+      "query": "a team goes on a suicide mission to steal the plans for a planet destroying weapon",
+      "kind": "premise",
+      "expected_tmdb_id": 330459,
+      "expected_title": "Rogue One: A Star Wars Story (2016)",
+      "bi_rank": 2,
+      "xe_rank": 1,
+      "bi_top1": "LEGO Marvel Avengers: Mission Demolition",
+      "xe_top1": "Rogue One: A Star Wars Story",
+      "xe_top1_percent": 45,
+      "xe_top5": [
+        "Rogue One: A Star Wars Story",
+        "G-Force",
+        "Thunderbolts*",
+        "Avengers: Age of Ultron",
+        "Star Wars"
+      ],
+      "seconds": 0.20536358398385346
+    },
+    {
+      "query": "a nerdy linguist joins a submarine expedition to find a sunken city",
+      "kind": "premise",
+      "expected_tmdb_id": 10865,
+      "expected_title": "Atlantis: The Lost Empire (2001)",
+      "bi_rank": 2,
+      "xe_rank": 1,
+      "bi_top1": "20,000 Leagues Under the Sea",
+      "xe_top1": "Atlantis: The Lost Empire",
+      "xe_top1_percent": 85,
+      "xe_top5": [
+        "Atlantis: The Lost Empire",
+        "20,000 Leagues Under the Sea",
+        "Ghosts of the Abyss",
+        "The Island at the Top of the World",
+        "In Search of the Castaways"
+      ],
+      "seconds": 0.2002742080949247
+    },
+    {
+      "query": "a teenager finds a map to pirate treasure and sails on a space ship with a cyborg cook",
+      "kind": "premise",
+      "expected_tmdb_id": 9016,
+      "expected_title": "Treasure Planet (2002)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Treasure Planet",
+      "xe_top1": "Treasure Planet",
+      "xe_top1_percent": 100,
+      "xe_top5": [
+        "Treasure Planet",
+        "Treasure Island",
+        "Secrets of the Pirate's Inn",
+        "Muppet Treasure Island",
+        "Mooncussers"
+      ],
+      "seconds": 0.22541466599795967
+    },
+    {
+      "query": "a deformed bell ringer in a paris cathedral is kept hidden away by a cruel judge",
+      "kind": "premise",
+      "expected_tmdb_id": 10545,
+      "expected_title": "The Hunchback of Notre Dame (1996)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "The Hunchback of Notre Dame",
+      "xe_top1": "The Hunchback of Notre Dame",
+      "xe_top1_percent": 75,
+      "xe_top5": [
+        "The Hunchback of Notre Dame",
+        "Holes",
+        "Way Down Cellar",
+        "The Hunchback of Notre Dame II",
+        "The Horse Without a Head"
+      ],
+      "seconds": 0.20747283298987895
+    },
+    {
+      "query": "a cartoon princess gets pushed into the real world and ends up in new york city",
+      "kind": "premise",
+      "expected_tmdb_id": 4523,
+      "expected_title": "Enchanted (2007)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Enchanted",
+      "xe_top1": "Enchanted",
+      "xe_top1_percent": 95,
+      "xe_top5": [
+        "Enchanted",
+        "James and the Giant Peach",
+        "Oliver & Company",
+        "The Princess and the Frog",
+        "Sleeping Beauty"
+      ],
+      "seconds": 0.21007808297872543
+    },
+    {
+      "query": "boys at a detention camp in the desert are forced to dig holes all day for no reason",
+      "kind": "premise",
+      "expected_tmdb_id": 8326,
+      "expected_title": "Holes (2003)",
+      "bi_rank": 1,
+      "xe_rank": 1,
+      "bi_top1": "Holes",
+      "xe_top1": "Holes",
+      "xe_top1_percent": 100,
+      "xe_top5": [
+        "Holes",
+        "One Little Indian",
+        "Heavyweights",
+        "Rusty and the Falcon",
+        "A Far Off Place"
+      ],
+      "seconds": 0.1820949170505628
+    }
+  ]
+}

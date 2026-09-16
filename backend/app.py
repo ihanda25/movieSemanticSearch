@@ -19,6 +19,8 @@ sys.path.insert(0, str(ROOT))
 
 from disney_overview_search.disney_cross_encode import search_movies_reranked  # noqa: E402
 
+from disney_overview_search.feedback import record_search, save_feedback, lookup_movies
+
 TOP_K = 5
 
 app = Flask(__name__, static_folder=None)
@@ -56,8 +58,10 @@ def static_files(filename):
 
 @app.post("/api/search")
 def search():
-    payload = request.get_json(silent=True) or {}
-    query = (payload.get("query") or "").strip()
+    payload = request.get_json(silent=True)
+    if not isinstance(payload, dict) or not isinstance(payload.get("query"), str):
+        return jsonify({"error": "Please describe a movie."}), 400
+    query = payload["query"].strip()
 
     if not query:
         return jsonify({"error": "Please describe a movie."}), 400
@@ -65,18 +69,39 @@ def search():
     app.logger.info("Received description: %s", query)
 
     results = []
-    for hit in search_movies_reranked(query, top_k=TOP_K):
+    hits = search_movies_reranked(query, top_k=TOP_K)
+    for hit in hits:
         movie = hit["movie"]
         # release_date is "YYYY-MM-DD", or missing/empty for a few entries.
         release_date = movie.get("release_date") or ""
         results.append({
+            "id": movie["id"],
             "title": movie.get("title", "Unknown title"),
             "year": release_date[:4],
             "overview": movie.get("overview", ""),
             "match": to_percent(hit["score"]),
         })
 
-    return jsonify({"results": results})
+    search_id = record_search(query, hits, "ui")
+    return jsonify({"results": results, "search_id": search_id})
+
+
+@app.get("/api/movies")
+def movies():
+    title = request.args.get("q", "").strip()
+    return jsonify({"results": lookup_movies(title) if title else []})
+
+
+@app.post("/api/feedback")
+def feedback():
+    payload = request.get_json(silent=True)
+    if not isinstance(payload, dict) or not isinstance(payload.get("search_id"), str):
+        return jsonify({"error": "A search ID is required"}), 400
+    try:
+        save_feedback(payload["search_id"], payload.get("outcome"), payload.get("movie_id"))
+    except (ValueError, TypeError) as exc:
+        return jsonify({"error": str(exc)}), 400
+    return jsonify({"saved": True})
 
 
 if __name__ == "__main__":

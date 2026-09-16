@@ -249,3 +249,29 @@ is the real fix, the third is what tells you whether either worked.
 
   This is the difference between tuning and guessing, and it is the piece the
   project is missing most.
+
+
+2026-09-16 -- TMDB keyword/tagline enrichment
+------------------------------------------------------------
+Cached keywords/taglines for all 826 existing records without changing original
+fields or ordering. 692 have keywords; 521 have taglines. Separate overview and
+extra-text passages produce 1546 normalized vectors. Max passage score selects
+unique movie candidates; the cross-encoder receives all fields together.
+Same 50 premise queries and models, candidate_k=50:
+  Top 1: 35/50 -> 41/50; Recall@5: 42/50 -> 48/50.
+  MRR: 0.762 -> 0.878; stage-1 Recall@50: 47/50 -> 49/50.
+No final-rank regressions on this set. Remaining misses: Guardians (bi 29,
+rerank 20) and Star Wars (bi 64, outside candidates). Scene queries not evaluated.
+Original evaluation/baseline.json and evaluation/results.csv are unchanged.
+New outputs: evaluation/enriched.json, enriched.csv, enrichment_comparison.md.
+These are development-set results, not a held-out estimate.
+
+Enrichment source and scoring clarification:
+Keywords and taglines are fetched from actual TMDB movie entries, not generated.
+documents.py defines the shared text formatting. Stage 1 takes the maximum of
+the overview and keywords/tagline passage scores per movie (not an average).
+Stage 2 scores the query against one combined title/overview/keywords/tagline
+passage, with no hand-assigned field weights. Stage-1 scores select candidates
+but are not blended into the final cross-encoder scores. The measured gain is
+for both stages together; it does not isolate either stage or either new field.
+See README.md, "Where enrichment comes from and how it is weighted".

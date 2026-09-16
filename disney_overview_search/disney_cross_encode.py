@@ -39,6 +39,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from disney_overview_search.search_disney import search_movies  # noqa: E402
+from disney_overview_search.documents import document_text  # noqa: E402
 
 CROSS_ENCODER_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 
@@ -59,28 +60,14 @@ def load_cross_encoder():
     return _cross_encoder
 
 
-def document_text(movie):
-    """The passage the cross-encoder scores the query against.
-
-    Deliberately the same fields embed.py puts into the vector, so both stages
-    are ranking the same text and a difference in results is the models
-    disagreeing rather than the inputs differing.
-    """
-
-    overview = movie.get("overview") or ""
-    return f"Title: {movie.get('title', '')}, Overview: {overview}"
-
-
 def search_movies_reranked(query, top_k=TOP_K, candidate_k=CANDIDATE_K):
     """Retrieves with the bi-encoder, then reorders the candidates by cross-encoder.
 
     Each result carries the cross-encoder `score` it was ranked by, plus the
     `bi_score` and `bi_rank` it came in with, so the two stages can be compared.
 
-    NOTE: `score` here is a cross-encoder logit, roughly -11..+11 and centred
-    near 0, NOT a cosine similarity. `to_percent()` in backend/app.py rescales
-    the 0.15-0.60 cosine band and would clamp almost every one of these to 0 or
-    100, so that mapping needs replacing before this feeds the UI.
+    `score` is a cross-encoder logit, not cosine similarity. The backend maps
+    it through a sigmoid for display; this is not calibrated user confidence.
     """
 
     candidates = search_movies(query, top_k=candidate_k)
@@ -134,6 +121,12 @@ def main():
                   f"  (bi-encoder rank {result['bi_rank']}, {result['bi_score']:.3f})")
             print(f"         {movie['overview'][:100]}")
         print(f"  [{elapsed:.2f}s]\n")
+        from disney_overview_search.feedback import terminal_feedback
+        try:
+            terminal_feedback(query, results)
+        except (EOFError, KeyboardInterrupt):
+            print()
+            return
 
 
 if __name__ == "__main__":

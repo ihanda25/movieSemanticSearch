@@ -2,6 +2,70 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Current implementation update: enrichment and feedback (2026-09-16)
+
+This update supersedes older overview-only architecture and proposed-enrichment
+notes below. See README.md for the full chronological history and future plan.
+
+- Keywords and taglines are cached from actual TMDB entries. `documents.py`
+  shares text formatting and the embedding-model constant. The current index
+  has 1,546 vectors for 826 movies: overview plus optional enrichment passage.
+  Retrieval takes the maximum passage score per unique movie, then reranks 50
+  candidates using combined text. There are no explicit field weights or
+  blending of stage scores. Original evaluation/baseline.json and results.csv
+  must remain intact; enriched outputs are separate (82% top 1, 96% top 5 on
+  the 50-query development set). Match percentages are not calibrated confidence.
+- Feedback collection is now implemented; training is not. UI results expose
+  “This is it,” “None of these,” and title lookup for a correct movie outside
+  the five. POST /api/search returns a search_id and each result's TMDB id.
+  POST /api/feedback accepts search_id, outcome (selected/none/other), and
+  movie_id when appropriate. GET /api/movies?q= performs local title lookup.
+- `disney_overview_search/feedback.py` owns SQLite persistence at
+  `database/feedback.sqlite3` (gitignored, Python standard library only).
+  `searches` stores query, timestamp, UI/terminal source, model names, index
+  fingerprint, and the five displayed movies with original text and both
+  stage scores/ranks. `feedback` stores one current label per search, allowing
+  correction without duplicate labels. None-of-these is not a positive label.
+- Running `.venv/bin/python disney_overview_search/disney_cross_encode.py`
+  prompts for feedback after each query: result number, n, t for title lookup,
+  or Enter to skip. The bi-encoder diagnostic REPL is unchanged.
+- Export labels with `.venv/bin/python -m disney_overview_search.feedback
+  --export evaluation/feedback.csv` (one shell command). CSV includes a JSON
+  snapshot column. It is for inspection/dataset preparation, not automatic
+  training. Test with `.venv/bin/python tests/check_feedback.py` using temporary
+  storage so real feedback is not polluted.
+- Inspect all saved searches/labels read-only with
+  `.venv/bin/python database/view_feedback.py`; use `--table feedback` for raw
+  labels or `--table searches --details` for full search snapshots. The viewer
+  never creates a missing database. UI feedback buttons show Saved ✓ after a
+  successful response and show errors beside the clicked control. Test these
+  states with `node tests/check_feedback_ui.js`.
+- Agent trials use a separate gitignored `database/agent_feedback.sqlite3`.
+  `evaluation/synthetic_seed.json` now holds 377 agent-authored, unreviewed
+  labels across three batches (277 distinct movies): batches 1–2 wrote a
+  premise + scene pair per movie (50 movies each, batch 2 scene-majority);
+  batch 3 wrote one query per movie to prioritize corpus breadth (177 new
+  movies) over per-movie depth. `evaluation/collect_agent_feedback.py`
+  exercises actual search/title lookup/feedback API routes using Flask's test
+  client and writes `evaluation/agent_search_run.json`. It appends: it diffs
+  the seed against already-recorded normalized query text and processes only
+  unseen rows, so growing the seed and re-running never replays or duplicates
+  an earlier batch. Source is agent_authored, label_status is
+  needs_human_review, and no labels should be merged into human feedback or
+  treated as held-out evaluation. Validate with
+  evaluation/check_synthetic_seed.py — its row-count assertion is hard-coded
+  to the current total and must be bumped by hand whenever the seed grows.
+  Preserve existing rows/trials; only append, never overwrite or replay.
+- Human review of this set is starting with the outcome=other rows (correct
+  movie absent from the returned top 5) — highest fine-tuning value and most
+  likely to contain a misremembered plot detail, since nothing has
+  independently checked them yet.
+- Next phase: finish that review, resolve ambiguous alternatives, split
+  independent queries into training/validation/test sets, and experimentally
+  fine-tune only the cross-encoder first. Never train on every click or
+  auto-promote a model. No training job or fine-tuned checkpoint exists yet.
+  See README.md for data milestones and evaluation requirements.
+
 ## Project
 
 A quick UI where you describe a scene you remember and get back the Disney movie

@@ -67,6 +67,39 @@ def discover(session, company_id, min_runtime):
         page += 1
 
 
+def save_catalog(path, catalog):
+    """Atomic checkpoints allow interrupted enrichment to resume."""
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(json.dumps(catalog, indent=2, ensure_ascii=False) + "\n")
+    temporary.replace(path)
+
+
+def enrich_catalog(session, catalog, path):
+    failures = []
+    for i, movie in enumerate(catalog.values(), 1):
+        if "keywords" in movie and "tagline" in movie:
+            continue
+        try:
+            details = get(session, f"/movie/{movie['id']}",
+                          append_to_response="keywords", language="en-US")
+            keywords = details["keywords"]["keywords"]
+            movie["keywords"] = list(dict.fromkeys(k["name"] for k in keywords))
+            movie["tagline"] = details.get("tagline") or ""
+        except requests.ConnectionError:
+            save_catalog(path, catalog)
+            raise RuntimeError("TMDB connection failed; progress saved, rerun to resume") from None
+        except (requests.RequestException, RuntimeError, KeyError) as exc:
+            failures.append(movie["id"])
+            print(f"Could not enrich {movie['id']}: {type(exc).__name__}", flush=True)
+        if i % 25 == 0:
+            save_catalog(path, catalog)
+            print(f"Enriched {i}/{len(catalog)}", flush=True)
+    save_catalog(path, catalog)
+    if failures:
+        raise RuntimeError(f"Enrichment incomplete for {failures}; rerun to retry")
+    print(f"Enrichment complete: {len(catalog)} movies", flush=True)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument(
@@ -76,6 +109,8 @@ def main():
         help="drop anything shorter, in minutes (0 keeps shorts). Default 40.",
     )
     ap.add_argument("--out", type=Path, default=ROOT / "database" / "catalog.json")
+    ap.add_argument("--enrich-only", action="store_true",
+                    help="enrich the existing catalog without rediscovering movies; resumable")
     args = ap.parse_args()
 
     token = os.getenv("tmdb_token")
@@ -84,6 +119,10 @@ def main():
 
     session = requests.Session()
     session.headers["Authorization"] = f"Bearer {token}"
+
+    if args.enrich_only:
+        enrich_catalog(session, json.loads(args.out.read_text()), args.out)
+        return
 
     catalog = {}
     for company_id, studio_name in STUDIOS:
@@ -109,6 +148,8 @@ def main():
 
     ordered = dict(sorted(catalog.items(), key=lambda kv: (kv[1]["release_date"] or "", kv[0])))
     args.out.write_text(json.dumps(ordered, indent=2, ensure_ascii=False) + "\n")
+
+    enrich_catalog(session, ordered, args.out)
 
     missing = sum(1 for m in ordered.values() if m["overview"] == "N/A")
     print(f"\nWrote {len(ordered)} movies to {args.out.relative_to(ROOT)}")
