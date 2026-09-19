@@ -7,3 +7,7 @@ python-dotenv==1.2.3  # loads TMDB credentials from .env
 # by far the heaviest thing here — it runs the model locally, no API key needed.
 sentence-transformers==6.0.0
 numpy==2.5.2
+
+# CrossEncoderTrainer's Dataset/evaluator plumbing in evaluation/finetune_cross_encoder.py
+datasets==5.0.1
+accelerate==1.15.0

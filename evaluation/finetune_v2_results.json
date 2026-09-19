@@ -1,0 +1,129 @@
+{
+  "neg_1": {
+    "num_negatives": 1,
+    "train_queries": 264,
+    "val_queries": 57,
+    "test_queries": 56,
+    "checkpoint": "models/cross-encoder-finetuned-v2-neg_1/final",
+    "before": {
+      "val": {
+        "val_map": 0.7105987368706668,
+        "val_mrr@5": 0.698830409356725,
+        "val_ndcg@5": 0.7316155578320869,
+        "val_base_map": 0.5336805758498763,
+        "val_base_mrr@5": 0.5190058479532164,
+        "val_base_ndcg@5": 0.5522476243271063
+      },
+      "test": {
+        "test_map": 0.7155527489796066,
+        "test_mrr@5": 0.7038690476190477,
+        "test_ndcg@5": 0.7434422027589704,
+        "test_base_map": 0.5182284058813413,
+        "test_base_mrr@5": 0.5023809523809524,
+        "test_base_ndcg@5": 0.5545659996903657
+      }
+    },
+    "after": {
+      "val": {
+        "val_map": 0.7428539434421788,
+        "val_mrr@5": 0.7309941520467838,
+        "val_ndcg@5": 0.755218211027573,
+        "val_base_map": 0.5336805758498763,
+        "val_base_mrr@5": 0.5190058479532164,
+        "val_base_ndcg@5": 0.5522476243271063
+      },
+      "test": {
+        "test_map": 0.7584573412698413,
+        "test_mrr@5": 0.7485119047619048,
+        "test_ndcg@5": 0.7857470285880515,
+        "test_base_map": 0.5182284058813413,
+        "test_base_mrr@5": 0.5023809523809524,
+        "test_base_ndcg@5": 0.5545659996903657
+      }
+    }
+  },
+  "neg_4": {
+    "num_negatives": 4,
+    "train_queries": 264,
+    "val_queries": 57,
+    "test_queries": 56,
+    "checkpoint": "models/cross-encoder-finetuned-v2-neg_4/final",
+    "before": {
+      "val": {
+        "val_map": 0.7105987368706668,
+        "val_mrr@5": 0.698830409356725,
+        "val_ndcg@5": 0.7316155578320869,
+        "val_base_map": 0.5336805758498763,
+        "val_base_mrr@5": 0.5190058479532164,
+        "val_base_ndcg@5": 0.5522476243271063
+      },
+      "test": {
+        "test_map": 0.7155527489796066,
+        "test_mrr@5": 0.7038690476190477,
+        "test_ndcg@5": 0.7434422027589704,
+        "test_base_map": 0.5182284058813413,
+        "test_base_mrr@5": 0.5023809523809524,
+        "test_base_ndcg@5": 0.5545659996903657
+      }
+    },
+    "after": {
+      "val": {
+        "val_map": 0.737054950362484,
+        "val_mrr@5": 0.7251461988304093,
+        "val_ndcg@5": 0.7510403076441154,
+        "val_base_map": 0.5336805758498763,
+        "val_base_mrr@5": 0.5190058479532164,
+        "val_base_ndcg@5": 0.5522476243271063
+      },
+      "test": {
+        "test_map": 0.746489448051948,
+        "test_mrr@5": 0.7372023809523809,
+        "test_ndcg@5": 0.7771360028881587,
+        "test_base_map": 0.5182284058813413,
+        "test_base_mrr@5": 0.5023809523809524,
+        "test_base_ndcg@5": 0.5545659996903657
+      }
+    }
+  },
+  "v1": {
+    "num_negatives": 1,
+    "negative_source": "stored top-5 (not the full 50)",
+    "checkpoint": "models/cross-encoder-finetuned-v1/final",
+    "before": {
+      "val": {
+        "val_map": 0.7105987368706668,
+        "val_mrr@5": 0.698830409356725,
+        "val_ndcg@5": 0.7316155578320869,
+        "val_base_map": 0.5336805758498763,
+        "val_base_mrr@5": 0.5190058479532164,
+        "val_base_ndcg@5": 0.5522476243271063
+      },
+      "test": {
+        "test_map": 0.7155527489796066,
+        "test_mrr@5": 0.7038690476190477,
+        "test_ndcg@5": 0.7434422027589704,
+        "test_base_map": 0.5182284058813413,
+        "test_base_mrr@5": 0.5023809523809524,
+        "test_base_ndcg@5": 0.5545659996903657
+      }
+    },
+    "after": {
+      "val": {
+        "val_map": 0.7428539434421788,
+        "val_mrr@5": 0.7309941520467838,
+        "val_ndcg@5": 0.755218211027573,
+        "val_base_map": 0.5336805758498763,
+        "val_base_mrr@5": 0.5190058479532164,
+        "val_base_ndcg@5": 0.5522476243271063
+      },
+      "test": {
+        "test_map": 0.7584573412698413,
+        "test_mrr@5": 0.7485119047619048,
+        "test_ndcg@5": 0.7857470285880515,
+        "test_base_map": 0.5182284058813413,
+        "test_base_mrr@5": 0.5023809523809524,
+        "test_base_ndcg@5": 0.5545659996903657
+      }
+    }
+  }
+}

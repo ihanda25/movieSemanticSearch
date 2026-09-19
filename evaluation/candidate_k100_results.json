@@ -1,0 +1,2278 @@
+{
+  "classification": {
+    "hit before and after": 304,
+    "still missed": 44,
+    "stage-1 ceiling miss (still beyond 100)": 22,
+    "fixed by fine-tune": 7
+  },
+  "by_split": {
+    "train": [
+      {
+        "classification": "hit before and after",
+        "title": "Toy Story (1995)",
+        "prod_rank": 5,
+        "ft_rank": 4
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Toy Story (1995)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Toy Story 2 (1999)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Toy Story 2 (1999)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Toy Story 4 (2019)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Toy Story 4 (2019)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Finding Nemo (2003)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Finding Nemo (2003)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Finding Dory (2016)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Finding Dory (2016)",
+        "prod_rank": 4,
+        "ft_rank": 5
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Monsters, Inc. (2001)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Monsters, Inc. (2001)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Monsters University (2013)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Monsters University (2013)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Incredibles (2004)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "The Incredibles (2004)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Incredibles 2 (2018)",
+        "prod_rank": 3,
+        "ft_rank": 2
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "Incredibles 2 (2018)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Cars 2 (2011)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Cars 2 (2011)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Ratatouille (2007)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Ratatouille (2007)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "Up (2009)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Up (2009)",
+        "prod_rank": 5,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Brave (2012)",
+        "prod_rank": 4,
+        "ft_rank": 3
+      },
+      {
+        "classification": "still missed",
+        "title": "Brave (2012)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Inside Out (2015)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Inside Out (2015)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Onward (2020)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Onward (2020)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "Luca (2021)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Luca (2021)",
+        "prod_rank": 3,
+        "ft_rank": 3
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Turning Red (2022)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Turning Red (2022)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "A Bug's Life (1998)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "A Bug's Life (1998)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "Big Hero 6 (2014)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Big Hero 6 (2014)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Ralph Breaks the Internet (2018)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "Ralph Breaks the Internet (2018)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Zootopia (2016)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Zootopia (2016)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Tangled (2010)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Tangled (2010)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Frozen (2013)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Frozen (2013)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Frozen II (2019)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Frozen II (2019)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Lilo & Stitch (2002)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "Lilo & Stitch (2002)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Treasure Planet (2002)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Treasure Planet (2002)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Atlantis: The Lost Empire (2001)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "Atlantis: The Lost Empire (2001)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Holes (2003)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Holes (2003)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Iron Man (2008)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Iron Man (2008)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Iron Man 2 (2010)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "Iron Man 2 (2010)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "still missed",
+        "title": "Iron Man 3 (2013)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "Iron Man 3 (2013)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "Captain America: The First Avenger (2011)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "Captain America: The First Avenger (2011)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "fixed by fine-tune",
+        "title": "Captain America: The Winter Soldier (2014)",
+        "prod_rank": null,
+        "ft_rank": 4
+      },
+      {
+        "classification": "still missed",
+        "title": "Captain America: The Winter Soldier (2014)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Captain America: Civil War (2016)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Captain America: Civil War (2016)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "still missed",
+        "title": "Thor (2011)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "Thor (2011)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Thor: Ragnarok (2017)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Thor: Ragnarok (2017)",
+        "prod_rank": 2,
+        "ft_rank": 3
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Doctor Strange (2016)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Doctor Strange (2016)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Pinocchio (1940)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Pinocchio (1940)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Dumbo (1941)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Dumbo (1941)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Bambi (1942)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Bambi (1942)",
+        "prod_rank": 5,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Peter Pan (1953)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Peter Pan (1953)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "One Hundred and One Dalmatians (1961)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "One Hundred and One Dalmatians (1961)",
+        "prod_rank": 3,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Sword in the Stone (1963)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Sword in the Stone (1963)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Jungle Book (1967)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Jungle Book (1967)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Robin Hood (1973)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "still missed",
+        "title": "Robin Hood (1973)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Fox and the Hound (1981)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Fox and the Hound (1981)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Black Cauldron (1985)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Black Cauldron (1985)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Great Mouse Detective (1986)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Great Mouse Detective (1986)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Oliver & Company (1988)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Oliver & Company (1988)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Pocahontas (1995)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Pocahontas (1995)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Mulan (1998)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Mulan (1998)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Old Yeller (1957)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Old Yeller (1957)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Cool Runnings (1993)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Cool Runnings (1993)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Honey, I Shrunk the Kids (1989)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Honey, I Shrunk the Kids (1989)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Parent Trap (1998)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Parent Trap (1998)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Freaky Friday (2003)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Freaky Friday (2003)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Rocketeer (1991)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Rocketeer (1991)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "A Goofy Movie (1995)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "A Goofy Movie (1995)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Flubber (1997)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Flubber (1997)",
+        "prod_rank": 4,
+        "ft_rank": 5
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Enchanted (2007)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Enchanted (2007)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Empire Strikes Back (1980)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "still missed",
+        "title": "The Empire Strikes Back (1980)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Return of the Jedi (1983)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "Return of the Jedi (1983)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Star Wars: Episode I - The Phantom Menace (1999)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "Star Wars: Episode I - The Phantom Menace (1999)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Indiana Jones and the Last Crusade (1989)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Indiana Jones and the Last Crusade (1989)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Raiders of the Lost Ark (1981)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Raiders of the Lost Ark (1981)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Pirates of the Caribbean: The Curse of the Black Pearl (2003)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Pirates of the Caribbean: The Curse of the Black Pearl (2003)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "National Treasure (2004)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "National Treasure (2004)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Beauty and the Beast (1991)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Beauty and the Beast (1991)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Snow White and the Seven Dwarfs (1938)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Snow White and the Seven Dwarfs (1938)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Guardians of the Galaxy (2014)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Guardians of the Galaxy (2014)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "still missed",
+        "title": "Fantasia (1940)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Treasure Island (1950)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "20,000 Leagues Under the Sea (1954)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Darby O'Gill and the Little People (1959)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Swiss Family Robinson (1960)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Absent-Minded Professor (1961)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Parent Trap (1961)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Incredible Journey (1963)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "Bedknobs and Broomsticks (1971)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Pete's Dragon (1977)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Dragonslayer (1981)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Something Wicked This Way Comes (1983)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Journey of Natty Gann (1985)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Labyrinth (1986)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Willow (1988)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "fixed by fine-tune",
+        "title": "Honey, I Blew Up the Kid (1992)",
+        "prod_rank": null,
+        "ft_rank": 5
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Muppet Christmas Carol (1992)",
+        "prod_rank": 3,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "D2: The Mighty Ducks (1994)",
+        "prod_rank": 4,
+        "ft_rank": 3
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Angels in the Outfield (1994)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Heavyweights (1995)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Operation Dumbo Drop (1995)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "James and the Giant Peach (1996)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Jungle 2 Jungle (1997)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "George of the Jungle (1997)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "I'll Be Home for Christmas (1998)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Mighty Joe Young (1998)",
+        "prod_rank": 3,
+        "ft_rank": 3
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Inspector Gadget (1999)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "Fantasia 2000 (2000)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Tigger Movie (2000)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Dinosaur (2000)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Kid (2000)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Buzz Lightyear of Star Command: The Adventure Begins (2000)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Remember the Titans (2000)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "102 Dalmatians (2000)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Princess Diaries (2001)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Snow Dogs (2002)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "Return to Never Land (2002)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Rookie (2002)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Star Wars: Episode II - Attack of the Clones (2002)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Tuck Everlasting (2002)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Lizzie McGuire Movie (2003)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Haunted Mansion (2003)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Home on the Range (2004)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Ice Princess (2005)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Star Wars: Episode III - Revenge of the Sith (2005)",
+        "prod_rank": 3,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Chicken Little (2005)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe (2005)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Shaggy Dog (2006)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Wild (2006)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Pirates of the Caribbean: Dead Man's Chest (2006)",
+        "prod_rank": 5,
+        "ft_rank": 5
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Invincible (2006)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Ghost Rider (2007)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "fixed by fine-tune",
+        "title": "Spider-Man 3 (2007)",
+        "prod_rank": null,
+        "ft_rank": 4
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Fantastic Four: Rise of the Silver Surfer (2007)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Chronicles of Narnia: Prince Caspian (2008)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "Indiana Jones and the Kingdom of the Crystal Skull (2008)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Incredible Hulk (2008)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "High School Musical 3: Senior Year (2008)",
+        "prod_rank": 3,
+        "ft_rank": 3
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Bedtime Stories (2008)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Race to Witch Mountain (2009)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Alice in Wonderland (2010)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "TRON: Legacy (2010)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Pirates of the Caribbean: On Stranger Tides (2011)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "fixed by fine-tune",
+        "title": "The Avengers (2012)",
+        "prod_rank": null,
+        "ft_rank": 5
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Odd Life of Timothy Green (2012)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Oz the Great and Powerful (2013)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Lone Ranger (2013)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Thor: The Dark World (2013)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Saving Mr. Banks (2013)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Muppets Most Wanted (2014)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Million Dollar Arm (2014)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Maleficent (2014)",
+        "prod_rank": 4,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "McFarland, USA (2015)",
+        "prod_rank": 2,
+        "ft_rank": 4
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Tomorrowland (2015)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Good Dinosaur (2015)",
+        "prod_rank": 4,
+        "ft_rank": 4
+      },
+      {
+        "classification": "still missed",
+        "title": "Star Wars: The Force Awakens (2015)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Finest Hours (2016)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Jungle Book (2016)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The BFG (2016)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Beauty and the Beast (2017)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Guardians of the Galaxy Vol. 2 (2017)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "still missed",
+        "title": "Spider-Man: Homecoming (2017)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "still missed",
+        "title": "Star Wars: The Last Jedi (2017)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Black Panther (2018)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "A Wrinkle in Time (2018)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Avengers: Infinity War (2018)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Solo: A Star Wars Story (2018)",
+        "prod_rank": 4,
+        "ft_rank": 3
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Nutcracker and the Four Realms (2018)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Mary Poppins Returns (2018)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Captain Marvel (2019)",
+        "prod_rank": 3,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Dumbo (2019)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Spider-Man: Far From Home (2019)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Lion King (2019)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Star Wars: The Rise of Skywalker (2019)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The One and Only Ivan (2020)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Cruella (2021)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Jungle Cruise (2021)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Shang-Chi and the Legend of the Ten Rings (2021)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Doctor Strange in the Multiverse of Madness (2022)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Chip 'n Dale: Rescue Rangers (2022)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Hocus Pocus 2 (2022)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Black Panther: Wakanda Forever (2022)",
+        "prod_rank": 3,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Disenchanted (2022)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Strange World (2022)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Guardians of the Galaxy Vol. 3 (2023)",
+        "prod_rank": 5,
+        "ft_rank": 4
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Little Mermaid (2023)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Indiana Jones and the Dial of Destiny (2023)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Haunted Mansion (2023)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "fixed by fine-tune",
+        "title": "The Marvels (2023)",
+        "prod_rank": null,
+        "ft_rank": 5
+      },
+      {
+        "classification": "still missed",
+        "title": "Wish (2023)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Inside Out 2 (2024)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Moana 2 (2024)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Mufasa: The Lion King (2024)",
+        "prod_rank": 3,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Elio (2025)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Freaky Friday (1976)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Apple Dumpling Gang (1975)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Escape to Witch Mountain (1975)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Shaggy D.A. (1976)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Candleshoe (1977)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Herbie Goes to Monte Carlo (1977)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Return from Witch Mountain (1978)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Unidentified Flying Oddball (1979)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Popeye (1980)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Night Crossing (1982)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      }
+    ],
+    "val": [
+      {
+        "classification": "hit before and after",
+        "title": "Toy Story 3 (2010)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Toy Story 3 (2010)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Cars (2006)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Cars (2006)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Cars 3 (2017)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Cars 3 (2017)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Coco (2017)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Coco (2017)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Elemental (2023)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Elemental (2023)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Wreck-It Ralph (2012)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Wreck-It Ralph (2012)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Encanto (2021)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Encanto (2021)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Emperor's New Groove (2000)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "The Emperor's New Groove (2000)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Ant-Man (2015)",
+        "prod_rank": 3,
+        "ft_rank": 2
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "Ant-Man (2015)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Lady and the Tramp (1955)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Lady and the Tramp (1955)",
+        "prod_rank": 3,
+        "ft_rank": 3
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Tarzan (1999)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Tarzan (1999)",
+        "prod_rank": 2,
+        "ft_rank": 3
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Mighty Ducks (1992)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Mighty Ducks (1992)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Star Wars (1977)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "still missed",
+        "title": "Star Wars (1977)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Mary Poppins (1964)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Mary Poppins (1964)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Sleeping Beauty (1959)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Sleeping Beauty (1959)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Song of the South (1946)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Black Hole (1979)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Never Cry Wolf (1983)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Howard the Duck (1986)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Newsies (1992)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Homeward Bound: The Incredible Journey (1993)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "still missed",
+        "title": "Muppet Treasure Island (1996)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "101 Dalmatians (1996)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Herbie Fully Loaded (2005)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Sky High (2005)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Eight Below (2006)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Santa Clause 3: The Escape Clause (2006)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Pirates of the Caribbean: At World's End (2007)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "National Treasure: Book of Secrets (2007)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Prince of Persia: The Sands of Time (2010)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Secretariat (2010)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "John Carter (2012)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Into the Woods (2014)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Pete's Dragon (2016)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Avengers: Endgame (2019)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Spider-Man: No Way Home (2021)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Lightyear (2022)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Thor: Love and Thunder (2022)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Ant-Man and the Wasp: Quantumania (2023)",
+        "prod_rank": 4,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Deadpool & Wolverine (2024)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Herbie Goes Bananas (1980)",
+        "prod_rank": 3,
+        "ft_rank": 4
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Tex (1982)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      }
+    ],
+    "test": [
+      {
+        "classification": "hit before and after",
+        "title": "WALL\u00b7E (2008)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "WALL\u00b7E (2008)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Soul (2020)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Soul (2020)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Moana (2016)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "fixed by fine-tune",
+        "title": "Moana (2016)",
+        "prod_rank": null,
+        "ft_rank": 3
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Princess and the Frog (2009)",
+        "prod_rank": 4,
+        "ft_rank": 2
+      },
+      {
+        "classification": "stage-1 ceiling miss (still beyond 100)",
+        "title": "The Princess and the Frog (2009)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Cinderella (1950)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Cinderella (1950)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Alice in Wonderland (1951)",
+        "prod_rank": 3,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Alice in Wonderland (1951)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Aristocats (1970)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Aristocats (1970)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Rescuers (1977)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Rescuers (1977)",
+        "prod_rank": 3,
+        "ft_rank": 3
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Hunchback of Notre Dame (1996)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Hunchback of Notre Dame (1996)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Hocus Pocus (1993)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Hocus Pocus (1993)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Santa Clause (1994)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Santa Clause (1994)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Tron (1982)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Tron (1982)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Rogue One: A Star Wars Story (2016)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Rogue One: A Star Wars Story (2016)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Indiana Jones and the Temple of Doom (1984)",
+        "prod_rank": 3,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Indiana Jones and the Temple of Doom (1984)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "fixed by fine-tune",
+        "title": "The Lion King (1994)",
+        "prod_rank": null,
+        "ft_rank": 4
+      },
+      {
+        "classification": "still missed",
+        "title": "The Lion King (1994)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Flight of the Navigator (1986)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Doug's 1st Movie (1999)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Recess: School's Out (2001)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Santa Clause 2 (2002)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Miracle (2004)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Princess Diaries 2: Royal Engagement (2004)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Pacifier (2005)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Glory Road (2006)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Meet the Robinsons (2007)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Beverly Hills Chihuahua (2008)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Bolt (2008)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "A Christmas Carol (2009)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Sorcerer's Apprentice (2010)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Winnie the Pooh (2011)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Muppets (2011)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "still missed",
+        "title": "Cinderella (2015)",
+        "prod_rank": null,
+        "ft_rank": null
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Avengers: Age of Ultron (2015)",
+        "prod_rank": 2,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Ant-Man and the Wasp (2018)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Christopher Robin (2018)",
+        "prod_rank": 3,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Aladdin (2019)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Togo (2019)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Mulan (2020)",
+        "prod_rank": 2,
+        "ft_rank": 2
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Raya and the Last Dragon (2021)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Black Widow (2021)",
+        "prod_rank": 3,
+        "ft_rank": 3
+      },
+      {
+        "classification": "hit before and after",
+        "title": "The Fantastic 4: First Steps (2025)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      },
+      {
+        "classification": "hit before and after",
+        "title": "Gus (1976)",
+        "prod_rank": 1,
+        "ft_rank": 1
+      }
+    ]
+  }
+}

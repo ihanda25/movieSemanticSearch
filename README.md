@@ -149,11 +149,13 @@ End-to-end enriched search works locally with two pretrained models. The saved
 development set has 48/50 top-five hits; Guardians of the Galaxy and Star Wars
 remain misses. Fresh phrasings can still rank incorrectly, scene performance
 has not been established by this enrichment run, and displayed percentages are
-uncalibrated. Feedback collection now works in the UI and reranking terminal REPL;
-there is no training job or fine-tuned model yet. A 377-query agent-authored
-trial set (see [Agent-generated search trials](#agent-generated-search-trials))
-exists to seed that eventual training data, but it is unreviewed and does not
-change this picture on its own.
+uncalibrated. Feedback collection now works in the UI and reranking terminal
+REPL. A first fine-tuned cross-encoder checkpoint exists (see
+[Agent-generated search trials](#agent-generated-search-trials) and the plan's
+step 4) and shows a real improvement on held-out agent-authored queries with
+no dev-set regression, but it is **not deployed** — `disney_cross_encode.py`
+still serves the pretrained model — because that result rests on one agent's
+self-reported labels at a small scale, not on real user feedback yet.
 
 Alternative embedding models, full-catalog reranker comparisons, fuller plot
 summaries, confidence calibration, and feedback-driven fine-tuning have been
@@ -365,10 +367,10 @@ processes only the rows it hasn't seen yet, so re-running after growing the
 seed file never replays or duplicates an earlier batch into
 `database/agent_feedback.sqlite3` or the run report.
 
-Human review of this set is starting with the `outcome=other` rows (the
-correct movie missing from the top 5 entirely) — those are the highest-value
-rows for eventual fine-tuning and the most likely to contain an agent
-misremembering a plot detail, since nothing has independently checked them yet.
+Human review of the `outcome=other` rows (the correct movie missing from the
+top 5 entirely — highest-value for fine-tuning, and most likely to contain an
+agent misremembering a plot detail) is done; nothing was flagged as a bad
+label. That cleared the way for the first experimental fine-tune below.
 
 Write queries before inspecting the movie's indexed text. Keep related queries
 and movies grouped when constructing dataset splits, and check overlap with the
@@ -377,11 +379,17 @@ not a new held-out test set or a substitute for real user feedback.
 
 ## Plan: user feedback and periodic fine-tuning
 
-Feedback collection (step 1) is implemented. Training and deployment below remain
-a proposed next phase, not an implemented training system. The goal is
-to learn which movie a user intended from explicit feedback while keeping the
-existing retrieval architecture. This is supervised learning from feedback,
-not an online reinforcement-learning loop or an LLM wrapper.
+Feedback collection (step 1) is implemented. Steps 1–3 below are done using the
+agent-authored trial set as a stand-in for real user feedback; step 4 has now
+run once, experimentally, on that set — see
+[Agent-generated search trials](#agent-generated-search-trials) and
+`findings.txt`'s 2026-09-17 entry for the actual numbers. Deployment (the end
+of step 4 and step 5) has not happened: the resulting checkpoint sits
+unreviewed-for-deployment in `models/cross-encoder-finetuned-v1/`, not wired
+into the backend. The goal throughout is to learn which movie a user intended
+from explicit feedback while keeping the existing retrieval architecture. This
+is supervised learning from feedback, not an online reinforcement-learning
+loop or an LLM wrapper.
 
 ### 1. Collect explicit selections
 
@@ -443,11 +451,11 @@ run, then approximately 1,000 for a broader assessment—not a promise of improv
 
 The 377-query agent-authored set in
 [Agent-generated search trials](#agent-generated-search-trials) sits in the "a
-few hundred" row above by count alone, but it does not yet satisfy this
-section: it is single-source (one agent's memory, not varied real users),
-unreviewed, and has not been split into training/validation/test. Human
-review — starting with the `outcome=other` rows — comes before any of that
-counts toward an exploratory run.
+few hundred" row above and has run one exploratory fine-tune (step 4 below).
+It's still single-source (one agent's memory, not varied real users) and the
+labels are spot-checked, not independently verified — real user feedback via
+the UI's "This is it" flow is still what this section is ultimately about, not
+a replacement for it.
 
 ### 4. Train separately, evaluate, then decide whether to deploy
 
@@ -471,6 +479,65 @@ Initially trigger this manually after a meaningful batch of new labels. A weekly
 or monthly schedule is only useful when enough new data has accumulated.
 Automate collection, dataset preparation, training, and reports later; do not
 automatically promote every newly trained checkpoint.
+
+**Steps 1–4 have now run once, experimentally**, on the agent-authored set
+rather than real user feedback (`evaluation/build_split.py`,
+`evaluation/finetune_cross_encoder.py`, `evaluation/eval_checkpoint.py`; see
+`findings.txt`'s 2026-09-17 entry for the full writeup). Test-split MRR@5 went
+0.704 → 0.753 and NDCG@5 0.743 → 0.793 over the current production reranker,
+with the val split moving the same direction; the original `queries.json` dev
+set showed no regression (Recall@5 held at 48/50, MRR 0.878 → 0.885). Step 5,
+deployment, has deliberately **not** happened — 56 test queries authored by
+one agent is a real result worth recording, not a production-scale
+confirmation, and the labels themselves are still self-reported. Treat this as
+proof the pipeline works end to end, not as a decision to ship it.
+
+**How much of the remaining miss rate this fine-tune could ever fix, properly
+measured:** `evaluation/diagnose_stage1_ceiling.py` re-retrieves the full
+50-candidate bi-encoder pool fresh per query (not just each query's already-
+stored top 5) and separates true stage-1 ceiling misses (confirmed movie
+beyond the 50 — no reranker fine-tune can ever reach these) from stage-2
+demotions (movie was in the 50, a reranker pushed it below rank 5 — fixable in
+principle). Of all 377 queries: 299 already hit, 36 are genuine stage-1
+ceiling misses, 33 are stage-2 cases still missed by both the production and
+v1 fine-tuned reranker, 8 were fixed by v1, 1 regressed. 22 of the 33
+still-missed are in the training split itself, meaning v1 had those exact
+queries available and still didn't learn them — its hard-negative mining only
+drew from each query's stored top 5 (≤4 wrong candidates), not the full
+50-candidate pool, so the training signal was weaker than the available data
+allowed. `evaluation/stage1_ceiling.csv` has the full per-query breakdown.
+
+**The v2 hypothesis was tested (2026-09-18) and did not hold.**
+`evaluation/finetune_v2.py --num-negatives N` mines N hard negatives from the
+full 50-candidate pool (cached once by `evaluation/build_candidate_pool.py`)
+and evaluates val/test the same fair way, so v1 could be re-scored on equal
+footing (`evaluation/refit_v1_full50.py`, no retraining needed). Result: v1
+(1 negative, old top-5 pool) and a `neg_1` config (1 negative, full 50-pool)
+scored **identically** — the single hardest wrong candidate is almost always
+already in the old top-5 anyway, so widening the pool for just one pick
+changed nothing. A `neg_4` config (4 negatives) scored **worse** than either
+1-negative version on both val and test. Neither "search a wider pool" nor
+"use more negatives" was the fix; the real bottleneck — more training epochs,
+a different loss function, semi-hard rather than hardest-possible negative
+mining, or more/better data — remains untested. Full numbers and a library
+gotcha caught along the way (a mutable-attribute footgun in
+`CrossEncoderRerankingEvaluator.primary_metric`) are in `findings.txt`'s
+2026-09-18 entry.
+
+**Raising `CANDIDATE_K` was also measured directly, not just estimated.**
+`evaluation/stage1_ceiling_depth.py` found steep diminishing returns in how
+close the 36 stage-1 ceiling misses sit to the cutoff (100→14/36 back in
+reach, 200→23/36 — some are nowhere close). `evaluation/eval_candidate_k100.py`
+then measured the real effect of `CANDIDATE_K=100` rather than trusting "in
+reach" as a proxy: ceiling misses dropped 36→22, but only 5 of the 14
+newly-reachable queries actually landed in the top 5 — more candidates means
+more distractors for the reranker too — plus one new regression, at roughly
+double the reranking cost. Not a clear win to ship alone. The movies still
+unreachable even at K=100 need bi-encoder-level work (a different embedding
+model, or fine-tuning the bi-encoder itself, per item 2 in "Retrieval
+quality" above) — no amount of reranker tuning touches them. Nothing from any
+of this session is deployed; `CROSS_ENCODER_MODEL` and `CANDIDATE_K` in
+`disney_cross_encode.py` are unchanged.
 
 ### 5. Improve the stage responsible for the failure
 

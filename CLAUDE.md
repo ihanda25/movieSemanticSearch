@@ -56,15 +56,106 @@ notes below. See README.md for the full chronological history and future plan.
   evaluation/check_synthetic_seed.py — its row-count assertion is hard-coded
   to the current total and must be bumped by hand whenever the seed grows.
   Preserve existing rows/trials; only append, never overwrite or replay.
-- Human review of this set is starting with the outcome=other rows (correct
-  movie absent from the returned top 5) — highest fine-tuning value and most
-  likely to contain a misremembered plot detail, since nothing has
-  independently checked them yet.
-- Next phase: finish that review, resolve ambiguous alternatives, split
-  independent queries into training/validation/test sets, and experimentally
-  fine-tune only the cross-encoder first. Never train on every click or
-  auto-promote a model. No training job or fine-tuned checkpoint exists yet.
-  See README.md for data milestones and evaluation requirements.
+- Human review of the outcome=other rows is done; nothing flagged as a bad
+  label. `evaluation/build_split.py` splits the 277 movies into train/val/test
+  (70/15/15 by movie, seeded, stratified by group size and outcome so a
+  movie's queries never cross a split and hard "other" cases aren't dumped
+  into one split by chance) and writes `evaluation/splits.json`; validate with
+  `evaluation/check_splits.py`. `evaluation/finetune_cross_encoder.py`
+  fine-tunes `cross-encoder/ms-marco-MiniLM-L-6-v2` with
+  `MultipleNegativesRankingLoss` (pairwise/contrastive: each query's confirmed
+  movie vs. one explicit hard negative — the wrong top-5 candidate the
+  pretrained model currently scores highest — plus other positives in the
+  batch as free in-batch negatives), evaluates with
+  `CrossEncoderRerankingEvaluator` (MRR@5/NDCG@5) on val during training and
+  on the held-out test split afterward, and writes
+  `evaluation/finetune_results.json` with both the pre-fine-tune ("current
+  production model, measured on this exact test slice") and post-fine-tune
+  numbers side by side. Checkpoint lands in `models/cross-encoder-finetuned-v1/`
+  (gitignored); nothing wires it into the backend automatically — that's a
+  separate, deliberate step gated on the comparison in
+  `finetune_results.json` actually showing improvement with no dev-set
+  regression.
+- First fine-tune ran 2026-09-17 (377-query set, 4 epochs). Held-out test
+  split (56 queries): MRR@5 0.704 → 0.753, NDCG@5 0.743 → 0.793 over the
+  current production reranker; val split moved the same direction, so it
+  isn't just favorable checkpoint selection. `evaluation/eval_checkpoint.py`
+  ran the checkpoint against the original hand-written `queries.json` dev set
+  as a regression check: Recall@5 held at 48/50 (96%), MRR ticked up 0.878 →
+  0.885 — no regression. Full numbers and caveats (56 queries is not a
+  production-scale estimate; labels are self-reported and only spot-checked,
+  not independently verified; this loosens the cross-encoder's already-
+  uncalibrated sigmoid percentage further) are in `findings.txt`'s
+  2026-09-17 entry and `evaluation/finetune_results.json`. The checkpoint is
+  NOT wired into the backend — `CROSS_ENCODER_MODEL` in
+  `disney_cross_encode.py` still points at the pretrained model. Swapping it
+  in is a separate, deliberate decision, not implied by these numbers alone.
+  Per-query detail for all 377 queries: `evaluation/compare_checkpoints.py` →
+  `evaluation/finetune_comparison.csv`/`.md`.
+- `evaluation/diagnose_stage1_ceiling.py` separates true stage-1 ceiling
+  misses (confirmed movie beyond the bi-encoder's full `CANDIDATE_K=50`, which
+  NO reranker fine-tune can ever fix) from stage-2 demotions (movie was in the
+  50, a reranker pushed it below rank 5 — a better reranker can in principle
+  recover these) by re-retrieving the full 50 fresh per query, since the
+  comparison above only had each query's already-stored top 5. Real
+  breakdown, all 377: 299 already hit, 36 stage-1 ceiling misses, 33 stage-2
+  still missed, 8 stage-2 fixed by the v1 fine-tune, 1 regressed. 22 of the 33
+  still-missed are in the TRAIN split — v1 had those exact queries during
+  training and still didn't learn them, pointing at a specific weakness (v1's
+  hard-negative mining drew from each query's stored top-5, at most 4 wrong
+  candidates, never the other ~46 in the actual 50-pool) rather than an
+  inherent limit. See `evaluation/stage1_ceiling.csv` and `findings.txt`'s
+  second 2026-09-17 entry.
+- v2 sweep ran 2026-09-18 and the hypothesis did NOT hold.
+  `evaluation/build_candidate_pool.py` caches the full 50-candidate pool +
+  production score per query once (`evaluation/full_candidate_pool.json`), so
+  training-negative mining and val/test evaluation both use the real 50, not
+  each query's old stored top-5 — this also fixes a v1 evaluation gap
+  (reranking a pre-curated 5 is an easier task than the real 50-candidate
+  one). `evaluation/finetune_v2.py --num-negatives N` trains and evaluates a
+  config on this fair basis; `evaluation/refit_v1_full50.py` re-scores v1's
+  existing checkpoint the same way with no retraining. Result, full-50
+  evaluation throughout: v1 (1 negative, old top-5 pool) and `neg_1` (1
+  negative, full 50-pool) score **identically** — val/test MRR@5 0.731/0.749,
+  NDCG@5 0.755/0.786 — because the single hardest wrong candidate is almost
+  always already in the top 5 anyway, so widening the mining pool for a
+  single pick changes nothing. `neg_4` (4 negatives, full 50-pool) scored
+  **worse** on both val and test (MRR@5 0.725/0.737) than either 1-negative
+  config. `neg_8` was skipped — unlikely to reverse a trend already going the
+  wrong direction. So neither "search deeper for one hard negative" nor "use
+  more explicit hard negatives" is the fix; the real bottleneck (more epochs,
+  a different loss, semi-hard mining, more/better data) is untested. Also
+  caught and fixed a library gotcha:
+  `CrossEncoderRerankingEvaluator.primary_metric` is unprefixed ("ndcg@5")
+  until the evaluator is actually called once — reading it before that (as
+  happens on a cached-baseline sweep run) silently sets
+  `metric_for_best_model` to a key that doesn't exist and crashes training;
+  fixed by hardcoding the real key instead of trusting the mutable attribute.
+- `CANDIDATE_K=100` was measured, not just estimated, as a candidate fix for
+  the 36 stage-1 ceiling misses. `evaluation/stage1_ceiling_depth.py` found
+  steep diminishing returns re-retrieving each with no cutoff (75→6/36 in
+  reach, 100→14/36, 150→17/36, 200→23/36; some, like Ralph Breaks the
+  Internet at true rank 557, are nowhere close). `evaluation/
+  eval_candidate_k100.py` then measured the ACTUAL effect of raising to 100
+  (not just "in reach"): ceiling misses dropped 36→22 as predicted, but only
+  5 of the 14 newly-in-pool queries actually reached top 5 — the other 9 are
+  reachable now but still buried below rank 5, since more candidates means
+  more distractors too. One regression: a query the fine-tuned model
+  correctly hit at K=50 now misses at K=100. Net: +5 hits, -1 regression, out
+  of 377 queries, at roughly double the reranking cost per query. Not a clear
+  win to ship alone.
+- Where this leaves things: the ~22 movies still unreachable even at
+  `CANDIDATE_K=100` (findings.txt's second 2026-09-18 entry has the full
+  list) need bi-encoder-level work — a different embedding model or
+  fine-tuning the bi-encoder itself — no amount of reranker tuning or
+  candidate-cutoff raising touches them, since they never reach the
+  reranker. Nothing from any of this is deployed: `CROSS_ENCODER_MODEL` and
+  `CANDIDATE_K` in `disney_cross_encode.py` are unchanged. Next phase:
+  resolve ambiguous labels as the seed set grows, decide whether to
+  experiment with the bi-encoder (README's roadmap item 2) or a different
+  cross-encoder training recipe next, and never auto-promote a checkpoint
+  without this same before/after comparison. See README.md for data
+  milestones and evaluation requirements.
 
 ## Project
 
