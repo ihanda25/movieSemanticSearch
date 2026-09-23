@@ -23,7 +23,7 @@ from sentence_transformers import CrossEncoder
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from disney_overview_search.disney_cross_encode import CANDIDATE_K, CROSS_ENCODER_MODEL  # noqa: E402
+from disney_overview_search.disney_cross_encode import CANDIDATE_K, PRETRAINED_CROSS_ENCODER_MODEL as CROSS_ENCODER_MODEL  # noqa: E402
 from disney_overview_search.documents import document_text  # noqa: E402
 from disney_overview_search.search_disney import search_movies  # noqa: E402
 

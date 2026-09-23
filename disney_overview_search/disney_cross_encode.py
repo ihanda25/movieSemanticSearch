@@ -41,7 +41,9 @@ sys.path.insert(0, str(ROOT))
 from disney_overview_search.search_disney import search_movies  # noqa: E402
 from disney_overview_search.documents import document_text  # noqa: E402
 
-CROSS_ENCODER_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"
+# Keep the original training/baseline model separate from the serving checkpoint.
+PRETRAINED_CROSS_ENCODER_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"
+CROSS_ENCODER_MODEL = str(ROOT / "models" / "cross-encoder-finetuned-v1" / "final")
 
 # How many candidates stage 1 hands to stage 2. Reranking cost is linear in this
 # number, and it caps recall -- see the ceiling note in the module docstring.

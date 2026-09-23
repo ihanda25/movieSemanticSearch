@@ -34,7 +34,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from disney_overview_search.documents import document_text  # noqa: E402
-from disney_overview_search.disney_cross_encode import CROSS_ENCODER_MODEL, TOP_K  # noqa: E402
+from disney_overview_search.disney_cross_encode import PRETRAINED_CROSS_ENCODER_MODEL as CROSS_ENCODER_MODEL, TOP_K  # noqa: E402
 
 SEED = 42
 MODEL_DIR = ROOT / "models" / "cross-encoder-finetuned-v1"

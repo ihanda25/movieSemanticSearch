@@ -27,17 +27,10 @@ app = Flask(__name__, static_folder=None)
 
 
 def to_percent(score):
-    """Turns a cross-encoder logit into a 0-100 'match' figure.
+    """Monotonic display score, not a calibrated probability of user intent.
 
-    The ms-marco cross-encoder is trained with a binary relevance objective, so
-    its raw output is a logit and sigmoid(logit) is the model's own probability
-    that the document answers the query. That replaces the hand-tuned rescaling
-    the bi-encoder needed: cosine scores sat in a narrow band whose endpoints
-    had to be measured by hand, whereas these numbers mean something absolute
-    on their own. Still monotonic, so it never reorders results.
-
-    Consequence worth knowing: a query the model has no good answer for now
-    reads in the single digits rather than a comfortable-looking 40%.
+    The fine-tuned reranker is trained for relative ordering. Applying a sigmoid
+    preserves that ordering but does not make its scores confidence estimates.
     """
 
     # Clamped only so math.exp cannot overflow; real logits from this model sit

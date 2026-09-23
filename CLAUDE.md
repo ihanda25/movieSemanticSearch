@@ -1,5 +1,20 @@
 # CLAUDE.md
 
+## Serving update (2026-09-23)
+
+The UI and terminal now use `models/cross-encoder-finetuned-v1/final` with
+50 candidates. The embedding model and enriched index are unchanged.
+This supersedes historical statements below that the fine-tune is not deployed.
+The checkpoint is gitignored and must exist locally before starting the backend;
+regenerate it with `evaluation/finetune_cross_encoder.py` if needed (requires
+`evaluation/agent_search_run.json` and `evaluation/splits.json`). Training and
+historical baseline comparisons still explicitly use the original pretrained
+model. To roll back, set `CROSS_ENCODER_MODEL` in
+`disney_overview_search/disney_cross_encode.py` to
+`PRETRAINED_CROSS_ENCODER_MODEL` and restart the backend.
+Match percentages remain uncalibrated display scores.
+
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Current implementation update: enrichment and feedback (2026-09-16)
@@ -413,3 +428,11 @@ instead of guessing at it. Cheaper than this note used to assume — the measure
 minutes for a 40-query set, not the 20s/query estimated before the thing
 existed. Worth doing as part of the eval harness rather than as a special
 exercise.
+
+## Planned feedback training loop (2026-09-23)
+
+See README.md section "6. Planned continuous feedback and batch fine-tuning loop"
+for the current human-feedback roadmap: continuous collection, versioned batch
+training, evaluation against the deployed checkpoint, and initially manual
+promotion with rollback. The daily check / roughly 100 usable new labels policy
+is proposed only; no orchestrator or schedule has been implemented.

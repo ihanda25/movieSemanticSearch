@@ -1,5 +1,20 @@
 # movieSemanticSearch
 
+## Serving update (2026-09-23)
+
+The UI and terminal now use `models/cross-encoder-finetuned-v1/final` with
+50 candidates. The embedding model and enriched index are unchanged.
+This supersedes historical statements below that the fine-tune is not deployed.
+The checkpoint is gitignored and must exist locally before starting the backend;
+regenerate it with `evaluation/finetune_cross_encoder.py` if needed (requires
+`evaluation/agent_search_run.json` and `evaluation/splits.json`). Training and
+historical baseline comparisons still explicitly use the original pretrained
+model. To roll back, set `CROSS_ENCODER_MODEL` in
+`disney_overview_search/disney_cross_encode.py` to
+`PRETRAINED_CROSS_ENCODER_MODEL` and restart the backend.
+Match percentages remain uncalibrated display scores.
+
+
 Describe a movie plot or scene you remember and get five suggested Disney,
 Pixar, Marvel, or Lucasfilm movies. Search runs locally using pretrained
 embedding and reranking models; it does not call an LLM to generate answers.
@@ -551,3 +566,62 @@ For future confidence calibration, collect incorrect and no-match searches as
 well as correct selections, and validate any score-to-probability mapping on
 separate data. Rescaling numbers alone does not establish confidence or fix
 the ordering. The current percentage display remains uncalibrated.
+
+### 6. Planned continuous feedback and batch fine-tuning loop
+
+Status: planned, not implemented or scheduled. Human feedback is collected
+continuously in `database/feedback.sqlite3`; model updates will happen in
+separate batches, not inside search requests or after every click. The UI now
+serves fine-tuned v1, which is the initial incumbent for promotion comparisons.
+
+Flow: search → explicit feedback → dataset snapshot → candidate training →
+evaluation against the incumbent → manual promotion or rejection.
+
+1. **Prepare usable human labels.** Resolve corrections using the current label
+   for each search, deduplicate repeated or closely paraphrased queries, and
+   flag ambiguous movie selections for review. `selected` and `other` outcomes
+   identify positives; `none` without a correct title does not. Keep synthetic
+   examples and human feedback distinguishable throughout dataset preparation
+   and reporting. An unselected movie is not automatically an incorrect answer.
+2. **Trigger by new data, not just time.** Initially check daily and train only
+   after roughly 100 new usable labels have accumulated since the last training
+   snapshot. This is a starting policy to validate, not a proven data threshold.
+   Track label revisions as well as newly created searches so corrections are
+   incorporated. No scheduled job is created by this plan.
+3. **Freeze reproducible inputs.** Save a versioned snapshot of query/label
+   records, provenance, catalog text, split assignments, index fingerprint,
+   candidate pools, and training configuration. Record which label versions
+   were included in each run. Keep related queries and movie groups together
+   across splits, with fixed evaluation examples excluded from training.
+4. **Train off the serving path.** Start from the original pretrained
+   cross-encoder and train on accumulated eligible examples, including older
+   cases alongside the new batch. Initially use one reviewed hard negative per
+   query mined from the actual candidate pool; four negatives performed worse
+   in our previous experiment. Save to a new versioned checkpoint and never
+   overwrite the model currently serving requests. Training failures leave the
+   live app unaffected.
+5. **Evaluate the real search pipeline.** Compare the candidate with the
+   currently deployed checkpoint using the same 50-candidate retrieval pools.
+   Report top-one accuracy, Recall@5, MRR@5, latency, and individual regressions,
+   separately for scene and premise queries. Track stage-one Recall@50 too:
+   missing candidates require retrieval/corpus work, not reranker fine-tuning.
+   Maintain the existing development regression checks and a separate held-out
+   human evaluation set. Repeated model selection can overfit a fixed holdout;
+   periodically collect fresh untouched evaluation cases.
+6. **Review, promote, and retain rollback.** Produce a report with data counts,
+   exclusions, configuration, before/after metrics, and changed results. Agree
+   on acceptance thresholds before enabling automatic promotion; initially a
+   human approves each candidate. On approval, switch the serving checkpoint,
+   reload/restart the backend, and smoke-test search. Retain the prior checkpoint
+   and restore it if loading or verification fails. Log the deployed version in
+   subsequent feedback snapshots. Score calibration remains separate work.
+
+The implementation still needed is an orchestrator with run state, immutable
+snapshots, dataset preparation, training/evaluation commands, and a promotion
+report. Prevent overlapping runs and support retries without counting the same
+labels twice. Record failed, rejected, and promoted runs separately so a rejected
+candidate does not cause an identical retraining job every day. Decide checkpoint
+backup/distribution separately: `models/` and feedback databases are gitignored.
+
+Submitting feedback will immediately add or correct a potential training case;
+its effect on live rankings arrives only after an accepted batch is deployed.
